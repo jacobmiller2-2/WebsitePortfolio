@@ -1,7 +1,5 @@
 import React from "react";
 
-import SocialInfoPane from "./SocialInfoPane";
-
 const Contact = () => {
   const renderInfo = () => {
     return (

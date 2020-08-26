@@ -9,6 +9,7 @@ const SocialInfoPane = () => {
         className="ui circular linkedin icon button"
         href="https://linkedin.com/in/jacobmiller22"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <i className="big linkedin icon" />
       </a>
@@ -16,18 +17,23 @@ const SocialInfoPane = () => {
         className="ui circular github icon black button"
         href="https://github.com/jacobmiller22"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <i className="big github icon"></i>
       </a>
       <a
-        class="ui circular twitter icon button"
+        className="ui circular twitter icon button"
         href="https://twitter.com/jacobmiller22"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        <i class="big twitter icon"></i>
+        <i className="big twitter icon"></i>
       </a>
       <a
         className="ui circular linkify icon black button"
         href="https://jacobmiller22.com"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <i className="big linkify icon" />
       </a>

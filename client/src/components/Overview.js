@@ -6,6 +6,7 @@ const Overview = () => {
       <div className="ui huge centered header">Jacob Miller</div>
       <img
         className="ui circular centered medium bordered image"
+        alt="placeholder"
         src="https://bbgeneralcorp.com/wp-content/uploads/2017/09/placeholder.png"
       ></img>
       <div className="content">
