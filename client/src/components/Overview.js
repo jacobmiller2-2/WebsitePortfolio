@@ -6,7 +6,7 @@ const Overview = () => {
       <div className="ui huge centered header">Jacob Miller</div>
       <img
         className="ui circular centered medium bordered image"
-        alt="Professional Profile Picture"
+        alt="Professional Profile"
         src="./assets/Profile-Picture-Formal.png"></img>
       <div className="content">
         <p className="ui ">

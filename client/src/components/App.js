@@ -2,10 +2,10 @@ import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
-import CourseList from "./courses/CourseList";
-import ProjectList from "./projects/ProjectList";
+import CourseLanding from "./courses/CourseLanding";
+import ProjectLanding from "./projects/ProjectLanding";
 import Overview from "./Overview";
-import About from "./About";
+
 import Contact from "./contact/Contact";
 
 const App = () => {
@@ -15,8 +15,8 @@ const App = () => {
         <div>
           <Header />
           <Route path="/" exact component={Overview} />
-          <Route path="/courses" exact component={CourseList} />
-          <Route path="/projects" exact component={ProjectList} />
+          <Route path="/courses" exact component={CourseLanding} />
+          <Route path="/projects" exact component={ProjectLanding} />
           <Route path="/contact" exact component={Contact} />
           <Footer />
         </div>
