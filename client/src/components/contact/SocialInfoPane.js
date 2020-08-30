@@ -37,6 +37,14 @@ const SocialInfoPane = () => {
       >
         <i className="big linkify icon" />
       </a>
+      <a
+        className="ui circular mail icon black button"
+        href="mailto:jacobmiller22@vt.edu"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i className="big mail icon" />
+      </a>
     </div>
   );
 };
