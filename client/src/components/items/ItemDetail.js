@@ -19,7 +19,7 @@ const ItemDetail = ({ item }) => {
   return (
     <div>
       <div className="ui embed">
-        <iframe src=""></iframe>
+        <iframe title={"re"} src=""></iframe>
       </div>
       <div className="ui segment">
         <div className="ui large header">{item.title}</div>

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 import ItemList from "../items/ItemList";
-import ItemDetail from "../items/ItemDetail";
 
-import { OPEN_DETAIL_LEFT } from "../items/variants";
+import { LIST_OPEN_DETAIL_LEFT } from "../items/variants";
 
 const Mock_Projects = [
   {
@@ -55,31 +54,15 @@ const Mock_Projects = [
 
 const ProjectLanding = () => {
   const [projects, setProjects] = useState([]);
-  const [selected, setSelected] = useState(null);
 
   useEffect(() => {
     // Load Projects
     setProjects(Mock_Projects);
   }, []);
 
-  const onProjectSelect = (project) => {
-    setSelected(project);
-  };
+  // Custom content with custom click handler
 
-  return (
-    <div className="ui container">
-      <div className="ui grid">
-        <div className="ui row">
-          <div className="nine wide column">
-            <ItemDetail item={selected} />
-          </div>
-          <div className="seven wide column">
-            <ItemList items={projects} onItemSelect={onProjectSelect} />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+  return <ItemList items={projects} variant={LIST_OPEN_DETAIL_LEFT} />;
 };
 
 export default ProjectLanding;
