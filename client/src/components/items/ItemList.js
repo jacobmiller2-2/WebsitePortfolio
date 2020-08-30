@@ -6,19 +6,31 @@ import Loader from "../feedback/Loader";
 
 import * as variants from "./variants";
 
-const ItemList = ({ items, variant, title, itemContent }) => {
+const ItemList = ({ items, variant, title, itemContent, detailContent }) => {
   const [selected, setSelected] = useState(null);
 
   const onItemSelect = (item) => {
     setSelected(item);
+    console.log("RERERE");
   };
 
   const renderFocusDetail = () => {
-    return null;
+    if (!selected) {
+      return (
+        <div className="ui container">
+          <div className="ui divided items">{renderItems(onItemSelect)}</div>
+        </div>
+      );
+    }
+
+    if (detailContent) {
+      return detailContent(selected);
+    }
+    return <ItemDetail item={selected} />;
   };
 
   const renderNoDetail = () => {
-    return <div className="ui divided items">{renderItems()}</div>;
+    return;
   };
 
   const renderOpenDetailLeft = () => {
@@ -42,6 +54,8 @@ const ItemList = ({ items, variant, title, itemContent }) => {
 
   const renderItems = (onItemSelect) => {
     if (itemContent) {
+      if (!onItemSelect) {
+      }
       return items.map((item) => {
         return itemContent(item, onItemSelect);
       });

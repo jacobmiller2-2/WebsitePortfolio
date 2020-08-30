@@ -1,67 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
 import ItemList from "../items/ItemList";
+import CourseDetail from "./CourseDetail";
 
-import { LIST_NO_DETAIL } from "../items/variants";
-const Mock_Courses = [
-  {
-    subject: {
-      full: "Computer Science",
-      abbrev: "CS",
-    },
-    title: "Data Structures and Algorithms",
-    courseNumber: "2114",
-    crn: "n/a",
-    instructor: "Margaret Ellis",
-    finalGrade: "B+",
-    inProgress: false,
-  },
-  {
-    subject: {
-      full: "Computer Science",
-      abbrev: "CS",
-    },
-    title: "Data Structures and Algorithms",
-    courseNumber: "3114",
-    crn: "83018",
-    instructor: "Young Cao",
-    finalGrade: "",
-    inProgress: true,
-  },
-  {
-    subject: {
-      full: "Computer Science",
-      abbrev: "CS",
-    },
-    title: "Computer Organization",
-    courseNumber: "2505",
-    crn: "12956",
-    instructor: "Md Tausif",
-    finalGrade: "B+",
-    inProgress: false,
-  },
-  {
-    subject: {
-      full: "Computer Science",
-      abbrev: "CS",
-    },
-    title: "Intro to Problem Solving in CS",
-    courseNumber: "2104",
-    crn: "82970",
-    instructor: "David McPherson",
-    finalGrade: "",
-    inProgress: true,
-  },
-];
+import { LIST_FOCUS_DETAIL } from "../items/variants";
+import ItemDetail from "../items/ItemDetail";
+
+import history from "../../history";
+
+import courses from "../../db/courses";
 
 const CourseLanding = () => {
-  const [courses, setCourses] = useState([]);
-
-  useEffect(() => {
-    // Load Projects
-    setCourses(Mock_Courses);
-  }, []);
-
   const courseItemContent = (item) => {
     const { subject, inProgress, title, courseNumber } = item;
     const header = `${title} - ${subject.abbrev}${courseNumber}`;
@@ -76,22 +26,20 @@ const CourseLanding = () => {
           </div>
         );
       }
-      return <i class="huge green check circle icon"></i>;
-    };
-
-    const onCourseClick = () => {
-      console.log("clicked");
+      return <i className="huge green check circle icon"></i>;
     };
 
     return (
-      <div className="item" key={item.crn} onClick={() => onCourseClick()}>
+      <Link to={`/courses/${item.crn}`} className="item" key={item.crn}>
         <div className="middle aligned content" style={{ paddingLeft: "2rem" }}>
-          <div className="ui header">{header}</div>
-          <div className="description">{item.instructor}</div>
+          <h2 className="ui dividing header">
+            {header}
+            <div className="ui sub header">{item.instructor}</div>
+          </h2>
         </div>
         <h1 className="ui header">{item.finalGrade}</h1>
         <div>{renderInProgress()}</div>
-      </div>
+      </Link>
     );
   };
 
@@ -100,7 +48,8 @@ const CourseLanding = () => {
       <ItemList
         items={courses}
         itemContent={courseItemContent}
-        variant={LIST_NO_DETAIL}
+        detailContent={CourseDetail}
+        variant={LIST_FOCUS_DETAIL}
       />
     </div>
   );
