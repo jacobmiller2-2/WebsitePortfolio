@@ -7,11 +7,9 @@ const CourseDetail = (props) => {
   const [course, setCourse] = useState(null);
 
   useEffect(() => {
-    console.log(courses[props.match.params.id]);
-    courses.map((course) => {
+    courses.forEach((course) => {
       if (course.crn === props.match.params.id) {
         setCourse(course);
-        return;
       }
     });
   }, [props.match.params.id]);
@@ -19,7 +17,7 @@ const CourseDetail = (props) => {
   if (!course) {
     return <div>Loading...</div>;
   }
-  const { subject, inProgress, title, courseNumber } = course;
+  const { subject, title, courseNumber } = course;
   const header = `${title} - ${subject.abbrev}${courseNumber}`;
   return (
     <div>
@@ -27,6 +25,7 @@ const CourseDetail = (props) => {
         Back
       </Link>
       <div className="ui header">{header}</div>
+      <div className="ui"></div>
     </div>
   );
 };

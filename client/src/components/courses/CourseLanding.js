@@ -5,13 +5,10 @@ import ItemList from "../items/ItemList";
 import CourseDetail from "./CourseDetail";
 
 import { LIST_FOCUS_DETAIL } from "../items/variants";
-import ItemDetail from "../items/ItemDetail";
-
-import history from "../../history";
 
 import courses from "../../db/courses";
 
-const CourseLanding = () => {
+const CourseLanding = (props) => {
   const courseItemContent = (item) => {
     const { subject, inProgress, title, courseNumber } = item;
     const header = `${title} - ${subject.abbrev}${courseNumber}`;
