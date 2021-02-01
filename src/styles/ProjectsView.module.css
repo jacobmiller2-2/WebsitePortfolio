@@ -1,0 +1,19 @@
+#projectsView {
+  min-width: 100vw;
+}
+
+#projectTitle {
+  color: #dfe0e2;
+}
+
+#projectList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+#projectList > .item {
+  padding: 0.25rem;
+  margin: 0.5rem;
+}

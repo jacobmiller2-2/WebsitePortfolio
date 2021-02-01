@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #111111 !important;
 }
 
 a {
@@ -18,12 +19,13 @@ a {
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 .jumbotron {
-  background-color: #fff !important;
+  background-color: #111111 !important;
+  color: #dfe0e2;
 }
