@@ -7,7 +7,6 @@ const Project = () => {
   return (
     <div>
       <h1>Projects</h1>
-      {/* <Carousel /> */}
       <ProjectList projects={projects} />
     </div>
   );
