@@ -1,0 +1,29 @@
+#contactWrapper {
+  color: #d4d6d8;
+}
+
+#contactWrapper a {
+  color: #d4d6d8;
+}
+
+#contactWrapper a:hover {
+  color: #eb5160;
+}
+
+#direct {
+  padding: 15px 5px;
+}
+
+#direct > .item {
+  margin: 5px;
+  padding: 5px;
+}
+#social {
+  padding: 15px 5px;
+  margin-top: 5px;
+}
+
+#social > .item {
+  margin: 5px;
+  padding: 5px;
+}

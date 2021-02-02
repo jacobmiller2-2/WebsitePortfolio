@@ -4,6 +4,7 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 
 import IntroView from "../Views/IntroView";
 import ProjectsView from "../Views/ProjectsView";
+import AboutView from "../Views/AboutView";
 
 import Container from "react-bootstrap/Container";
 
@@ -17,6 +18,7 @@ export default function Home() {
 
       <IntroView />
       <ProjectsView />
+      <AboutView />
       <footer className={styles.footer}>
         <a
           href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'

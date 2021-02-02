@@ -1,12 +1,3 @@
-#projectsView {
-  max-width: 100vw;
-  caret-color: transparent;
-}
-
-#projectTitle {
-  color: #dfe0e2;
-}
-
 #projectList {
   display: flex;
   flex-direction: row;
