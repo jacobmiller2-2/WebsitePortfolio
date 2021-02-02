@@ -6,4 +6,6 @@ export enum Tech {
   CSS = "css",
   PYTHON = "python",
   SWIFT = "swift",
+  GATSBY = "gatsby",
+  REACT = "react",
 }

@@ -12,25 +12,22 @@ const projects = [
     src: "",
   },
   {
-    title: "Project 2",
-    summary: "summary",
-    tech: ["nodejs", "javascript"],
-    projectLink: "",
-    src: "",
+    title: "VT Hacks Live-Site",
+    summary: "The web application to be used by the VT Hacks hackathon",
+    tech: ["typescript", "html", "css", "gatsby", "react"],
+    projectLink: "https://live.vthacks.com/",
+    src: "https://github.com/vthacks-org/Live-Site",
   },
   {
-    title: "Project 3",
-    summary: "summary",
-    tech: ["python"],
-    projectLink: "",
-    src: "",
-  },
-  {
-    title: "Project 4",
-    summary: "summary",
-    tech: ["python"],
-    projectLink: "",
-    src: "",
+    title: "Lovely Letters",
+    summary:
+      "A web application that allows users to send letters to each other. Built with a React frontend, and an express backend server",
+    tech: ["javascript", "nodejs", "html", "css"],
+    projectLink: "https://priyanka.jacobmiller22.com/",
+    src: [
+      "https://github.com/jacobmiller22/merry-christmas",
+      "https://github.com/jacobmiller22/merry-christmas-server",
+    ],
   },
 ];
 
