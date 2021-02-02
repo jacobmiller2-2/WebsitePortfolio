@@ -2,11 +2,23 @@
   border: 1px solid #dfe0e2;
   background-color: #161616;
   color: #d4d6d8;
+  height: 100%;
+  position: relative;
 }
 
 .title {
   color: #ec5b69;
 }
 
-.subtitle {
+.linkWrapper {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.link {
+  color: #dfe0e2;
+}
+
+.link:hover {
+  color: #ec5b69;
 }

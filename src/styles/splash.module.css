@@ -10,3 +10,19 @@
   justify-content: center;
   caret-color: transparent;
 }
+
+#status {
+  color: #eb5160;
+}
+
+#status .blink {
+  font-family: "Fira Code", monospace;
+  animation: blinkingText 2s infinite;
+  /* color: #0ff; */
+}
+
+@keyframes blinkingText {
+  25% {
+    opacity: 0;
+  }
+}

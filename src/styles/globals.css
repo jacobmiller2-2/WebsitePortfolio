@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Fira Code";
+  src: url("../assets/fonts/FiraCode-SemiBold.ttf");
+}
+
 html,
 body {
   padding: 0;
