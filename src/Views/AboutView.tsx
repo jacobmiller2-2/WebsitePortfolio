@@ -7,7 +7,7 @@ import ContactForm from "../Components/ContactForm";
 
 import genStyles from "../styles/generic.module.css";
 
-const About = () => {
+const About = ({ contactInfo }) => {
   return (
     <Container>
       <h1 className={genStyles.sectionHeader}>Contact Me</h1>
@@ -16,7 +16,7 @@ const About = () => {
           <ContactForm />
         </Col>
         <Col>
-          <ContactDetails />
+          <ContactDetails contactInfo={contactInfo} />
         </Col>
       </Row>
       <div className={genStyles.sectionView}>
