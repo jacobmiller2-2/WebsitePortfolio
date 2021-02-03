@@ -7,10 +7,10 @@ import Popover from "react-bootstrap/Popover";
 import Tooltip from "react-bootstrap/Tooltip";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
+import { CodeSlash, ChevronRight } from "react-bootstrap-icons";
 
 import styles from "../styles/ProjectsView.module.css";
 import card from "../styles/card.module.css";
-import { CodeSlash, ChevronRight } from "react-bootstrap-icons";
 
 import _ from "lodash";
 import { getTechPic } from "../utils";
