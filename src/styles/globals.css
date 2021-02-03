@@ -42,3 +42,19 @@ a {
     padding-right: 0px;
   }
 }
+
+#nav {
+  background-color: #111111;
+}
+#nav * {
+  color: #eb5160;
+  background-color: #111111;
+}
+
+#nav > .navbar-brand {
+  font-family: "Fira Code", monospace;
+}
+
+.nav {
+  color: #eb5160;
+}

@@ -5,7 +5,8 @@ import ProjectsView from "../Views/ProjectsView";
 import AboutView from "../Views/AboutView";
 import FooterView from "../Views/FooterView";
 
-import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
@@ -44,14 +45,25 @@ export default function Home() {
         <title>Jacob Miller</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
+
+      <Navbar sticky='top' id='nav' className='nav'>
+        <Navbar.Brand href='#home'>Jacob Miller</Navbar.Brand>
+        <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+        <Navbar.Collapse>
+          <Nav>
+            <Nav.Link href='#projects'>Projects</Nav.Link>
+            <Nav.Link href='#about'>About</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
       <Col>
-        <Row>
+        <Row id='intro'>
           <IntroView />
         </Row>
-        <Row className={styles.alt}>
+        <Row id='projects' className={styles.alt}>
           <ProjectsView />
         </Row>
-        <Row className={styles.primary}>
+        <Row id='about' className={styles.primary}>
           <AboutView contactInfo={contactInfo} />
         </Row>
 
