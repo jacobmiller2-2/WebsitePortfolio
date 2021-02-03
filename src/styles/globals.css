@@ -35,3 +35,10 @@ a {
   background-color: #111111 !important;
   color: #dfe0e2;
 }
+
+@media (max-width: 600px) {
+  #contactForm {
+    border: none;
+    padding-right: 0px;
+  }
+}

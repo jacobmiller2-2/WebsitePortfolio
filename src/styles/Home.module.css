@@ -116,7 +116,7 @@
 
 .alt {
   padding-top: 40px;
-  padding-bottom: 15px;
+  padding-bottom: 30px;
   clip-path: polygon(0 0%, 100% 4%, 100% 96%, 0% 100%);
   background-color: #1f1f1f;
 }

@@ -36,7 +36,10 @@ const ContactForm = () => {
     return field ? <p className={formStyles.error}>{field?.message}</p> : null;
   };
   return (
-    <form className={formStyles.form} onSubmit={handleSubmit(onSubmit)}>
+    <form
+      id='contactForm'
+      className={formStyles.form}
+      onSubmit={handleSubmit(onSubmit)}>
       <input
         type='text'
         name='firstName'
