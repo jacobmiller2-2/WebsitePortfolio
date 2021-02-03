@@ -1,5 +1,6 @@
 #contactWrapper {
   color: #d4d6d8;
+  margin-left: 10px;
 }
 
 #contactWrapper a {
@@ -11,19 +12,17 @@
 }
 
 #direct {
-  padding: 15px 5px;
+  margin: 15px;
 }
 
 #direct > .item {
-  margin: 5px;
   padding: 5px;
 }
 #social {
-  padding: 15px 5px;
-  margin-top: 5px;
+  margin-left: 15px;
+  margin-top: 30px;
 }
 
 #social > .item {
-  margin: 5px;
   padding: 5px;
 }

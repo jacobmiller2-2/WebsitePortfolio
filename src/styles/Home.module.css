@@ -114,6 +114,16 @@
   height: 1em;
 }
 
+.alt {
+  padding-top: 40px;
+  padding-bottom: 15px;
+  clip-path: polygon(0 0%, 100% 4%, 100% 96%, 0% 100%);
+  background-color: #1f1f1f;
+}
+.primary {
+  margin-top: 40px;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;

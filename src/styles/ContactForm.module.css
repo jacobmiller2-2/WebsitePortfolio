@@ -5,6 +5,8 @@
   justify-content: center;
   font-family: inherit;
   color: #d4d6d8;
+  padding-right: 30px;
+  border-right: 1px solid #eb5160;
 }
 
 .form > * {
