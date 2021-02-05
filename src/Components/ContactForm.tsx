@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 
 import formStyles from "../styles/ContactForm.module.css";
+import axios from "axios";
 
 interface IFormInputs {
   firstName: string;
@@ -30,6 +31,11 @@ const ContactForm = () => {
 
   const onSubmit = (data: IFormInputs) => {
     alert(JSON.stringify(data));
+
+    (async () => {
+      const res = await axios.post("/api/contact", data);
+      alert(JSON.stringify(res));
+    })();
   };
 
   const renderError = (field) => {

@@ -44,11 +44,11 @@ a {
 }
 
 #nav {
-  background-color: #111111;
+  /* background-color: #111111; */
 }
 #nav * {
   color: #eb5160;
-  background-color: #111111;
+  /* background-color: #111111; */
 }
 
 #nav > .navbar-brand {
