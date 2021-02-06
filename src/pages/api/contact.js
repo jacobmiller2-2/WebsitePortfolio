@@ -23,6 +23,7 @@ export default async (req, res) => {
     });
   }
 
+  console.log("MY PROD CALL", isProd());
   if (isProd()) {
     AWS.config.update({
       accessKeyId: AWS_ACCESS_KEY_ID,
