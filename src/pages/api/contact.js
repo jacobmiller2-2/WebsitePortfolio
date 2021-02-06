@@ -33,10 +33,10 @@ export default async (req, res) => {
   };
 
   try {
-    var res = await ddb.putItem(params).promise();
+    var data = await ddb.putItem(params).promise();
   } catch (err) {
     console.log("Error: ", err);
   }
 
-  res.status(200).json({ success: res ? true : false });
+  res.send(data);
 };

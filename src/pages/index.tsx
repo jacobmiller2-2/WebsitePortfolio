@@ -12,8 +12,9 @@ import Col from "react-bootstrap/Col";
 
 import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 import styles from "../styles/Home.module.css";
+import axios from "axios";
 
-export default function Home() {
+export default function Index({ projects }) {
   const contactInfo = {
     firstName: "Jacob",
     lastName: "Miller",
@@ -66,7 +67,7 @@ export default function Home() {
           <IntroView />
         </Row>
         <Row id='projects' className={styles.alt}>
-          <ProjectsView />
+          <ProjectsView projects={projects} />
         </Row>
         <Row id='about' className={styles.primary}>
           <AboutView contactInfo={contactInfo} />
@@ -76,4 +77,16 @@ export default function Home() {
       </Col>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const projects = await axios.get("http://localhost:3000/api/projects");
+
+  console.log("Projects", projects.data);
+
+  return {
+    props: {
+      projects: projects.data.data,
+    },
+  };
 }
