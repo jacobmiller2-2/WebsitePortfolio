@@ -12,7 +12,8 @@ import Col from "react-bootstrap/Col";
 
 import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 import styles from "../styles/Home.module.css";
-import axios from "axios";
+
+import projects from "./api/projects";
 
 export default function Index({ projects }) {
   const contactInfo = {
@@ -80,13 +81,10 @@ export default function Index({ projects }) {
 }
 
 export async function getStaticProps() {
-  const projects = await axios.get("/api/projects");
-
-  console.log("Projects", projects.data);
-
+  console.log("My Projects: ", await projects());
   return {
     props: {
-      projects: projects.data.data,
+      projects: JSON.parse(await projects()),
     },
   };
 }

@@ -35,7 +35,7 @@ export default async (req, res) => {
   try {
     var data = await ddb.putItem(params).promise();
   } catch (err) {
-    console.log("Error: ", err);
+    console.log("Error: xdxdxdxddx ");
   }
 
   res.send(data);
