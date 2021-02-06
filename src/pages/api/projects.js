@@ -1,4 +1,10 @@
 const AWS = require("aws-sdk");
+const { isProd } = require("../../utils");
+const {
+  AWS_ACCESS_KEY_ID,
+  AWS_SECRET_ACCESS_KEY,
+  AWS_REGION,
+} = require("../../config/keys");
 
 export default async () => {
   /**
@@ -8,7 +14,16 @@ export default async () => {
    *
    */
 
-  AWS.config.loadFromPath("./src/config/aws.json");
+  console.log("MY PROD CALL", isProd());
+  if (isProd()) {
+    AWS.config.update({
+      accessKeyId: AWS_ACCESS_KEY_ID,
+      secretAccessKey: AWS_SECRET_ACCESS_KEY,
+      region: AWS_REGION,
+    });
+  } else {
+    AWS.config.loadFromPath("./src/config/aws.json");
+  }
 
   var ddb = new AWS.DynamoDB.DocumentClient();
 
@@ -18,18 +33,18 @@ export default async () => {
 
   var items = [];
 
-  const onScan = (err, data) => {
-    if (err) {
-      console.error(
-        "Unable to scan the table. Error JSON:",
-        JSON.stringify(err, null, 2)
-      );
-    } else {
-      data.Items.forEach((item) => {
-        items.push(item);
-      });
-    }
-  };
+  // const onScan = (err, data) => {
+  //   if (err) {
+  //     console.error(
+  //       "Unable to scan the table. Error JSON:",
+  //       JSON.stringify(err, null, 2)
+  //     );
+  //   } else {
+  //     data.Items.forEach((item) => {
+  //       items.push(item);
+  //     });
+  //   }
+  // };
 
   try {
     var data = await ddb.scan(params).promise();
