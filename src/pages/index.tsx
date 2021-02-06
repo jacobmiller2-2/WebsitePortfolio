@@ -81,7 +81,6 @@ export default function Index({ projects }) {
 }
 
 export async function getStaticProps() {
-  console.log("My Projects: ", await projects());
   return {
     props: {
       projects: JSON.parse(await projects()),

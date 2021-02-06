@@ -1,4 +1,10 @@
 const AWS = require("aws-sdk");
+const { isProd } = require("../../utils");
+const {
+  AWS_ACCESS_KEY_ID,
+  AWS_SECRET_ACCESS_KEY,
+  AWS_REGION,
+} = require("../../config/keys");
 
 export default async (req, res) => {
   /**
@@ -17,7 +23,15 @@ export default async (req, res) => {
     });
   }
 
-  AWS.config.loadFromPath("./src/config/aws.json");
+  if (isProd) {
+    AWS.config.update({
+      accessKeyId: AWS_ACCESS_KEY_ID,
+      secretAccessKey: AWS_SECRET_ACCESS_KEY,
+      region: AWS_REGION,
+    });
+  } else {
+    AWS.config.loadFromPath("./src/config/aws.json");
+  }
 
   var ddb = new AWS.DynamoDB();
 
@@ -35,7 +49,7 @@ export default async (req, res) => {
   try {
     var data = await ddb.putItem(params).promise();
   } catch (err) {
-    console.log("Error: xdxdxdxddx ");
+    console.log("Error: ");
   }
 
   res.send(data);

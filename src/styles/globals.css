@@ -44,7 +44,7 @@ a {
 }
 
 #nav {
-  /* background-color: #111111; */
+  /* background-color: rgb(17, 17, 17, 0.4); */
 }
 #nav * {
   color: #eb5160;
@@ -57,4 +57,21 @@ a {
 
 .nav {
   color: #eb5160;
+}
+
+#nav-blur {
+  /* filter: blur(20px); */
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 50px;
+  margin-bottom: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1010;
+  -webkit-filter: blur(20px);
+  -moz-filter: blur(20px);
+  -o-filter: blur(20px);
+  -ms-filter: blur(20px);
+  filter: blur(20px);
 }
