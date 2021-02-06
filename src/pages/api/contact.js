@@ -1,6 +1,6 @@
 const AWS = require("aws-sdk");
 
-export default (req, res) => {
+export default async (req, res) => {
   /**
    * Recieve a JSON object with fields -> firstName, lastName, company, message
    *
@@ -34,7 +34,7 @@ export default (req, res) => {
 
   try {
     var res = await ddb.putItem(params).promise();
-  } catch(err) {
+  } catch (err) {
     console.log("Error: ", err);
   }
 
