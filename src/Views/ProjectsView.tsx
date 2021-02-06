@@ -9,8 +9,8 @@ const projects = [
     title: "Start My Project",
     summary: "A lightweight CLI for beginning daily devlopment processes",
     tech: ["python"],
-    projectLink: "",
-    src: "",
+    projectLink: "temp",
+    src: "temp",
   },
   {
     title: "VT Hacks Live-Site",

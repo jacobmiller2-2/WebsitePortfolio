@@ -9,7 +9,6 @@ import axios from "axios";
 interface IFormInputs {
   firstName: string;
   lastName: string;
-  email: string;
   company: string;
   message: string;
 }
@@ -17,7 +16,6 @@ interface IFormInputs {
 const schema = z.object({
   firstName: z.string().nonempty({ message: "Please enter your first name." }),
   lastName: z.string().nonempty({ message: "Please enter your last name." }),
-  email: z.string().nonempty({ message: "Please enter your email." }),
   company: z.string(),
   message: z
     .string()
@@ -46,6 +44,7 @@ const ContactForm = () => {
       id='contactForm'
       className={formStyles.form}
       onSubmit={handleSubmit(onSubmit)}>
+      <label htmlFor='firstName'>First Name</label>
       <input
         type='text'
         name='firstName'
@@ -54,6 +53,7 @@ const ContactForm = () => {
       />
       {renderError(errors.firstName)}
 
+      <label htmlFor='lastName'>Last Name</label>
       <input
         type='text'
         name='lastName'
@@ -62,12 +62,11 @@ const ContactForm = () => {
       />
       {renderError(errors.lastName)}
 
-      <input type='text' name='email' ref={register} placeholder='Email' />
-      {renderError(errors.email)}
-
+      <label htmlFor='company'>Company</label>
       <input type='text' name='company' ref={register} placeholder='Company' />
       {renderError(errors.company)}
 
+      <label htmlFor='message'>Message</label>
       <textarea
         className={formStyles.textarea}
         name='message'

@@ -17,6 +17,13 @@
   padding: 15px 15px;
 }
 
+.form > label {
+  caret-color: transparent;
+  background-color: inherit;
+  padding: 5px;
+  margin-bottom: -5px;
+}
+
 .form > *:focus {
   outline: none;
   border: 1px solid #eb5160;

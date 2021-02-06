@@ -44,10 +44,15 @@ export default function Home() {
       <Head>
         <title>Jacob Miller</title>
         <link rel='icon' href='/favicon.ico' />
+        <meta
+          property='og:title'
+          content='Portfolio Website showcasing projects developed by Jacob Miller.'
+          key='title'
+        />
       </Head>
 
       <Navbar sticky='top' id='nav' className='nav'>
-        <Navbar.Brand href='#home'>Jacob Miller</Navbar.Brand>
+        <Navbar.Brand href='#intro'>Jacob Miller</Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse>
           <Nav>
