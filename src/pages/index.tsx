@@ -80,7 +80,7 @@ export default function Index({ projects }) {
 }
 
 export async function getStaticProps() {
-  const projects = await axios.get("http://localhost:3000/api/projects");
+  const projects = await axios.get("/api/projects");
 
   console.log("Projects", projects.data);
 
