@@ -25,17 +25,17 @@ export default async (req, res) => {
     AWS.config.loadFromPath("./src/config/aws.json");
     w;
   }
-  console.log(keys);
-  // var ddb = new AWS.DynamoDB(
-  //   isProd()
-  //     ? {
-  //         accessKeyId: AWS_ACCESS_KEY_ID,
-  //         secretAccessKey: AWS_SECRET_ACCESS_KEY,
-  //         region: AWS_REGION,
-  //         apiVersion: "2012-08-10",
-  //       }
-  //     : { apiVersion: "2012-08-10" }
-  // );
+  console.log(keys.AWS_ACCESS_KEY_ID);
+  var ddb = new AWS.DynamoDB(
+    isProd()
+      ? {
+          accessKeyId: keys.AWS_ACCESS_KEY_ID,
+          secretAccessKey: keys.AWS_SECRET_ACCESS_KEY,
+          region: keys.AWS_REGION,
+          apiVersion: "2012-08-10",
+        }
+      : { apiVersion: "2012-08-10" }
+  );
 
   var params = {
     TableName: "Messages",
