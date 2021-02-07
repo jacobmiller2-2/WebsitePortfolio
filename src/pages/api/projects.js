@@ -20,7 +20,7 @@ export default async () => {
       secretAccessKey: AWS_SECRET_ACCESS_KEY,
       region: AWS_REGION,
     }));
-    AWS.config.update(awsConfig);
+    AWS.config = awsConfig;
   } else {
     AWS.config.loadFromPath("./src/config/aws.json");
   }
