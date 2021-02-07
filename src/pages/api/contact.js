@@ -29,9 +29,9 @@ export default async (req, res) => {
   var ddb = new AWS.DynamoDB(
     isProd()
       ? {
-          accessKeyId: keys.AWS_ACCESS_KEY_ID,
-          secretAccessKey: keys.AWS_SECRET_ACCESS_KEY,
-          region: keys.AWS_REGION,
+          accessKeyId: keys.default.AWS_ACCESS_KEY_ID,
+          secretAccessKey: keys.default.AWS_SECRET_ACCESS_KEY,
+          region: keys.default.AWS_REGION,
           apiVersion: "2012-08-10",
         }
       : { apiVersion: "2012-08-10" }
