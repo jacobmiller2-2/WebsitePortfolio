@@ -14,11 +14,13 @@ export default async () => {
    *
    */
 
-  AWS.config = new AWS.Config();
-  console.log("MY PROD CALL", isProd());
   if (isProd()) {
-    AWS.config.credentials.accessKeyId = AWS_ACCESS_KEY_ID;
-    AWS.config.credentials.secretAccessKey = AWS_SECRET_ACCESS_KEY;
+    const awsConfig = (AWS.config = new AWS.Config({
+      accessKeyId: AWS_ACCESS_KEY_ID,
+      secretAccessKey: AWS_SECRET_ACCESS_KEY,
+      region: AWS_REGION,
+    }));
+    AWS.config.update(awsConfig);
   } else {
     AWS.config.loadFromPath("./src/config/aws.json");
   }
