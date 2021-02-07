@@ -1,10 +1,6 @@
 const AWS = require("aws-sdk");
 const { isProd } = require("../../utils");
-const {
-  AWS_ACCESS_KEY_ID,
-  AWS_SECRET_ACCESS_KEY,
-  AWS_REGION,
-} = require("../../config/keys");
+const keys = require("../../config/keys");
 
 export default async (req, res) => {
   /**
@@ -29,17 +25,17 @@ export default async (req, res) => {
     AWS.config.loadFromPath("./src/config/aws.json");
     w;
   }
-  console.log(AWS_ACCESS_KEY_ID);
-  var ddb = new AWS.DynamoDB(
-    isProd()
-      ? {
-          accessKeyId: AWS_ACCESS_KEY_ID,
-          secretAccessKey: AWS_SECRET_ACCESS_KEY,
-          region: AWS_REGION,
-          apiVersion: "2012-08-10",
-        }
-      : { apiVersion: "2012-08-10" }
-  );
+  console.log(keys);
+  // var ddb = new AWS.DynamoDB(
+  //   isProd()
+  //     ? {
+  //         accessKeyId: AWS_ACCESS_KEY_ID,
+  //         secretAccessKey: AWS_SECRET_ACCESS_KEY,
+  //         region: AWS_REGION,
+  //         apiVersion: "2012-08-10",
+  //       }
+  //     : { apiVersion: "2012-08-10" }
+  // );
 
   var params = {
     TableName: "Messages",
