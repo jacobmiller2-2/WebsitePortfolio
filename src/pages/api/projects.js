@@ -27,8 +27,9 @@ export default async () => {
           accessKeyId: AWS_ACCESS_KEY_ID,
           secretAccessKey: AWS_SECRET_ACCESS_KEY,
           region: AWS_REGION,
+          apiVersion: "2012-08-10",
         }
-      : {}
+      : { apiVersion: "2012-08-10" }
   );
 
   var params = {
