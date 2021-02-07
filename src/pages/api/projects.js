@@ -15,11 +15,11 @@ export default async () => {
    */
 
   if (isProd()) {
-    var awsConfig = (AWS.config = new AWS.Config({
+    var awsConfig = new AWS.Config({
       accessKeyId: AWS_ACCESS_KEY_ID,
       secretAccessKey: AWS_SECRET_ACCESS_KEY,
       region: AWS_REGION,
-    }));
+    });
   } else {
     AWS.config.loadFromPath("./src/config/aws.json");
   }
