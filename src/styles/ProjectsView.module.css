@@ -1,15 +1,20 @@
 #projectList {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: center;
+  align-items: stretch;
+  height: 100%;
 }
 
 #projectList > .item {
   padding: 0.25rem;
   margin: 0.5rem;
-  width: 250px;
-  height: 300px;
+  /* width: 250px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .techPic {
@@ -23,7 +28,7 @@
 }
 
 .bottom {
-  position: absolute;
-  bottom: 0px;
-  height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
 }

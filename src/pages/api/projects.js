@@ -13,9 +13,9 @@ export default async () => {
   if (isProd()) {
     // var awsConfig = new AWS.Config({});
   } else {
-    AWS.config.loadFromPath("./src/config/aws.json");
+    AWS.config.loadFromPath("./src/config/aws-config-dev.json");
   }
-  console.log(keys.default.AWS_ACCESS_KEY_ID);
+
   var ddb = new AWS.DynamoDB.DocumentClient(
     isProd()
       ? {

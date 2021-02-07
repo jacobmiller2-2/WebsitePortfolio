@@ -23,9 +23,8 @@ export default async (req, res) => {
     // var awsConfig = new AWS.Config({});
   } else {
     AWS.config.loadFromPath("./src/config/aws.json");
-    w;
   }
-  console.log(keys.AWS_ACCESS_KEY_ID);
+
   var ddb = new AWS.DynamoDB(
     isProd()
       ? {
