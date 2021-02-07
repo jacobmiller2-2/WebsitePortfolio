@@ -15,16 +15,21 @@ export default async () => {
    */
 
   if (isProd()) {
-    var awsConfig = new AWS.Config({
-      accessKeyId: AWS_ACCESS_KEY_ID,
-      secretAccessKey: AWS_SECRET_ACCESS_KEY,
-      region: AWS_REGION,
-    });
+    // var awsConfig = new AWS.Config({});
   } else {
     AWS.config.loadFromPath("./src/config/aws.json");
+    w;
   }
 
-  var ddb = new AWS.DynamoDB.DocumentClient(awsConfig ? awsConfig : {});
+  var ddb = new AWS.DynamoDB.DocumentClient(
+    isProd()
+      ? {
+          accessKeyId: AWS_ACCESS_KEY_ID,
+          secretAccessKey: AWS_SECRET_ACCESS_KEY,
+          region: AWS_REGION,
+        }
+      : {}
+  );
 
   var params = {
     TableName: "Projects",

@@ -24,17 +24,21 @@ export default async (req, res) => {
   }
 
   if (isProd()) {
-    var awsConfig = new AWS.Config({
-      accessKeyId: AWS_ACCESS_KEY_ID,
-      secretAccessKey: AWS_SECRET_ACCESS_KEY,
-      region: AWS_REGION,
-    });
+    // var awsConfig = new AWS.Config({});
   } else {
     AWS.config.loadFromPath("./src/config/aws.json");
     w;
   }
 
-  var ddb = new AWS.DynamoDB(awsConfig ? awsConfig : {});
+  var ddb = new AWS.DynamoDB(
+    isProd()
+      ? {
+          accessKeyId: AWS_ACCESS_KEY_ID,
+          secretAccessKey: AWS_SECRET_ACCESS_KEY,
+          region: AWS_REGION,
+        }
+      : {}
+  );
 
   var params = {
     TableName: "Messages",
