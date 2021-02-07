@@ -1,8 +1,10 @@
 #projectList {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: center;
+  align-items: stretch;
+  height: 100%;
 }
 
 #projectList > .item {
