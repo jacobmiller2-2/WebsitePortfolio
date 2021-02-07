@@ -20,7 +20,7 @@ export default async () => {
     AWS.config.loadFromPath("./src/config/aws.json");
     w;
   }
-
+  console.log(AWS_ACCESS_KEY_ID);
   var ddb = new AWS.DynamoDB.DocumentClient(
     isProd()
       ? {
