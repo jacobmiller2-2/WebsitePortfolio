@@ -14,6 +14,7 @@ export default async () => {
    *
    */
 
+  AWS.config = new AWS.Config();
   console.log("MY PROD CALL", isProd());
   if (isProd()) {
     AWS.config.credentials.accessKeyId = AWS_ACCESS_KEY_ID;
