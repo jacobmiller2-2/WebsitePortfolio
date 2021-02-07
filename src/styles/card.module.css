@@ -1,12 +1,9 @@
 .card {
-  display: inline-flex;
-
-  align-items: flex-end;
   border: 1px solid #dfe0e2;
   background-color: #161616 !important;
   color: #d4d6d8;
-  /* height: 100%; */
-  /* position: relative; */
+  height: 100%;
+  position: relative;
 }
 
 .title {
