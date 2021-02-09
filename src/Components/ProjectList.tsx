@@ -30,8 +30,9 @@ const ProjectList = ({ projects, id }) => {
       return techPic ? (
         <OverLayTrigger
           key={tech}
-          placement='top'
-          overlay={<Tooltip id={`tooltip-${tech}`}>{tech}</Tooltip>}>
+          placement="top"
+          overlay={<Tooltip id={`tooltip-${tech}`}>{tech}</Tooltip>}
+        >
           <span className={styles.techPic}>{techPic()}</span>
         </OverLayTrigger>
       ) : null;
@@ -53,15 +54,15 @@ const ProjectList = ({ projects, id }) => {
       return (
         <div className={card.linkWrapper}>
           <Card.Link
-            target='_blank'
+            target="_blank"
             className={card.link}
             onClick={handleClick}
-            style={{ cursor: "pointer" }}>
-            Check it out
-            <ChevronRight />
+            style={{ cursor: "pointer" }}
+          >
+            <CodeSlash /> View Source
           </Card.Link>
-          <OverLay target={target} show={show} placement='top'>
-            <Popover id=''>
+          <OverLay target={target} show={show} placement="top">
+            <Popover id="">
               <Popover.Content>
                 <ButtonGroup>{renderLinkButtons()}</ButtonGroup>
               </Popover.Content>
@@ -72,9 +73,8 @@ const ProjectList = ({ projects, id }) => {
     }
     return (
       <div className={card.linkWrapper}>
-        <Card.Link href={src} target='_blank' className={card.link}>
-          Check it out
-          <ChevronRight />
+        <Card.Link href={src} target="_blank" className={card.link}>
+          <CodeSlash /> View Source
         </Card.Link>
       </div>
     );
@@ -90,15 +90,17 @@ const ProjectList = ({ projects, id }) => {
               <Card.Text>{project.summary}</Card.Text>
               <div className={styles.bottom}>
                 <span>{renderTech(project.tech)}</span>
-                {renderSrc(project.src)}
                 <div className={card.linkWrapper}>
                   <Card.Link
                     href={project.src}
-                    target='_blank'
-                    className={card.link}>
-                    <CodeSlash /> View Source
+                    target="_blank"
+                    className={card.link}
+                  >
+                    Check it out
+                    <ChevronRight />
                   </Card.Link>
                 </div>
+                {renderSrc(project.src)}
               </div>
             </Card.Body>
           </Card>
