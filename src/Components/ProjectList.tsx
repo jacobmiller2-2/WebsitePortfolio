@@ -16,11 +16,15 @@ import _ from "lodash";
 import { getTechPic } from "../utils";
 
 const ProjectList = ({ projects, id }) => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(null);
   const [target, setTarget] = useState(null);
 
-  const handleClick = (event) => {
-    setShow(!show);
+  const handleClick = (event, name) => {
+    if (show) {
+      setShow(null);
+    } else {
+      setShow(name);
+    }
     setTarget(event.target);
   };
 
@@ -39,12 +43,12 @@ const ProjectList = ({ projects, id }) => {
     });
   };
 
-  const renderSrc = (src) => {
+  const renderSrc = (src, name) => {
     const renderLinkButtons = () => {
       return _.map(src, (link, index) => {
         return (
           <a key={`src-${index}`} href={link}>
-            <Button>Source {index + 1}</Button>;
+            <Button variant="outline-dark">Source {index + 1}</Button>;
           </a>
         );
       });
@@ -56,12 +60,12 @@ const ProjectList = ({ projects, id }) => {
           <Card.Link
             target="_blank"
             className={card.link}
-            onClick={handleClick}
+            onClick={(e) => handleClick(e, name)}
             style={{ cursor: "pointer" }}
           >
             <CodeSlash /> View Source
           </Card.Link>
-          <OverLay target={target} show={show} placement="top">
+          <OverLay target={target} show={show === name} placement="top">
             <Popover id="">
               <Popover.Content>
                 <ButtonGroup>{renderLinkButtons()}</ButtonGroup>
@@ -100,7 +104,7 @@ const ProjectList = ({ projects, id }) => {
                     <ChevronRight />
                   </Card.Link>
                 </div>
-                {renderSrc(project.src)}
+                {renderSrc(project.src, project.title)}
               </div>
             </Card.Body>
           </Card>
