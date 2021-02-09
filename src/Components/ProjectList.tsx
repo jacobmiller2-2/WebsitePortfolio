@@ -47,7 +47,7 @@ const ProjectList = ({ projects, id }) => {
     const renderLinkButtons = () => {
       return _.map(src, (link, index) => {
         return (
-          <a key={`src-${index}`} href={link}>
+          <a key={`src-${index}`} href={link} target="_blank">
             <Button variant="outline-dark">Source {index + 1}</Button>;
           </a>
         );
