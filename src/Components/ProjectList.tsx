@@ -96,7 +96,7 @@ const ProjectList = ({ projects, id }) => {
                 <span>{renderTech(project.tech)}</span>
                 <div className={card.linkWrapper}>
                   <Card.Link
-                    href={project.src}
+                    href={project.projectLink}
                     target="_blank"
                     className={card.link}
                   >
