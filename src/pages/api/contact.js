@@ -22,7 +22,7 @@ export default async (req, res) => {
   if (isProd()) {
     // var awsConfig = new AWS.Config({});
   } else {
-    AWS.config.loadFromPath("./src/config/aws.json");
+    AWS.config.loadFromPath("./src/config/aws-config-dev.json");
   }
 
   var ddb = new AWS.DynamoDB(

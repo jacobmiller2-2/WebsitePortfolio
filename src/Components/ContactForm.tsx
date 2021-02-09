@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+
+import Spinner from "react-bootstrap/Spinner";
 
 import formStyles from "../styles/ContactForm.module.css";
 import axios from "axios";
@@ -23,16 +25,17 @@ const schema = z.object({
 });
 
 const ContactForm = () => {
+  const [submitting, setSubmitting] = useState(false);
+
   const { register, handleSubmit, errors } = useForm({
     resolver: zodResolver(schema),
   });
 
   const onSubmit = (data: IFormInputs) => {
-    alert(JSON.stringify(data));
-
+    setSubmitting(true);
     (async () => {
       const res = await axios.post("/api/contact", data);
-      alert(JSON.stringify(res));
+      setSubmitting(false);
     })();
   };
 
@@ -41,41 +44,46 @@ const ContactForm = () => {
   };
   return (
     <form
-      id='contactForm'
+      id="contactForm"
       className={formStyles.form}
-      onSubmit={handleSubmit(onSubmit)}>
-      <label htmlFor='firstName'>First Name</label>
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      <label htmlFor="firstName">First Name</label>
       <input
-        type='text'
-        name='firstName'
+        type="text"
+        name="firstName"
         ref={register}
-        placeholder='First Name'
+        placeholder="First Name"
       />
       {renderError(errors.firstName)}
 
-      <label htmlFor='lastName'>Last Name</label>
+      <label htmlFor="lastName">Last Name</label>
       <input
-        type='text'
-        name='lastName'
+        type="text"
+        name="lastName"
         ref={register}
-        placeholder='Last Name'
+        placeholder="Last Name"
       />
       {renderError(errors.lastName)}
 
-      <label htmlFor='company'>Company</label>
-      <input type='text' name='company' ref={register} placeholder='Company' />
+      <label htmlFor="company">Company</label>
+      <input type="text" name="company" ref={register} placeholder="Company" />
       {renderError(errors.company)}
 
-      <label htmlFor='message'>Message</label>
+      <label htmlFor="message">Message</label>
       <textarea
         className={formStyles.textarea}
-        name='message'
+        name="message"
         ref={register}
-        placeholder='Message...'
+        placeholder="Message..."
       />
       {renderError(errors.message)}
 
-      <input className={formStyles.submit} type='submit' />
+      {submitting ? (
+        <Spinner animation="border" />
+      ) : (
+        <input className={formStyles.submit} type="submit" />
+      )}
     </form>
   );
 };
