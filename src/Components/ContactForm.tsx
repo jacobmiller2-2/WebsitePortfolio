@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+// import { zodResolver } from "@hookform/resolvers/yup";
 import * as z from "zod";
 
 import Spinner from "react-bootstrap/Spinner";
@@ -15,20 +15,20 @@ interface IFormInputs {
   message: string;
 }
 
-const schema = z.object({
-  firstName: z.string().nonempty({ message: "Please enter your first name." }),
-  lastName: z.string().nonempty({ message: "Please enter your last name." }),
-  company: z.string(),
-  message: z
-    .string()
-    .nonempty({ message: "No message to pass along? Please enter a message." }),
-});
+// const schema = z.object({
+//   firstName: z.string().nonempty({ message: "Please enter your first name." }),
+//   lastName: z.string().nonempty({ message: "Please enter your last name." }),
+//   company: z.string(),
+//   message: z
+//     .string()
+//     .nonempty({ message: "No message to pass along? Please enter a message." }),
+// });
 
 const ContactForm = () => {
   const [submitting, setSubmitting] = useState(false);
 
   const { register, handleSubmit, errors } = useForm({
-    resolver: zodResolver(schema),
+    // resolver: zodResolver(schema),
   });
 
   const onSubmit = (data: IFormInputs) => {
