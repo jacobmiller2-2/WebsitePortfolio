@@ -12,16 +12,16 @@ const Footer = ({ contactInfo }) => {
   return (
     <footer id={styles.footer}>
       <div className={styles.plugs}>
-        <a href={`mailto:${email}`} target='_blank'>
+        <a href={`mailto:${email}`} target="_blank">
           <Envelope width={width} height={height} />
         </a>
-        <a href={github.link} target='_blank'>
+        <a href={github.link} target="_blank">
           <Github width={width} height={height} />
         </a>
-        <a href={github.link} target='_blank'>
+        <a href={linkedin.link} target="_blank">
           <Linkedin width={width} height={height} />
         </a>
-        <a href={github.link} target='_blank'>
+        <a href={youtube.link} target="_blank">
           <Youtube width={width} height={height} />
         </a>
       </div>

@@ -80,7 +80,9 @@ const ContactForm = () => {
       {renderError(errors.message)}
 
       {submitting ? (
-        <Spinner animation="border" />
+        <div style={{ textAlign: "center" }}>
+          <Spinner animation="border" />
+        </div>
       ) : (
         <input className={formStyles.submit} type="submit" />
       )}
