@@ -23,7 +23,7 @@ const ContactDetails = ({ contactInfo }) => {
       </h2>
       <div id={contactStyles.direct}>
         <div className={contactStyles.item}>
-          <a href={`mailto:${email}`} target='_blank'>
+          <a href={`mailto:${email}`} target="_blank">
             <Envelope width={width} height={height} /> {email}
           </a>
         </div>
@@ -35,17 +35,17 @@ const ContactDetails = ({ contactInfo }) => {
       </div>
       <div id={contactStyles.social}>
         <div className={contactStyles.item}>
-          <a href={github.link} target='_blank'>
+          <a href={github.link} target="_blank">
             <Github width={width} height={height} /> {github.user}
           </a>
         </div>
         <div className={contactStyles.item}>
-          <a href={github.link} target='_blank'>
+          <a href={linkedin.link} target="_blank">
             <Linkedin width={width} height={height} /> {linkedin.user}
           </a>
         </div>
         <div className={contactStyles.item}>
-          <a href={github.link} target='_blank'>
+          <a href={youtube.link} target="_blank">
             <Youtube width={width} height={height} /> {youtube.user}
           </a>
         </div>
