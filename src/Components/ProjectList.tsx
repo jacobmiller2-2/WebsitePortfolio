@@ -9,11 +9,16 @@ import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import { CodeSlash, ChevronRight } from "react-bootstrap-icons";
 
+import LinkDropdownToggle from "./LinkDropdownToggle";
+import LinkDropdownMenu from "./LinkDropdownMenu";
+
 import styles from "../styles/ProjectsView.module.css";
+import listStyles from "../styles/ProjectList.module.css";
 import card from "../styles/card.module.css";
 
 import _ from "lodash";
 import { getTechPic } from "../utils";
+import { Dropdown } from "react-bootstrap";
 
 const ProjectList = ({ projects, id }) => {
   const [show, setShow] = useState(null);
@@ -44,34 +49,42 @@ const ProjectList = ({ projects, id }) => {
   };
 
   const renderSrc = (src, name) => {
-    const renderLinkButtons = () => {
+    const renderLinks = () => {
       return _.map(src, (link, index) => {
         return (
-          <a key={`src-${index}`} href={link} target="_blank">
-            <Button variant="outline-dark">Source {index + 1}</Button>;
-          </a>
+          <Dropdown.Item key={`src-${index}`} href={link} target="_blank">
+            <CodeSlash /> Source {index + 1}
+          </Dropdown.Item>
         );
       });
     };
 
-    if (Array.isArray(src)) {
+    if (!src.length || src.length === 0) {
+      return null;
+    }
+
+    if (src.length > 1) {
       return (
         <div className={card.linkWrapper}>
-          <Card.Link
-            target="_blank"
-            className={card.link}
-            onClick={(e) => handleClick(e, name)}
-            style={{ cursor: "pointer" }}
-          >
-            <CodeSlash /> View Source
-          </Card.Link>
-          <OverLay target={target} show={show === name} placement="top">
-            <Popover id="">
-              <Popover.Content>
-                <ButtonGroup>{renderLinkButtons()}</ButtonGroup>
-              </Popover.Content>
-            </Popover>
-          </OverLay>
+          <Dropdown>
+            <Dropdown.Toggle as={LinkDropdownToggle}>
+              <Card.Link
+                target="_blank"
+                className={card.link}
+                onClick={(e) => handleClick(e, name)}
+                style={{ cursor: "pointer" }}
+              >
+                <CodeSlash /> View Source
+              </Card.Link>
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu
+              as={LinkDropdownMenu}
+              className={listStyles.srcDropdown}
+            >
+              {renderLinks()}
+            </Dropdown.Menu>
+          </Dropdown>
         </div>
       );
     }
