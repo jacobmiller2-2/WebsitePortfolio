@@ -1,4 +1,5 @@
 import Head from "next/head";
+import React from "react";
 
 import IntroView from "../Views/IntroView";
 import ProjectsView from "../Views/ProjectsView";
@@ -45,32 +46,33 @@ export default function Index({ projects }) {
     <>
       <Head>
         <title>Jacob Miller</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel="icon" href="/favicon.ico" />
         <meta
-          property='og:title'
-          content='Portfolio Website showcasing projects developed by Jacob Miller.'
-          key='title'
+          property="og:title"
+          content="Portfolio Website showcasing projects developed by Jacob Miller."
+          key="title"
         />
       </Head>
 
-      <Navbar sticky='top' id='nav' className='nav'>
-        <Navbar.Brand href='#intro'>Jacob Miller</Navbar.Brand>
-        <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+      <Navbar sticky="top" id="nav" className="nav">
+        <Navbar.Brand href="#intro">Jacob Miller</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse>
           <Nav>
-            <Nav.Link href='#projects'>Projects</Nav.Link>
-            <Nav.Link href='#about'>About</Nav.Link>
+            <Nav.Link href="#projects">Projects</Nav.Link>
+            <Nav.Link href="#about">About</Nav.Link>
           </Nav>
         </Navbar.Collapse>
+        <div id="nav-blur" />
       </Navbar>
       <Col>
-        <Row id='intro'>
+        <Row id="intro">
           <IntroView />
         </Row>
-        <Row id='projects' className={styles.alt}>
+        <Row id="projects" className={styles.alt}>
           <ProjectsView projects={projects} />
         </Row>
-        <Row id='about' className={styles.primary}>
+        <Row id="about" className={styles.primary}>
           <AboutView contactInfo={contactInfo} />
         </Row>
 

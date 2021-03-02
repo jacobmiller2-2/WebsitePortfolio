@@ -3,20 +3,9 @@ const { isProd } = require("../../utils");
 const keys = require("../../config/keys");
 
 export default async () => {
-  /**
-   * Recieve a JSON object with fields -> firstName, lastName, company, message
-   *
-   * Timestamp message, store in dynamodb db
-   *
-   */
-
-  if (isProd()) {
-    // var awsConfig = new AWS.Config({});
-  } else {
+  if (!isProd()) {
     AWS.config.loadFromPath("./src/config/aws-config-dev.json");
   }
-
-  console.log(isProd());
 
   var ddb = new AWS.DynamoDB.DocumentClient(
     isProd()
