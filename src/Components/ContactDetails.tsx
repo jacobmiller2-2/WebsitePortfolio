@@ -27,11 +27,6 @@ const ContactDetails = ({ contactInfo }) => {
             <Envelope width={width} height={height} /> {email}
           </a>
         </div>
-        {/* <div className={contactStyles.item}>
-          <a href={`tele:${phone}`} target='_blank'>
-            <Phone width={width} height={height} /> {phone}
-          </a>
-        </div> */}
       </div>
       <div id={contactStyles.social}>
         <div className={contactStyles.item}>
