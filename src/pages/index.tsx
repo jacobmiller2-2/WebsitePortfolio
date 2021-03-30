@@ -25,7 +25,7 @@ export default function Index({ projects }) {
     social: {
       github: {
         user: "jacobmiller22",
-        link: "",
+        link: "https://github.com/jacobmiller22",
       },
       linkedin: {
         user: "jacobmiller22",
