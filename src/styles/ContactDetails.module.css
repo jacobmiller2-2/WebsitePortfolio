@@ -1,14 +1,17 @@
 #contactWrapper {
-  color: #d4d6d8;
+  /* color: #d4d6d8; */
+  color: rgb(var(--sec-clr));
   margin-left: 10px;
 }
 
 #contactWrapper a {
-  color: #d4d6d8;
+  /* color: #d4d6d8; */
+  color: rgb(var(--sec-clr));
 }
 
 #contactWrapper a:hover {
-  color: #eb5160;
+  /* color: #eb5160; */
+  color: rgb(var(--pri-clr));
 }
 
 #direct {

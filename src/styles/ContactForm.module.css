@@ -1,18 +1,23 @@
 .form {
-  caret-color: #eb5160;
+  /* caret-color: #eb5160; */
+  caret-color: rgb(var(--pri-clr));
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-family: inherit;
-  color: #d4d6d8;
+  /* color: #d4d6d8; */
   padding-right: 30px;
-  border-right: 1px solid #eb5160;
+  /* border-right: 1px solid #eb5160; */
+  border-right: 1px solid rgb(var(--pri-clr));
 }
 
 .form > * {
-  background-color: #161616;
-  color: #d4d6d8;
+  /* background-color: #161616; */
+  background-color: rgb(var(--sec-bgd-clr));
+  /* color: #d4d6d8; */
+  color: rgb(var(--sec-clr));
   border: transparent;
+  border-radius: 4px;
   margin: 5px;
   padding: 15px 15px;
 }
@@ -26,13 +31,14 @@
 
 .form > *:focus {
   outline: none;
-  border: 1px solid #eb5160;
+  /* border: 1px solid #eb5160; */
+  border: 1px solid rgb(var(--pri-clr));
 }
 
 .form > input:-webkit-autofill {
-  -webkit-text-fill-color: #d4d6d8;
-  box-shadow: 0 0 0px 30px #161616 inset;
-  -webkit-box-shadow: 0 0 0px 30px #161616 inset;
+  -webkit-text-fill-color: rgb(var(--sec-clr));
+  box-shadow: 0 0 0px 30px rgba(var(--pri-clr), 0.01) inset;
+  -webkit-box-shadow: 0 0 0px 30px rgba(var(--pri-clr), 0.01) inset;
   outline: none;
 }
 
@@ -41,15 +47,16 @@
 }
 
 .form > .error {
-  color: #eb5160;
-  border: 1px solid #7b0100;
+  /* color: #eb5160; */
+  color: rgb(var(--pri-clr));
+  border: 1px solid rgb(var(--err-clr));
   /* opacity: ; */
-  background-color: rgb(123, 1, 0, 0.25);
+  background-color: rgba(var(--err-bgd-clr), 0.25);
   /* border-radius: 3px; */
 }
 
 .form > .submit {
-  color: #eb5160;
+  color: rgb(var(--pri-clr));
   font-size: larger;
   font-weight: bold;
 }

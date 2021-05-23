@@ -1,13 +1,25 @@
 .card {
-  border: 1px solid #dfe0e2;
-  background-color: #161616 !important;
-  color: #d4d6d8;
+  border-radius: 4px !important;
+  border-style: solid !important;
+  border-color: rgb(var(--pri-bgd-clr)) !important;
+  border: none !important;
+  background-color: rgb(var(--pri-bgd-clr)) !important;
+  color: var(--pri-clr);
   height: 100%;
   position: relative;
 }
 
+.card:hover {
+  /* color: rgba(var(--pri-shadow), 1); */
+  /* -webkit-box-shadow: rgb(var(--pri-shadow)); */
+  /* box-shadow: rgb(var(--pri-shadow)); */
+  -webkit-box-shadow: var(--pri-shadow);
+  box-shadow: var(--pri-shadow);
+}
+
 .title {
-  color: #ec5b69;
+  /* color: #ec5b69; */
+  color: rgb(var(--pri-clr));
 }
 
 .linkWrapper {
@@ -16,9 +28,11 @@
 }
 
 .link {
-  color: #dfe0e2;
+  /* color: #dfe0e2; */
+  color: rgb(var(--sec-clr));
 }
 
 .link:hover {
-  color: #ec5b69;
+  /* color: #ec5b69; */
+  color: rgb(var(--pri-clr));
 }

@@ -54,7 +54,7 @@ export default function Index({ projects }) {
         />
       </Head>
 
-      <Navbar sticky="top" id="nav" className="nav">
+      {/* <Navbar sticky="top" id="nav" className="nav">
         <Navbar.Brand href="#intro">Jacob Miller</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse>
@@ -64,7 +64,8 @@ export default function Index({ projects }) {
           </Nav>
         </Navbar.Collapse>
         <div id="nav-blur" />
-      </Navbar>
+      </Navbar> */}
+      <div id="top-stripe"></div>
       <Col>
         <Row id="intro">
           <IntroView />
