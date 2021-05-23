@@ -26,7 +26,6 @@
 }
 
 .tech-row::-webkit-scrollbar {
-  /* display: none; */
   width: 0px;
   height: 4px;
   border-radius: 8px;

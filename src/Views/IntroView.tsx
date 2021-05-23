@@ -15,11 +15,13 @@ const Intro = () => {
       <Container className={splash.splash}>
         <Jumbotron fluid>
           <h1>Hi, I am Jacob Miller.</h1>
-          <h2>
+          <h2 className={splash["splash-code"]}>
             <span id={splash.status}>
               Status <span className={splash.blink}>$&gt;</span>
             </span>{" "}
-            Pursuing a degree in Computer Science
+            <span className={splash["splash-code-text"]}>
+              Pursuing a degree in Computer Science
+            </span>
             <span id={splash.status}>
               <span className={splash.terminalCursor}>▂</span>
             </span>

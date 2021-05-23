@@ -65,6 +65,20 @@ a {
     border: none;
     padding-right: 0px;
   }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  body::-webkit-scrollbar-thumb {
+    display: none;
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    display: none;
+  }
+  body::-webkit-scrollbar-track {
+    display: none;
+  }
 }
 
 #top-stripe {
@@ -72,4 +86,5 @@ a {
   max-height: 25px;
   height: 100%;
   background-color: rgb(var(--pri-clr-drk));
+  width: 100vw;
 }

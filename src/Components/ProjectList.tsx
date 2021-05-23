@@ -33,18 +33,17 @@ const ProjectList = ({ projects, id }) => {
     setTarget(event.target);
   };
 
-  const renderTech = (techStack) => {
+  const renderTech = (techStack: [string]) => {
     return _.map(techStack, (tech) => {
       const techPic = getTechPic(tech);
       return techPic ? (
-        // <OverLayTrigger
-        //   key={tech}
-        //   placement="top"
-        //   overlay={<Tooltip id={`tooltip-${tech}`}>{tech}</Tooltip>}
-        // >
-        //   <span className={styles.techPic}>{techPic()}</span>
-        // </OverLayTrigger>
-        <span className={styles.techPic}>{techPic()}</span>
+        <OverLayTrigger
+          key={tech}
+          placement="top"
+          overlay={<Tooltip id={`tooltip-${tech}`}>{tech}</Tooltip>}
+        >
+          <span className={styles.techPic}>{techPic()}</span>
+        </OverLayTrigger>
       ) : null;
     });
   };
