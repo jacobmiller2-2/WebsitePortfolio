@@ -25,10 +25,6 @@
   overflow: auto;
 }
 
-.tech-row::-webkit-scrollbar-track {
-  display: none;
-}
-
 .tech-row::-webkit-scrollbar {
   /* display: none; */
   width: 0px;
