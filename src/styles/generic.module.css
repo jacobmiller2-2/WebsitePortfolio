@@ -4,5 +4,5 @@
 }
 
 .sectionHeader {
-  color: #dfe0e2;
+  color: rgb(var(--sec-clr));
 }

@@ -11,7 +11,8 @@
 }
 
 #status {
-  color: #eb5160;
+  /* color: #eb5160; */
+  color: rgb(var(--pri-clr));
 }
 
 #status .blink {

@@ -5,11 +5,23 @@
 
 html,
 body {
+  --pri-bgd-clr: 255, 255, 255;
+  /* --pri-clr: 40, 86, 226; */
+  --pri-clr: 93, 63, 202;
+  --pri-clr-drk: 41, 26, 96;
+  --pri-shadow: 0px 10px 50px 0px rgba(39, 52, 59, 0.18);
+  --sec-bgd-clr: 239, 240, 242;
+  --sec-clr: 39, 52, 59;
+  --ter-clr: 2, 32, 68;
+
+  --err-clr: 123, 1, 0;
+  --err-bgd-clr: 123, 1, 0;
+
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #111111 !important;
+  background-color: var(--pri-bgd-clr) !important;
   caret-color: transparent;
 }
 
@@ -32,8 +44,8 @@ a {
 }
 
 .jumbotron {
-  background-color: #111111 !important;
-  color: #dfe0e2;
+  background-color: rgb(var(--pri-bgd-clr)) !important;
+  color: rgb(var(--sec-clr));
 }
 
 @media (max-width: 600px) {
@@ -44,17 +56,12 @@ a {
 }
 
 #nav * {
-  color: #eb5160;
-  /* background-color: #111111; */
   z-index: 8000;
+  color: rgb(var(--pri-clr));
 }
 
 #nav-wrapper {
-  position: sticky;
-  top: 0;
-  z-index: 1020;
-  -webkit-filter: blur(10px);
-  filter: blur(10px);
+  /* position: static; */
 }
 
 #nav > .navbar-brand {
@@ -62,20 +69,29 @@ a {
 }
 
 #nav-blur {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 50px;
+  /* min-height: 50px; */
   max-height: 60px;
   height: 100%;
-  padding-bottom: 50px;
-  margin-bottom: 20px;
-  background: rgba(17, 17, 17, 1);
+  /* padding-bottom: 50px; */
+  /* margin-bottom: 20px; */
+  background-color: rgba(var(-pri-bgd-clr), 0.9);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   z-index: 1010;
-  -webkit-filter: blur(20px);
-  -moz-filter: blur(20px);
-  -o-filter: blur(20px);
-  -ms-filter: blur(20px);
-  filter: blur(20px);
+  /* -webkit-filter: blur(20px); */
+  /* -moz-filter: blur(20px); */
+  /* -o-filter: blur(20px); */
+  /* -ms-filter: blur(20px); */
+  /* filter: blur(20px); */
+}
+
+#top-stripe {
+  min-height: 25px;
+  max-height: 25px;
+  height: 100%;
+  background-color: rgb(var(--pri-clr-drk));
 }
