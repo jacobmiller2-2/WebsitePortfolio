@@ -27,8 +27,6 @@ const ContactDetails = ({ contactInfo }) => {
             <Envelope width={width} height={height} /> {email}
           </a>
         </div>
-      </div>
-      <div id={contactStyles.social}>
         <div className={contactStyles.item}>
           <a href={github.link} target="_blank">
             <Github width={width} height={height} /> {github.user}

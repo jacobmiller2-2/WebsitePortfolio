@@ -6,8 +6,6 @@ import ProjectsView from "../Views/ProjectsView";
 import AboutView from "../Views/AboutView";
 import FooterView from "../Views/FooterView";
 
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
@@ -16,7 +14,7 @@ import styles from "../styles/Home.module.css";
 
 import projects from "./api/projects";
 
-export default function Index({ projects }) {
+export const index = ({ projects }) => {
   const contactInfo = {
     firstName: "Jacob",
     lastName: "Miller",
@@ -53,18 +51,6 @@ export default function Index({ projects }) {
           key="title"
         />
       </Head>
-
-      {/* <Navbar sticky="top" id="nav" className="nav">
-        <Navbar.Brand href="#intro">Jacob Miller</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse>
-          <Nav>
-            <Nav.Link href="#projects">Projects</Nav.Link>
-            <Nav.Link href="#about">About</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-        <div id="nav-blur" />
-      </Navbar> */}
       <div id="top-stripe"></div>
       <Col>
         <Row id="intro">
@@ -81,7 +67,9 @@ export default function Index({ projects }) {
       </Col>
     </>
   );
-}
+};
+
+export default index;
 
 export async function getStaticProps() {
   return {

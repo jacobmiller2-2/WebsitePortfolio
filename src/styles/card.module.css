@@ -9,6 +9,16 @@
   position: relative;
 }
 
+.card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-text {
+  flex-grow: 1;
+}
+
 .card:hover {
   /* color: rgba(var(--pri-shadow), 1); */
   /* -webkit-box-shadow: rgb(var(--pri-shadow)); */

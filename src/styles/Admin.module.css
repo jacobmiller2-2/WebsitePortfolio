@@ -1,0 +1,16 @@
+#auth_wrapper {
+  max-width: 35vw;
+}
+
+@media (max-width: 1200px) {
+  #auth_wrapper {
+    max-width: 50vw;
+  }
+}
+
+@media (max-width: 600px) {
+  #auth_wrapper {
+    max-width: 100vw;
+    min-width: 25vw;
+  }
+}

@@ -5,7 +5,7 @@ import * as z from "zod";
 
 import Spinner from "react-bootstrap/Spinner";
 
-import formStyles from "../styles/ContactForm.module.css";
+import formStyles from "../styles/form.module.css";
 import axios from "axios";
 
 interface IFormInputs {
@@ -84,7 +84,10 @@ const ContactForm = () => {
           <Spinner animation="border" />
         </div>
       ) : (
-        <input className={formStyles.submit} type="submit" />
+        <>
+          <label>&nbsp;</label>
+          <input className={formStyles.submit} type="submit" />
+        </>
       )}
     </form>
   );

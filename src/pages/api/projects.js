@@ -4,7 +4,6 @@ const keys = require("../../config/keys");
 
 export default async () => {
   if (!isProd()) {
-    console.log("testsgds");
     AWS.config.loadFromPath("./src/config/aws-config-dev.json");
   }
 
@@ -39,7 +38,6 @@ export default async () => {
   // };
 
   try {
-    console.log("test");
     var data = await ddb.scan(params).promise();
 
     return JSON.stringify(data.Items);

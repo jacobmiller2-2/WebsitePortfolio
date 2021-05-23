@@ -102,9 +102,11 @@ const ProjectList = ({ projects, id }) => {
       return (
         <div key={project.title} className={styles.item}>
           <Card className={card.card}>
-            <Card.Body>
+            <Card.Body className={card["card-body"]}>
               <Card.Title className={card.title}>{project.title}</Card.Title>
-              <Card.Text>{project.summary}</Card.Text>
+              <Card.Text className={card["card-text"]}>
+                {project.summary}
+              </Card.Text>
               <div className={styles.bottom}>
                 <span>{renderTech(project.tech)}</span>
                 <div className={card.linkWrapper}>

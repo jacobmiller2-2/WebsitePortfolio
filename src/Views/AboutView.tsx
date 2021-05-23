@@ -10,13 +10,21 @@ import genStyles from "../styles/generic.module.css";
 const About = ({ contactInfo }) => {
   return (
     <Container>
-      <h1 className={genStyles.sectionHeader}>Contact Me</h1>
+      <h1 className={genStyles.sectionHeader}>About Me</h1>
       <Row>
-        <Col>
-          <ContactForm />
+        <Col style={{ borderRight: "1px solid rgb(var(--pri-clr))" }}>
+          <div style={{ textAlign: "center", padding: "25px" }}>
+            Currently, I am working majoring in computer science and minoring in
+            math and cybersecurity at Virginia Tech, Go Hokies! I enjoy running
+            and playing video games. One of my biggest passions is supporting
+            the development of reusable rocket ships. If you're interested in
+            having a chat, feel free to contact me.
+          </div>
+          <ContactDetails contactInfo={contactInfo} />
         </Col>
         <Col>
-          <ContactDetails contactInfo={contactInfo} />
+          <h2>Contact Me</h2>
+          <ContactForm />
         </Col>
       </Row>
       <div className={genStyles.sectionView}>

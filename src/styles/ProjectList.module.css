@@ -10,3 +10,7 @@
 .srcDropdown > *:hover {
   color: #ec5b69 !important;
 }
+
+.text {
+  flex-grow: 1;
+}

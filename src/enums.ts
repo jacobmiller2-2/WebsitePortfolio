@@ -8,4 +8,5 @@ export enum Tech {
   SWIFT = "swift",
   GATSBY = "gatsby",
   REACT = "react",
+  RUST = "rust",
 }
