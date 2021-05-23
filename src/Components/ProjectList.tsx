@@ -37,13 +37,14 @@ const ProjectList = ({ projects, id }) => {
     return _.map(techStack, (tech) => {
       const techPic = getTechPic(tech);
       return techPic ? (
-        <OverLayTrigger
-          key={tech}
-          placement="top"
-          overlay={<Tooltip id={`tooltip-${tech}`}>{tech}</Tooltip>}
-        >
-          <span className={styles.techPic}>{techPic()}</span>
-        </OverLayTrigger>
+        // <OverLayTrigger
+        //   key={tech}
+        //   placement="top"
+        //   overlay={<Tooltip id={`tooltip-${tech}`}>{tech}</Tooltip>}
+        // >
+        //   <span className={styles.techPic}>{techPic()}</span>
+        // </OverLayTrigger>
+        <span className={styles.techPic}>{techPic()}</span>
       ) : null;
     });
   };
@@ -108,7 +109,9 @@ const ProjectList = ({ projects, id }) => {
                 {project.summary}
               </Card.Text>
               <div className={styles.bottom}>
-                <span>{renderTech(project.tech)}</span>
+                <span className={styles["tech-row"]}>
+                  {renderTech(project.tech)}
+                </span>
                 <div className={card.linkWrapper}>
                   <Card.Link
                     href={project.projectLink}
