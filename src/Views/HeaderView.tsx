@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
