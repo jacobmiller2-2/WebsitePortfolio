@@ -20,9 +20,6 @@
 }
 
 .card:hover {
-  /* color: rgba(var(--pri-shadow), 1); */
-  /* -webkit-box-shadow: rgb(var(--pri-shadow)); */
-  /* box-shadow: rgb(var(--pri-shadow)); */
   -webkit-box-shadow: var(--pri-shadow);
   box-shadow: var(--pri-shadow);
 }
@@ -45,4 +42,15 @@
 .link:hover {
   /* color: #ec5b69; */
   color: rgb(var(--pri-clr));
+}
+
+@media (max-width: 600px) {
+  #projectList {
+    justify-content: center;
+  }
+
+  .card:hover {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
 }
