@@ -9,11 +9,13 @@ import styles from "../styles/Header.module.css";
 export const Header = () => {
   return (
     <Navbar sticky="top" id={styles.nav} className="nav">
-      <Link href="/">
-        <Navbar.Brand className={`${styles["navbar-brand"]} ${styles.link}`}>
-          Jacob Miller
-        </Navbar.Brand>
-      </Link>
+      <Navbar.Brand
+        href="/"
+        className={`${styles["navbar-brand"]} ${styles.link}`}
+      >
+        Jacob Miller
+      </Navbar.Brand>
+
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse>
         <Nav>
