@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { GetServerSideProps } from "next";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 import Container from "react-bootstrap/Container";
@@ -10,7 +10,7 @@ import Header from "../Views/HeaderView";
 
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import auth from "./api/auth";
+// import auth from "./api/auth";
 
 import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 import formStyles from "../styles/form.module.css";
@@ -24,6 +24,8 @@ interface IFormInputs {
 export const admin = () => {
   const [submitting, setSubmitting] = useState(false);
 
+  const router = useRouter();
+
   const { register, handleSubmit, errors } = useForm({
     // resolver: zodResolver(schema),
   });
@@ -35,7 +37,8 @@ export const admin = () => {
       setSubmitting(false);
       if (res.status == 200) {
         // success
-        console.log("success");
+        window.localStorage.setItem("", "");
+        router.push("/admin/dashboard");
       } else {
         // Error
       }
