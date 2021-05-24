@@ -4,8 +4,6 @@ import Header from "../../Views/HeaderView";
 import Container from "react-bootstrap/Container";
 import ProjectList from "../../Components/admin/ProjectList";
 
-import "../../../node_modules/bootstrap/dist/css/bootstrap.css";
-
 import projects from "../api/projects";
 
 const dashboard = ({ projects }) => {

@@ -9,7 +9,6 @@ import FooterView from "../Views/FooterView";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 import styles from "../styles/Home.module.css";
 
 import projects from "./api/projects";

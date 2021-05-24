@@ -12,7 +12,6 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 // import auth from "./api/auth";
 
-import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 import formStyles from "../styles/form.module.css";
 import styles from "../styles/Admin.module.css";
 
