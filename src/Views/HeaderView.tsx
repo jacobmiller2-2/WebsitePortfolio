@@ -21,8 +21,11 @@ export const Header = () => {
         Jacob Miller
       </Navbar.Brand>
 
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
+      <Navbar.Toggle />
+      <Navbar.Collapse
+        id="responsive-navbar-nav"
+        onClick={() => console.log("Fdsfs")}
+      >
         <Nav className="mr-auto">
           <Nav.Link href="/#projects">Projects</Nav.Link>
 
