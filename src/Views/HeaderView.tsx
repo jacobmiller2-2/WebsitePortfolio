@@ -7,7 +7,13 @@ import styles from "../styles/Header.module.css";
 
 export const Header = () => {
   return (
-    <Navbar sticky="top" id={styles.nav} className="nav">
+    <Navbar
+      sticky="top"
+      collapseOnSelect
+      expand="lg"
+      id={styles.nav}
+      className="nav"
+    >
       <Navbar.Brand
         href="/"
         className={`${styles["navbar-brand"]} ${styles.link}`}
@@ -16,16 +22,16 @@ export const Header = () => {
       </Navbar.Brand>
 
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse>
-        <Nav>
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="mr-auto">
           <Nav.Link href="/#projects">Projects</Nav.Link>
 
           <Nav.Link href="/#about">About</Nav.Link>
         </Nav>
+        <Nav id={styles["right-side"]}>
+          <Nav.Link href="/admin">Admin</Nav.Link>
+        </Nav>
       </Navbar.Collapse>
-      <Nav id={styles["right-side"]}>
-        <Nav.Link href="/admin">Admin</Nav.Link>
-      </Nav>
       <div id={styles["nav-blur"]} />
     </Navbar>
   );

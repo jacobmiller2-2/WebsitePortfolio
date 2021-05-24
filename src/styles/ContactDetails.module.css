@@ -5,12 +5,10 @@
 }
 
 #contactWrapper a {
-  /* color: #d4d6d8; */
   color: rgb(var(--sec-clr));
 }
 
 #contactWrapper a:hover {
-  /* color: #eb5160; */
   color: rgb(var(--pri-clr));
 }
 

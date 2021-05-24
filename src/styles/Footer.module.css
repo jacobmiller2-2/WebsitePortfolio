@@ -17,6 +17,5 @@
   color: rgb(var(--sec-clr));
 }
 #footer .plugs a:hover {
-  /* color: #eb5160; */
   color: rgb(var(--pri-clr));
 }

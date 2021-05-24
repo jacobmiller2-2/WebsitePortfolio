@@ -14,11 +14,11 @@ const About = ({ contactInfo }) => {
       <Row>
         <Col style={{ borderRight: "1px solid rgb(var(--pri-clr))" }}>
           <div style={{ textAlign: "center", padding: "25px" }}>
-            Currently, I am working majoring in computer science and minoring in
-            math and cybersecurity at Virginia Tech, Go Hokies! I enjoy running
-            and playing video games. One of my biggest passions is supporting
-            the development of reusable rocket ships. If you're interested in
-            having a chat, feel free to contact me.
+            Currently, I am majoring in computer science and minoring in math
+            and cybersecurity at Virginia Tech, Go Hokies! I enjoy running and
+            playing video games. One of my biggest passions is supporting the
+            development of reusable rocket ships. If you're interested in having
+            a chat, feel free to contact me.
           </div>
           <ContactDetails contactInfo={contactInfo} />
         </Col>
@@ -27,11 +27,6 @@ const About = ({ contactInfo }) => {
           <ContactForm />
         </Col>
       </Row>
-      <div className={genStyles.sectionView}>
-        {/* Contact Form -> left side of page */}
-
-        {/* My details -> right side of page */}
-      </div>
     </Container>
   );
 };
