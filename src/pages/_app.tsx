@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import { AppProps, NextWebVitalsMetric } from "next/app";
 import * as gtag from "../lib/gtag";
 
+import "../../node_modules/bootstrap/dist/css/bootstrap.css";
+
 function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   useEffect(() => {
