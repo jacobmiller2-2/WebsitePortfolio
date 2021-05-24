@@ -10,7 +10,6 @@ import Header from "../Views/HeaderView";
 
 import { useForm } from "react-hook-form";
 import axios from "axios";
-// import auth from "./api/auth";
 
 import formStyles from "../styles/form.module.css";
 import styles from "../styles/Admin.module.css";
