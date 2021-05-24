@@ -7,13 +7,7 @@ import styles from "../styles/Header.module.css";
 
 export const Header = () => {
   return (
-    <Navbar
-      sticky="top"
-      collapseOnSelect
-      expand="lg"
-      id={styles.nav}
-      className="nav"
-    >
+    <Navbar sticky="top" expand="lg" id={styles.nav} className="nav">
       <Navbar.Brand
         href="/"
         className={`${styles["navbar-brand"]} ${styles.link}`}
