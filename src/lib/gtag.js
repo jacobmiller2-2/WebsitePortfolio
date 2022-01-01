@@ -1,8 +1,6 @@
-import keys from "../config/keys";
-
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url) => {
-  window.gtag("config", keys.GOOGLE_ANALYTICS_ID_PORTFOLIO, {
+  window.gtag("config", process.env.GOOGLE_ANALYTICS_ID_PORTFOLIO, {
     page_path: url,
   });
 };

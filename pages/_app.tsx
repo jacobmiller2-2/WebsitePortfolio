@@ -1,13 +1,14 @@
 import { useEffect } from "react";
-import "../styles/globals.css";
+import "styles/globals.css";
 import { useRouter } from "next/router";
-import { AppProps, NextWebVitalsMetric } from "next/app";
-import * as gtag from "../lib/gtag";
-
-import "../../node_modules/bootstrap/dist/css/bootstrap.css";
+import { AppProps } from "next/app";
+import * as gtag from "lib/gtag";
+import { ChakraProvider } from "@chakra-ui/react";
+import theme from "theme";
 
 function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
+  console.log(theme);
   useEffect(() => {
     const handleRouteChange = (url) => {
       gtag.pageview(url);
@@ -18,7 +19,11 @@ function App({ Component, pageProps }: AppProps) {
     };
   }, [router.events]);
 
-  return <Component {...pageProps} />;
+  return (
+    <ChakraProvider theme={theme}>
+      <Component {...pageProps} />
+    </ChakraProvider>
+  );
 }
 
 export default App;

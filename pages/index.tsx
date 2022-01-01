@@ -1,79 +1,78 @@
-import Head from "next/head";
 import React from "react";
+import { GetStaticProps, GetStaticPropsContext } from "next";
+import Head from "next/head";
 
-import IntroView from "../Views/IntroView";
-import ProjectsView from "../Views/ProjectsView";
-import AboutView from "../Views/AboutView";
-import FooterView from "../Views/FooterView";
+import IntroView from "views/IntroView";
+import ProjectsView from "views/ProjectsView";
+import AboutView from "views/AboutView";
+import FooterView from "views/FooterView";
 
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import styles from "styles/Home.module.css";
+/** Data */
+import { getHero } from "lib/contentApi";
 
-import styles from "../styles/Home.module.css";
+/** Components */
+import Main from "layouts/Main";
+import { ExperienceView, IndexView, Topbar } from "views";
+import { Container, Box, VStack } from "@chakra-ui/react";
 
-import projects from "./api/projects";
+interface IndexPageProps {
+  hero: any;
+}
 
-export const index = ({ projects }) => {
-  const contactInfo = {
-    firstName: "Jacob",
-    lastName: "Miller",
-    email: "jacobmillerdev@gmail.com",
-    phone: "",
-    social: {
-      github: {
-        user: "jacobmiller22",
-        link: "https://github.com/jacobmiller22",
-      },
-      linkedin: {
-        user: "jacobmiller22",
-        link: "https://www.linkedin.com/in/jacobmiller22/",
-      },
-      twitter: {
-        user: "jacobmiller22",
-        link: "",
-      },
-      youtube: {
-        user: "Jacob Develops",
-        link: "https://www.youtube.com/channel/UCuNIpl8S8Nk3yCD0p2J2YBA",
-      },
-    },
-  };
-
+export const IndexPage = ({ hero }: IndexPageProps) => {
   return (
-    <>
-      <Head>
-        <title>Jacob Miller</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          property="og:title"
-          content="Portfolio Website showcasing projects developed by Jacob Miller."
-          key="title"
-        />
-      </Head>
-      <div id="top-stripe"></div>
-      <Col>
-        <Row id="intro">
-          <IntroView />
-        </Row>
-        <Row id="projects" className={styles.alt}>
-          <ProjectsView projects={projects} />
-        </Row>
-        <Row id="about" className={styles.primary}>
-          <AboutView contactInfo={contactInfo} />
-        </Row>
-
-        <FooterView contactInfo={contactInfo} />
-      </Col>
-    </>
+    <Main>
+      <Box bg="paper.default">
+        <Topbar sx={{ height: "5vh" }} />
+        <VStack>
+          <IndexView
+            id=""
+            hero={hero}
+            sx={{ height: "93vh", display: "flex", alignItems: "center" }}
+          />
+          {/* <ExperienceView experience={[]} id="experience" /> */}
+        </VStack>
+      </Box>
+    </Main>
   );
 };
 
-export default index;
+export default IndexPage;
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async (
+  ctx: GetStaticPropsContext
+) => {
+  const hero = await getHero();
+
+  const heroProps = { ...hero.data };
+
   return {
-    props: {
-      projects: JSON.parse(await projects()),
-    },
+    props: { hero: heroProps },
   };
-}
+};
+
+const contactInfo = {
+  firstName: "Jacob",
+  lastName: "Miller",
+  email: "jacobmillerdev@gmail.com",
+  phone: "",
+  social: {
+    github: {
+      user: "jacobmiller22",
+      link: "https://github.com/jacobmiller22",
+    },
+    linkedin: {
+      user: "jacobmiller22",
+      link: "https://www.linkedin.com/in/jacobmiller22/",
+    },
+    twitter: {
+      user: "jacobmiller22",
+      link: "",
+    },
+    youtube: {
+      user: "Jacob Develops",
+      link: "https://www.youtube.com/channel/UCuNIpl8S8Nk3yCD0p2J2YBA",
+    },
+  },
+};

@@ -1,7 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
-import keys from "../config/keys";
-
 export default class MyDocument extends Document {
   render() {
     return (
@@ -10,7 +8,7 @@ export default class MyDocument extends Document {
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
-            src={`https://www.googletagmanager.com/gtag/js?id=${keys.GOOGLE_ANALYTICS_ID_PORTFOLIO}`}
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_ID_PORTFOLIO}`}
           />
           <script
             dangerouslySetInnerHTML={{
@@ -18,7 +16,7 @@ export default class MyDocument extends Document {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${keys.GOOGLE_ANALYTICS_ID_PORTFOLIO}', {
+            gtag('config', '${process.env.GOOGLE_ANALYTICS_ID_PORTFOLIO}', {
               page_path: window.location.pathname,
             });
           `,
