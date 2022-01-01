@@ -14,6 +14,9 @@ const _theme: Theme = {
       body: {
         zIndex: 1000,
       },
+      footer: {
+        bgColor: "paper.default",
+      },
     },
   },
   components: {

@@ -6,7 +6,7 @@ const Main = ({ children }: IMainProps) => {
   return (
     <>
       <main>{children}</main>
-      <footer></footer>
+      <footer style={{ minHeight: "5vh" }}></footer>
     </>
   );
 };
