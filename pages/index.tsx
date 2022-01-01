@@ -49,6 +49,7 @@ export const getStaticProps: GetStaticProps = async (
 
   return {
     props: { hero: heroProps },
+    revalidate: 60,
   };
 };
 
