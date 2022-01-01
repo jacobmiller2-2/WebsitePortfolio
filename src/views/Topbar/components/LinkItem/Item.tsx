@@ -3,12 +3,15 @@ import { Box, Link, Text } from "@chakra-ui/react";
 interface IItemProps {
   children: React.ReactNode;
   href: string;
+  [rest: string]: any;
 }
 
-const Item = ({ children, href }: IItemProps) => {
+const Item = ({ children, href, ...rest }: IItemProps) => {
   return (
     <Link href={href}>
-      <Text>{children}</Text>
+      <Text display="block" {...rest}>
+        {children}
+      </Text>
     </Link>
   );
 };

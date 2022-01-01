@@ -9,11 +9,31 @@ const _theme: Theme = {
     mono: "-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Pretendard, Roboto, 'Noto Sans KR', 'Segoe UI', 'Malgun Gothic', sans-serif; ",
     body: "-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Pretendard, Roboto, 'Noto Sans KR', 'Segoe UI', 'Malgun Gothic', sans-serif; ",
   },
+  styles: {
+    global: {
+      body: {
+        zIndex: 1000,
+      },
+    },
+  },
   components: {
     Text: {
       baseStyle: {
         color: "text.primary",
         fontSize: "1.25rem",
+      },
+    },
+    Button: {
+      baseStyle: {
+        bgColor: "paper.primary",
+        _hover: {
+          bgColor: "card.default",
+        },
+      },
+      defaultProps: {
+        variant: "none",
+        size: "md",
+        colorScheme: "none",
       },
     },
     //@ts-ignore
@@ -39,8 +59,8 @@ const _theme: Theme = {
     Tag: {
       baseStyle: {
         container: {
-          color: "text.primary",
-          bg: "primary.default",
+          color: "primary.default",
+          bg: "paper.default",
           border: "1px solid",
           borderColor: "primary.default",
           padding: "0.5rem",

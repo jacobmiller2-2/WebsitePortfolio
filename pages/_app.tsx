@@ -1,10 +1,11 @@
 import { useEffect } from "react";
-import "styles/globals.css";
+// import "styles/globals.css";
 import { useRouter } from "next/router";
 import { AppProps } from "next/app";
 import * as gtag from "lib/gtag";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "theme";
+import Head from "next/head";
 
 function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -20,6 +21,9 @@ function App({ Component, pageProps }: AppProps) {
 
   return (
     <ChakraProvider theme={theme}>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <Component {...pageProps} />
     </ChakraProvider>
   );
