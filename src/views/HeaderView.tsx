@@ -3,7 +3,7 @@ import React from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
-import styles from "../styles/Header.module.css";
+import styles from "styles/Header.module.css";
 
 export const Header = () => {
   return (

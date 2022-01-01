@@ -7,7 +7,7 @@ import {
   Youtube,
 } from "react-bootstrap-icons";
 
-import contactStyles from "../styles/ContactDetails.module.css";
+import contactStyles from "styles/ContactDetails.module.css";
 
 const ContactDetails = ({ contactInfo }) => {
   const { firstName, lastName, email, phone } = contactInfo;

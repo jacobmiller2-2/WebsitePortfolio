@@ -18,8 +18,6 @@ const AtomMachine = ({ atoms }: AtomMachineProps): React.ReactNode[] => {
   const mapAtomToComponent = (atom: IAtom, i) => {
     switch (atom.type as EAtomType) {
       case EAtomType.PARAGRAPH:
-        console.log(atom);
-        // return <p key={`atom-${i}`}></p>;
         return handleSpans(atom);
       default:
         console.log("No Component for atom: ", atom);
@@ -44,7 +42,6 @@ const handleSpans = (atom: IAtom): React.ReactNode[] | React.ReactNode => {
   let sections = [];
   let curr = 0;
   spans.forEach((span, i: number) => {
-    console.log("curr", curr);
     if (span.start > curr) {
       sections.push(
         <Text key={`text-${i}`} as="span">

@@ -2,8 +2,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import ContactDetails from "../Components/ContactDetails";
-import ContactForm from "../Components/ContactForm";
+import ContactDetails from "components/ContactDetails";
+import ContactForm from "components/ContactForm";
 
 import genStyles from "../styles/generic.module.css";
 

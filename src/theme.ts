@@ -16,6 +16,7 @@ const _theme: Theme = {
         fontSize: "1.25rem",
       },
     },
+    //@ts-ignore
     Heading: {
       baseStyle: {
         color: "text.primary",
@@ -34,6 +35,7 @@ const _theme: Theme = {
         "4xl": { fontSize: "5.25rem" },
       },
     },
+    //@ts-ignore
     Tag: {
       baseStyle: {
         container: {
@@ -66,6 +68,7 @@ const _theme: Theme = {
     },
   },
   colors: {
+    //@ts-ignore
     primary: {
       default: "#0AB377",
     },

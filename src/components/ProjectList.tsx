@@ -12,9 +12,9 @@ import { CodeSlash, ChevronRight } from "react-bootstrap-icons";
 import LinkDropdownToggle from "./LinkDropdownToggle";
 import LinkDropdownMenu from "./LinkDropdownMenu";
 
-import styles from "../styles/ProjectsView.module.css";
-import listStyles from "../styles/ProjectList.module.css";
-import card from "../styles/card.module.css";
+import styles from "styles/ProjectsView.module.css";
+import listStyles from "styles/ProjectList.module.css";
+import card from "styles/card.module.css";
 
 import _ from "lodash";
 import { getTechPic } from "../utils";

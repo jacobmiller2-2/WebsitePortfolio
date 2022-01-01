@@ -8,7 +8,6 @@ import theme from "theme";
 
 function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  console.log(theme);
   useEffect(() => {
     const handleRouteChange = (url) => {
       gtag.pageview(url);

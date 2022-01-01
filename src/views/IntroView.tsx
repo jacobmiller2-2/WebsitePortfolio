@@ -4,8 +4,8 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Header from "./HeaderView";
 
-import splash from "../styles/splash.module.css";
-import styles from "../styles/IntroView.module.css";
+import splash from "styles/splash.module.css";
+import styles from "styles/IntroView.module.css";
 // import styles from "../styles/Home.module.css";
 
 const Intro = () => {

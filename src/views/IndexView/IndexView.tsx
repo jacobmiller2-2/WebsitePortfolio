@@ -16,8 +16,6 @@ interface IndexViewProps {
 }
 
 const IndexView = ({ hero, ...rest }: IndexViewProps) => {
-  console.log(hero);
-
   const renderTags = (tags: any[]): React.ReactNode[] => {
     return tags.map(({ tag }: any, i: number) => {
       return (

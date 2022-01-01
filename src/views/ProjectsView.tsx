@@ -1,8 +1,8 @@
 import { Container } from "react-bootstrap";
-import ProjectList from "../Components/ProjectList";
+import ProjectList from "components/ProjectList";
 
-import styles from "../styles/ProjectsView.module.css";
-import genStyles from "../styles/generic.module.css";
+import styles from "styles/ProjectsView.module.css";
+import genStyles from "styles/generic.module.css";
 
 const Project = ({ projects }) => {
   return (
