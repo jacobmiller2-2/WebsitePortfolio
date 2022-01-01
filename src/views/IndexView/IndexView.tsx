@@ -9,6 +9,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 import AtomMachine from "components/AtomMachine";
+import Head from "next/head";
 
 interface IndexViewProps {
   hero: any;
@@ -28,9 +29,12 @@ const IndexView = ({ hero, ...rest }: IndexViewProps) => {
 
   return (
     <Container maxW="container.lg" {...rest}>
+      <Head>
+        <title>Jacob Miller</title>
+      </Head>
       <VStack spacing={2} align="flex-start" maxW="100%">
         <Heading as="h6" size="md">
-          Welcome, my name is
+          {hero.prelude}
         </Heading>
         <Heading as="h1" size="4xl">
           {hero.name}.

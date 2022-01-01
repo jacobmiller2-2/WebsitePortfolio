@@ -53,6 +53,13 @@ const handleSpans = (atom: IAtom): React.ReactNode[] | React.ReactNode => {
     sections.push(getSpan(span, text));
     curr = span.end;
   });
+  if (curr < text.length) {
+    sections.push(
+      <Text key={`text-${spans.length}`} as="span">
+        {text.substring(curr)}
+      </Text>
+    );
+  }
   return sections;
 };
 
