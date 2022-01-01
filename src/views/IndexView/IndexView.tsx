@@ -19,7 +19,7 @@ const IndexView = ({ hero, ...rest }: IndexViewProps) => {
   const renderTags = (tags: any[]): React.ReactNode[] => {
     return tags.map(({ tag }: any, i: number) => {
       return (
-        <Tag key={`tag-${i}`} marginInlineStart={i > 0 ? "0.5rem" : "0px"}>
+        <Tag key={`tag-${i}`} whiteSpace="nowrap" minW="fit-content">
           {tag}
         </Tag>
       );
@@ -28,7 +28,7 @@ const IndexView = ({ hero, ...rest }: IndexViewProps) => {
 
   return (
     <Container maxW="container.lg" {...rest}>
-      <VStack spacing={2} align="flex-start">
+      <VStack spacing={2} align="flex-start" maxW="100%">
         <Heading as="h6" size="md">
           Welcome, my name is
         </Heading>
@@ -36,7 +36,9 @@ const IndexView = ({ hero, ...rest }: IndexViewProps) => {
           {hero.name}.
         </Heading>
 
-        <Flex marginTop="1rem !important">{renderTags(hero.tags)}</Flex>
+        <HStack maxW="100%" marginTop="1rem !important" overflow={"scroll"}>
+          {renderTags(hero.tags)}
+        </HStack>
         <br />
         <Box maxW="1200px">{AtomMachine({ atoms: hero.introduction })}</Box>
       </VStack>
