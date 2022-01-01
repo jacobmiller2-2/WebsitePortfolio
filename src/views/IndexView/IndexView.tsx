@@ -36,7 +36,16 @@ const IndexView = ({ hero, ...rest }: IndexViewProps) => {
           {hero.name}.
         </Heading>
 
-        <HStack maxW="100%" marginTop="1rem !important" overflow={"scroll"}>
+        <HStack
+          maxW="100%"
+          marginTop="1rem !important"
+          overflowX="scroll"
+          css={{
+            "&::-webkit-scrollbar": { display: "none" },
+            scrollbarWidth: "none",
+            "-ms-overflow-style": "none",
+          }}
+        >
           {renderTags(hero.tags)}
         </HStack>
         <br />
