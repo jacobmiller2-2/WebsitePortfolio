@@ -23,6 +23,7 @@ const _theme: Theme = {
         fontSize: "1.25rem",
       },
     },
+    //@ts-ignore
     Button: {
       baseStyle: {
         bgColor: "paper.primary",
