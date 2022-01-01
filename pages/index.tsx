@@ -1,20 +1,12 @@
 import React from "react";
 import { GetStaticProps, GetStaticPropsContext } from "next";
-import Head from "next/head";
-
-import IntroView from "views/IntroView";
-import ProjectsView from "views/ProjectsView";
-import AboutView from "views/AboutView";
-import FooterView from "views/FooterView";
-
-import styles from "styles/Home.module.css";
 /** Data */
 import { getHero } from "lib/contentApi";
 
 /** Components */
 import Main from "layouts/Main";
-import { ExperienceView, IndexView, Topbar } from "views";
-import { Container, Box, VStack } from "@chakra-ui/react";
+import { IndexView, Topbar } from "views";
+import { Box, VStack } from "@chakra-ui/react";
 
 interface IndexPageProps {
   hero: any;
