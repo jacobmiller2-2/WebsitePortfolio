@@ -24,14 +24,10 @@ export const IndexPage = ({ hero }: IndexPageProps) => {
   return (
     <Main>
       <Box bg="paper.default">
-        <Topbar sx={{ height: "5vh" }} />
+        <Topbar />
         <VStack>
-          <IndexView
-            id=""
-            hero={hero}
-            sx={{ height: "93vh", display: "flex", alignItems: "center" }}
-          />
-          {/* <ExperienceView experience={[]} id="experience" /> */}
+          <IndexView id="" hero={hero} h="100vh" />
+          <ExperienceView experience={[]} id="experience" />
         </VStack>
       </Box>
     </Main>

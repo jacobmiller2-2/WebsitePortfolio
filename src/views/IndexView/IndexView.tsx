@@ -28,7 +28,7 @@ const IndexView = ({ hero, ...rest }: IndexViewProps) => {
   };
 
   return (
-    <Container maxW="container.lg" {...rest}>
+    <Container maxW="container.lg" display="flex" alignItems="center" {...rest}>
       <Head>
         <title>Jacob Miller</title>
       </Head>

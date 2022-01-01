@@ -18,7 +18,7 @@ interface IExperienceViewProps {
 
 const ExperienceView = ({ experience, ...rest }: IExperienceViewProps) => {
   return (
-    <Container maxW="container.lg" {...rest}>
+    <Container maxW="container.lg" h="100vh" {...rest}>
       <VStack spacing={2} align="flex-start">
         <Heading as="h2" size="xl">
           My Experience

@@ -36,7 +36,7 @@ const Topbar = ({ ...rest }: ITopbarProps) => {
   };
 
   return (
-    <NavContainer>
+    <NavContainer {...rest}>
       <Logo />
       <MenuToggle toggle={toggle} open={open} />
       {renderLinks()}

@@ -1,4 +1,5 @@
 import React from "react";
+import useScroll from "hooks/useScroll";
 /** Interfaces/types */
 
 /** Components */
@@ -10,6 +11,8 @@ interface INavContainerProps {
 }
 
 const NavContainer = ({ children, ...rest }: INavContainerProps) => {
+  const { scrollTop } = useScroll();
+
   return (
     <Flex
       as="nav"
@@ -21,6 +24,10 @@ const NavContainer = ({ children, ...rest }: INavContainerProps) => {
       p={8}
       bg={["primary.500", "primary.500", "transparent", "transparent"]}
       color={["white", "white", "primary.700", "primary.700"]}
+      pos="fixed"
+      top={0}
+      transition="all 0.3s ease-in"
+      opacity={scrollTop > TOLERANCE ? 0 : 1}
       {...rest}
     >
       {children}
@@ -29,3 +36,5 @@ const NavContainer = ({ children, ...rest }: INavContainerProps) => {
 };
 
 export default NavContainer;
+
+const TOLERANCE = 75;

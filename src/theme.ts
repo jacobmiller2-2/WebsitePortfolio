@@ -91,7 +91,7 @@ const _theme: Theme = {
   colors: {
     //@ts-ignore
     primary: {
-      default: "#0AB377",
+      default: "#29DCE6",
     },
     paper: {
       default: "#18191A",
