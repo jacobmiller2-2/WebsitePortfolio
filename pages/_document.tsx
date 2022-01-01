@@ -6,7 +6,7 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
-          <meta name="theme-color" content="#3f51b5" />
+          <meta name="theme-color" content="#29DCE6" />
           <meta
             name="description"
             content="A portfolio website for Jacob Miller, a software engineer and web developer."
