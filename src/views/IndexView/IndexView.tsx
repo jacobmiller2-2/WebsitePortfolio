@@ -9,16 +9,17 @@ import {
   Box,
 } from "@chakra-ui/react";
 import AtomMachine from "components/AtomMachine";
+import { IHero } from "interfaces/Prismic";
 import Head from "next/head";
 
 interface IndexViewProps {
-  hero: any;
+  hero: IHero;
   [rest: string]: any;
 }
 
 const IndexView = ({ hero, ...rest }: IndexViewProps) => {
-  const renderTags = (tags: any[]): React.ReactNode[] => {
-    return tags.map(({ tag }: any, i: number) => {
+  const renderTags = (tags: { tag: string }[]): React.ReactNode[] => {
+    return tags.map(({ tag }: { tag: string }, i: number) => {
       return (
         <Tag key={`tag-${i}`} whiteSpace="nowrap" minW="fit-content">
           {tag}
@@ -54,7 +55,7 @@ const IndexView = ({ hero, ...rest }: IndexViewProps) => {
           css={{
             "&::-webkit-scrollbar": { display: "none" },
             scrollbarWidth: "none",
-            "-ms-overflow-style": "none",
+            msOverflowStyle: "none",
           }}
         >
           {renderTags(hero.tags)}

@@ -67,3 +67,30 @@ export enum ESpanType {
   HYPERLINK = "hyperlink",
   STRONG = "strong",
 }
+
+export interface IHero {
+  name: string;
+  prelude: string;
+  tags: { tag: string }[];
+  introduction: IAtom[];
+}
+
+export interface IExperience {
+  id: string;
+  start_date: string;
+  active: boolean;
+  end_date: string;
+  job_title: string;
+  entity_name: string;
+  entity_short_name: string;
+  description: IAtom[];
+  is_other: boolean;
+}
+
+export interface IExperienceMeta {
+  experience_order: {
+    experience: {
+      id: string;
+    };
+  }[];
+}

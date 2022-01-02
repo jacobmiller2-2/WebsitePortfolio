@@ -1,25 +1,37 @@
 import React from "react";
 import { GetStaticProps, GetStaticPropsContext } from "next";
 /** Data */
-import { getHero } from "lib/contentApi";
+import { getExperience, getExperienceMeta, getHero } from "lib/contentApi";
 
 /** Components */
 import Main from "layouts/Main";
-import { IndexView, Topbar } from "views";
+import { IndexView, ExperienceView, Topbar } from "views";
 import { Box, VStack } from "@chakra-ui/react";
+import { IExperience, IExperienceMeta, IHero } from "interfaces/Prismic";
+import exp from "constants";
 
 interface IndexPageProps {
-  hero: any;
+  hero: IHero;
+  experience: IExperience[];
+  experienceMeta: IExperienceMeta;
 }
 
-export const IndexPage = ({ hero }: IndexPageProps) => {
+export const IndexPage = ({
+  hero,
+  experience = [],
+  experienceMeta,
+}: IndexPageProps) => {
   return (
     <Main>
       <Box bg="paper.default">
         <Topbar />
         <VStack>
           <IndexView id="" hero={hero} />
-          {/* <ExperienceView experience={[]} id="experience" /> */}
+          <ExperienceView
+            experience={experience}
+            meta={experienceMeta}
+            id="experience"
+          />
         </VStack>
       </Box>
     </Main>
@@ -33,10 +45,16 @@ export const getStaticProps: GetStaticProps = async (
 ) => {
   const hero = await getHero();
 
-  const heroProps = { ...hero.data };
+  const experience = await getExperience();
+
+  const experienceMeta = await getExperienceMeta();
 
   return {
-    props: { hero: heroProps },
+    props: {
+      hero: hero.data,
+      experience: experience.map((exp) => ({ id: exp.id, ...exp.data })),
+      experienceMeta: experienceMeta.data,
+    },
     revalidate: 60,
   };
 };
