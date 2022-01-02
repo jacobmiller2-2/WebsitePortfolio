@@ -11,7 +11,7 @@ export default class MyDocument extends Document {
             name="description"
             content="A portfolio website for Jacob Miller, a software engineer and web developer."
           />
-          <link rel="shortcut icon" href="/static/portfolio_logo_v1.svg" />
+
           <meta
             name="robots"
             content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
