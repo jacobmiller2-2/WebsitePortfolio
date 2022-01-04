@@ -63,9 +63,6 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
         })}
       </CardBasic>
     </Box>
-    // <Card Header={Header} Tag={Tag} Subheader={Subheader}>
-    //   <Text>fdsf</Text>
-    // </Card>
   );
 };
 

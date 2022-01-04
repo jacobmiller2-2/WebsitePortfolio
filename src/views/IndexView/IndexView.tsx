@@ -33,7 +33,7 @@ const IndexView = ({ hero, ...rest }: IndexViewProps) => {
       maxW="container.lg"
       display="flex"
       alignItems="center"
-      h="100vh"
+      h={["100%", "100%", "100vh", "100vh"]}
       mh="100vh"
       {...rest}
     >

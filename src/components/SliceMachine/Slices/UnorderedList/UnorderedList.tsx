@@ -19,7 +19,6 @@ const UnorderedList = ({ slice, options }: IUnorderedListProps) => {
   const renderListItems = (items) => {
     return items.map(
       ({ list_item: atoms }: { list_item: IAtom[] }, i: number) => {
-        console.log(i);
         return (
           <ListItem key={`unordered-list-item-${i}`} color="primary.default">
             {AtomMachine({ atoms, options })}

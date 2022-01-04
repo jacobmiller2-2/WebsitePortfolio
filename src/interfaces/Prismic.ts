@@ -90,6 +90,7 @@ export interface IExperience {
 }
 
 export interface IExperienceMeta {
+  experience_view_title: string;
   experience_order: {
     experience: {
       id: string;

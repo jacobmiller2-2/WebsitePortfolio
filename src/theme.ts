@@ -52,6 +52,9 @@ const _theme: Theme = {
         _hover: {
           bgColor: "card.default",
         },
+        color: "primary.default",
+        borderColor: "primary.default",
+        borderWidth: "1px",
       },
       defaultProps: {
         variant: "none",

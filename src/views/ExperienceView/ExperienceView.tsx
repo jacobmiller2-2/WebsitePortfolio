@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 /** Interfaces/types */
 
 /** Components */
@@ -7,7 +9,7 @@ import {
   Heading,
   Text,
   HStack,
-  Flex,
+  Button,
   Box,
   Tabs,
   Tab,
@@ -31,19 +33,31 @@ const ExperienceView = ({
   ...rest
 }: IExperienceViewProps) => {
   // console.log(meta.experience_order);
+  const [showOther, setShowOther] = useState(false);
 
-  const renderCurrPositions = () => {
-    const items = getExperienceFromOrder(experience, meta.experience_order);
+  const items = getExperienceFromOrder(experience, meta.experience_order);
 
-    // const currPositions = items.filter((item) => item.active);
+  const relExperience = items.filter((item) => !item.is_other);
 
-    return items.map((item, i: number) => {
-      return <ExperienceCard experience={item} key={`experience-card-${i}`} />;
-    });
-  };
+  const otherExperience = items.filter((item) => item.is_other);
+
+  const renderRelevantExperience = () =>
+    relExperience.map((item, i: number) => (
+      <ExperienceCard experience={item} key={`experience-card-${i}`} />
+    ));
+
+  const renderOtherExperience = () =>
+    otherExperience.map((item, i: number) => (
+      <ExperienceCard experience={item} key={`experience-card-${i}`} />
+    ));
 
   return (
-    <Container maxW="container.lg" h="100vh" {...rest}>
+    <Container
+      maxW="container.lg"
+      h={["100%", "100%", "100vh", "100vh"]}
+      mh="100vh"
+      {...rest}
+    >
       <VStack spacing={2} align="flex-start" justifyContent="flex-start">
         <HStack
           w="100%"
@@ -52,11 +66,18 @@ const ExperienceView = ({
           marginBottom="3rem"
         >
           <Heading as="h2" size="xl">
-            My Experience
+            {meta.experience_view_title || "My Experience"}
           </Heading>
         </HStack>
-
-        {renderCurrPositions()}
+        {renderRelevantExperience()}
+        <HStack w="100%" justifyContent="center">
+          {!showOther && otherExperience.length > 0 && (
+            <Button onClick={() => setShowOther(true)}>
+              Show Other Work Experience
+            </Button>
+          )}
+        </HStack>
+        {showOther && renderOtherExperience()}
       </VStack>
     </Container>
   );
