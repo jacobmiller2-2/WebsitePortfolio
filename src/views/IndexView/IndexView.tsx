@@ -5,8 +5,10 @@ import {
   Heading,
   Tag,
   HStack,
-  Flex,
+  LinkBox,
+  LinkOverlay,
   Box,
+  Button,
 } from "@chakra-ui/react";
 import AtomMachine from "components/AtomMachine";
 import { IHero } from "interfaces/Prismic";
@@ -62,6 +64,13 @@ const IndexView = ({ hero, ...rest }: IndexViewProps) => {
         </HStack>
         <br />
         <Box maxW="1200px">{AtomMachine({ atoms: hero.introduction })}</Box>
+        <HStack w="100%" marginTop="2rem !important">
+          <LinkBox>
+            <Button>
+              <LinkOverlay href="#contact">Get in Touch</LinkOverlay>
+            </Button>
+          </LinkBox>
+        </HStack>
       </VStack>
     </Container>
   );

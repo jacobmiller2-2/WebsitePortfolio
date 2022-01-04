@@ -9,7 +9,7 @@ const _theme: Theme = {
     mono: "-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Pretendard, Roboto, 'Noto Sans KR', 'Segoe UI', 'Malgun Gothic', sans-serif; ",
     body: "-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Pretendard, Roboto, 'Noto Sans KR', 'Segoe UI', 'Malgun Gothic', sans-serif; ",
     //@ts-ignore
-    code: "fira code ",
+    code: "-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Fira Code, Roboto, 'Noto Sans KR', 'Segoe UI', 'Malgun Gothic', sans-serif; ",
   },
   styles: {
     global: {
