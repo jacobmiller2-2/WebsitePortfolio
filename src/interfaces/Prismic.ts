@@ -54,7 +54,9 @@ export interface ISlice {
   items: any[];
   primary: any;
 }
-export enum ESliceType {}
+export enum ESliceType {
+  UNORDERED_LIST = "unordered_list",
+}
 
 export interface ISpan {
   start: number;
@@ -83,8 +85,8 @@ export interface IExperience {
   job_title: string;
   entity_name: string;
   entity_short_name: string;
-  description: IAtom[];
   is_other: boolean;
+  body: ISlice[];
 }
 
 export interface IExperienceMeta {

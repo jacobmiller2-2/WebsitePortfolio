@@ -8,22 +8,110 @@ import {
 } from "interfaces/Prismic";
 
 /** Components */
-import { Text, Link } from "@chakra-ui/react";
+import {
+  Text,
+  Box,
+  Link,
+  ListItem,
+  StylesProvider,
+  ListIcon,
+} from "@chakra-ui/react";
+import { IoOptions } from "react-icons/io5";
 
 interface AtomMachineProps {
   atoms: IAtom[];
+  options?: {
+    Text: {
+      fontSize?: string;
+      color?: string;
+      variant?: string;
+    };
+  };
 }
 
-const AtomMachine = ({ atoms }: AtomMachineProps): React.ReactNode[] => {
+const AtomMachine = ({
+  atoms,
+  options,
+}: AtomMachineProps): React.ReactNode[] => {
   const mapAtomToComponent = (atom: IAtom, i) => {
     switch (atom.type as EAtomType) {
       case EAtomType.PARAGRAPH:
-        return handleSpans(atom);
+        return handleSpans(atom, options);
+      case EAtomType.LIST_ITEM:
+        return (
+          <ul style={{ listStylePosition: "outside" }}>
+            <StylesProvider value={{}}>
+              <ListItem listStyleType="none">
+                {/* <Box h="100%" display="inline-block"> */}
+                <ListIcon
+                  icon={IoOptions}
+                  color="primary.default"
+                  // position="absolute"
+                  // left="0px"
+                  // paddingLeft="30px"
+                  // marginBottom="10px"
+                  // marginRight="30px"
+                  // h="100%"
+                />
+                {/* </Box> */}
+                {/* {atom.text} */}
+                {handleSpans(atom, {
+                  ...options,
+                  Text: {
+                    ...options.Text,
+                    as: "span",
+                    textAlign: "match-parent",
+                    // paddingLeft: "30px",
+                    // css: {
+                    //   textAlign: "webkitMatchParent",
+                    //   backgroundColor: "red",
+                    // },
+                  },
+                })}
+              </ListItem>
+            </StylesProvider>
+          </ul>
+          //@ts-ignore
+          // <StylesProvider value={{}}>
+          //   <ListItem listStyleType="none">
+          //     {/* <Box h="100%" display="inline-block"> */}
+          //     <ListIcon
+          //       icon={IoOptions}
+          //       color="primary.default"
+          //       position="absolute"
+          //       left="0px"
+          //       paddingLeft="30px"
+          //       marginBottom="10px"
+          //       // marginRight="30px"
+          //       // h="100%"
+          //     />
+          //     {/* </Box> */}
+          //     {/* {atom.text} */}
+          //     {handleSpans(atom, {
+          //       ...options,
+          //       Text: {
+          //         ...options.Text,
+          //         as: "span",
+          //         textAlign: "match-parent",
+          //         // paddingLeft: "30px",
+          //         // css: {
+          //         //   textAlign: "webkitMatchParent",
+          //         //   backgroundColor: "red",
+          //         // },
+          //       },
+          //     })}
+          //   </ListItem>
+          // </StylesProvider>
+        );
       default:
         console.log("No Component for atom: ", atom);
         return null;
     }
   };
+
+  if (!atoms) {
+    return null;
+  }
 
   const mappedAtoms = atoms.map(mapAtomToComponent);
 
@@ -32,11 +120,18 @@ const AtomMachine = ({ atoms }: AtomMachineProps): React.ReactNode[] => {
 
 export default AtomMachine;
 
-const handleSpans = (atom: IAtom): React.ReactNode[] | React.ReactNode => {
+const handleSpans = (
+  atom: IAtom,
+  options
+): React.ReactNode[] | React.ReactNode => {
   const { spans, text } = atom;
 
   if (!spans || spans.length === 0) {
-    return <Text>{text}</Text>;
+    return (
+      <Text as="span" {...options?.Text}>
+        {text}
+      </Text>
+    );
   }
 
   let sections = [];
@@ -44,7 +139,7 @@ const handleSpans = (atom: IAtom): React.ReactNode[] | React.ReactNode => {
   spans.forEach((span, i: number) => {
     if (span.start > curr) {
       sections.push(
-        <Text key={`text-${i}`} as="span">
+        <Text key={`text-${i}`} as="span" {...options?.Text}>
           {text.substring(curr, span.start)}
         </Text>
       );
@@ -55,7 +150,7 @@ const handleSpans = (atom: IAtom): React.ReactNode[] | React.ReactNode => {
   });
   if (curr < text.length) {
     sections.push(
-      <Text key={`text-${spans.length}`} as="span">
+      <Text key={`text-${spans.length}`} as="span" {...options?.Text}>
         {text.substring(curr)}
       </Text>
     );

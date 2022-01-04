@@ -17,6 +17,7 @@ import {
 } from "@chakra-ui/react";
 import AtomMachine from "components/AtomMachine";
 import { IExperience, IExperienceMeta } from "interfaces/Prismic";
+import ExperienceCard from "./components/ExperienceCard/ExperienceCard";
 
 interface IExperienceViewProps {
   experience: IExperience[];
@@ -29,40 +30,33 @@ const ExperienceView = ({
   meta,
   ...rest
 }: IExperienceViewProps) => {
-  console.log(meta.experience_order);
+  // console.log(meta.experience_order);
 
-  const renderTabListItems = () => {
+  const renderCurrPositions = () => {
     const items = getExperienceFromOrder(experience, meta.experience_order);
 
-    return items.map((item, i: number) => {
-      return <Tab key={`experience-tab-${i}`}>{item.entity_short_name}</Tab>;
-    });
-  };
-
-  const renderTabPanelItems = () => {
-    const items = getExperienceFromOrder(experience, meta.experience_order);
+    // const currPositions = items.filter((item) => item.active);
 
     return items.map((item, i: number) => {
-      return (
-        <TabPanel key={`experience-item-${i}`}>
-          {AtomMachine({ atoms: item.description })}
-        </TabPanel>
-      );
+      return <ExperienceCard experience={item} key={`experience-card-${i}`} />;
     });
   };
 
   return (
     <Container maxW="container.lg" h="100vh" {...rest}>
-      <VStack spacing={2} align="flex-start">
-        <Heading as="h2" size="xl">
-          My Experience
-        </Heading>
-        <HStack>
-          <Tabs isFitted size="lg">
-            <TabList>{renderTabListItems()}</TabList>
-            <TabPanels>{renderTabPanelItems()}</TabPanels>
-          </Tabs>
+      <VStack spacing={2} align="flex-start" justifyContent="flex-start">
+        <HStack
+          w="100%"
+          align="center"
+          justifyContent="center"
+          marginBottom="3rem"
+        >
+          <Heading as="h2" size="xl">
+            My Experience
+          </Heading>
         </HStack>
+
+        {renderCurrPositions()}
       </VStack>
     </Container>
   );

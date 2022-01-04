@@ -41,7 +41,7 @@ const IndexView = ({ hero, ...rest }: IndexViewProps) => {
         <title>Jacob Miller</title>
       </Head>
       <VStack spacing={2} align="flex-start" maxW="100%">
-        <Heading as="h6" size="md">
+        <Heading as="h6" size="sm">
           {hero.prelude}
         </Heading>
         <Heading as="h1" size="4xl">

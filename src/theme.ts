@@ -8,6 +8,8 @@ const _theme: Theme = {
       "-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Pretendard, Roboto, 'Noto Sans KR', 'Segoe UI', 'Malgun Gothic', sans-serif; ",
     mono: "-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Pretendard, Roboto, 'Noto Sans KR', 'Segoe UI', 'Malgun Gothic', sans-serif; ",
     body: "-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Pretendard, Roboto, 'Noto Sans KR', 'Segoe UI', 'Malgun Gothic', sans-serif; ",
+    //@ts-ignore
+    code: "fira code ",
   },
   styles: {
     global: {
@@ -25,7 +27,24 @@ const _theme: Theme = {
         color: "text.primary",
         fontSize: "1.25rem",
       },
+      variants: {
+        accent: {
+          color: "primary.default",
+          fontFamily: "code",
+          fontSize: ".85rem",
+        },
+        secondary: {
+          color: "text.secondary",
+          fontSize: "1rem",
+        },
+        soft: {
+          color: "text.secondary",
+          fontSize: "1rem",
+          fontFamily: "code",
+        },
+      },
     },
+
     //@ts-ignore
     Button: {
       baseStyle: {
@@ -48,12 +67,10 @@ const _theme: Theme = {
       },
       sizes: {
         xs: {},
-        sm: {},
-        md: {
-          fontWeight: "thin body",
-        },
-        lg: {},
-        xl: {},
+        sm: { fontSize: "1.25rem", fontWeight: "thin body" },
+        md: { fontSize: "2.0rem" },
+        lg: { fontSize: "2.5rem" },
+        xl: { fontSize: "2.75rem" },
         "2xl": {},
         "3xl": {},
         "4xl": { fontSize: "5.25rem" },
@@ -99,7 +116,7 @@ const _theme: Theme = {
     paper: {
       default: "#18191A",
     },
-    text: { primary: "#E3E6EB" },
+    text: { primary: "#E4E6EB", secondary: "#b0b3b8" },
     card: {
       default: "#242526",
       light: "#3A3B3C",
