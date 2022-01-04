@@ -55,12 +55,14 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
           </Text>
         </Box>
       </Box>
-      <CardBasic marginInline="0" maxW="85%" paddingLeft="3rem">
-        {SliceMachine({
-          slices: experience.body,
-          options: { Text: { variant: "soft" } },
-        })}
-      </CardBasic>
+      {experience.body && experience.body.length > 0 && (
+        <CardBasic marginInline="0" maxW="85%" paddingLeft="3rem">
+          {SliceMachine({
+            slices: experience.body,
+            options: { Text: { variant: "soft" } },
+          })}
+        </CardBasic>
+      )}
     </Box>
   );
 };
