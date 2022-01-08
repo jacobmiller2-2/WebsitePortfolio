@@ -50,6 +50,20 @@ export const getExperienceMeta = async () => {
   return response[0];
 };
 
+export const getProjects = async () => {
+  const query = Prismic.Predicates.at("document.type", "project");
+  const response = await fetchAPI({ query });
+
+  return response;
+};
+
+export const getProjectMeta = async () => {
+  const query = Prismic.Predicates.at("document.type", "project_meta");
+  const response = await fetchAPI({ query });
+
+  return response[0];
+};
+
 // export const getReading = async (courseSlug: TUrlSlug, readingSlug: TUrlSlug) => {
 //   const readings: any[] = await getReadings(courseSlug);
 //   const units: IUnit[] = await getUnits(courseSlug);

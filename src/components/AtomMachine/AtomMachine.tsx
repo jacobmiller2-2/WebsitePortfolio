@@ -1,4 +1,5 @@
 import NextLink from "next/link";
+import React from "react";
 /** Interfaces/Types */
 import {
   EAtomType,
@@ -36,73 +37,12 @@ const AtomMachine = ({
   const mapAtomToComponent = (atom: IAtom, i) => {
     switch (atom.type as EAtomType) {
       case EAtomType.PARAGRAPH:
-        return handleSpans(atom, options);
-      case EAtomType.LIST_ITEM:
         return (
-          <ul style={{ listStylePosition: "outside" }}>
-            <StylesProvider value={{}}>
-              <ListItem listStyleType="none">
-                {/* <Box h="100%" display="inline-block"> */}
-                <ListIcon
-                  icon={IoOptions}
-                  color="primary.default"
-                  // position="absolute"
-                  // left="0px"
-                  // paddingLeft="30px"
-                  // marginBottom="10px"
-                  // marginRight="30px"
-                  // h="100%"
-                />
-                {/* </Box> */}
-                {/* {atom.text} */}
-                {handleSpans(atom, {
-                  ...options,
-                  Text: {
-                    ...options.Text,
-                    as: "span",
-                    textAlign: "match-parent",
-                    // paddingLeft: "30px",
-                    // css: {
-                    //   textAlign: "webkitMatchParent",
-                    //   backgroundColor: "red",
-                    // },
-                  },
-                })}
-              </ListItem>
-            </StylesProvider>
-          </ul>
-          //@ts-ignore
-          // <StylesProvider value={{}}>
-          //   <ListItem listStyleType="none">
-          //     {/* <Box h="100%" display="inline-block"> */}
-          //     <ListIcon
-          //       icon={IoOptions}
-          //       color="primary.default"
-          //       position="absolute"
-          //       left="0px"
-          //       paddingLeft="30px"
-          //       marginBottom="10px"
-          //       // marginRight="30px"
-          //       // h="100%"
-          //     />
-          //     {/* </Box> */}
-          //     {/* {atom.text} */}
-          //     {handleSpans(atom, {
-          //       ...options,
-          //       Text: {
-          //         ...options.Text,
-          //         as: "span",
-          //         textAlign: "match-parent",
-          //         // paddingLeft: "30px",
-          //         // css: {
-          //         //   textAlign: "webkitMatchParent",
-          //         //   backgroundColor: "red",
-          //         // },
-          //       },
-          //     })}
-          //   </ListItem>
-          // </StylesProvider>
+          <React.Fragment key={`atom-${i}`}>
+            {handleSpans(atom, options)}
+          </React.Fragment>
         );
+
       default:
         console.log("No Component for atom: ", atom);
         return null;
@@ -128,7 +68,7 @@ const handleSpans = (
 
   if (!spans || spans.length === 0) {
     return (
-      <Text as="span" {...options?.Text}>
+      <Text as="span" key={`text-start`} {...options?.Text}>
         {text}
       </Text>
     );
@@ -145,7 +85,7 @@ const handleSpans = (
       );
     } else {
     }
-    sections.push(getSpan(span, text));
+    sections.push(getSpan(span, text, i));
     curr = span.end;
   });
   if (curr < text.length) {
@@ -162,19 +102,26 @@ const getSpanText = (span, text) => {
   return text.substring(span.start, span.end);
 };
 
-const getSpan = (span, text) => {
+const getSpan = (span, text, i?) => {
   switch (span.type as ESpanType) {
     case ESpanType.HYPERLINK:
       const data: IHyperlinkData = span.data;
       if (data.link_type === "Web") {
         return (
-          <NextLink href={data.url} passHref>
-            <Link target={data.target}>{getSpanText(span, text)}</Link>
+          <NextLink href={data.url} passHref key={`link-${i}`}>
+            <Link target={data.target} rel="noreferrer">
+              {getSpanText(span, text)}
+            </Link>
           </NextLink>
         );
       } else {
         return (
-          <Link href={data.url} target={data.target}>
+          <Link
+            href={data.url}
+            target={data.target}
+            key={`link-${i}`}
+            rel="noreferrer"
+          >
             {text}
           </Link>
         );

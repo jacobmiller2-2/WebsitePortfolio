@@ -28,7 +28,11 @@ const UnorderedList = ({ slice, options }: IUnorderedListProps) => {
     );
   };
 
-  return <List styleType="'⇴ '">{renderListItems(slice.items)}</List>;
+  return (
+    <List styleType="'⇴ '" paddingLeft="1rem">
+      {renderListItems(slice.items)}
+    </List>
+  );
 };
 
 export default UnorderedList;

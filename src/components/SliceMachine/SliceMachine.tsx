@@ -9,7 +9,7 @@
 import { ISlice, ESliceType } from "interfaces/Prismic";
 
 /** Components */
-import { UnorderedList } from "./Slices";
+import { UnorderedList, RichText } from "./Slices";
 
 interface ISliceGeneratorProps {
   slices: ISlice[];
@@ -31,6 +31,16 @@ const SliceMachine = ({
       case ESliceType.UNORDERED_LIST:
         return (
           <UnorderedList
+            slice={slice}
+            key={`slice-${i}`}
+            options={options}
+            {...rest}
+          />
+        );
+
+      case ESliceType.RICH_TEXT:
+        return (
+          <RichText
             slice={slice}
             key={`slice-${i}`}
             options={options}

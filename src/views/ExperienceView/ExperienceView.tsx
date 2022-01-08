@@ -11,11 +11,6 @@ import {
   HStack,
   Button,
   Box,
-  Tabs,
-  Tab,
-  TabList,
-  TabPanels,
-  TabPanel,
 } from "@chakra-ui/react";
 import AtomMachine from "components/AtomMachine";
 import { IExperience, IExperienceMeta } from "interfaces/Prismic";

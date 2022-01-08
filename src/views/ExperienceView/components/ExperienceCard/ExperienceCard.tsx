@@ -3,8 +3,8 @@
 /** Components */
 import { CardBasic } from "components";
 import { Heading, Text, Box, Divider } from "@chakra-ui/react";
-import { IExperience } from "interfaces/Prismic";
 import SliceMachine from "components/SliceMachine";
+import { IExperience } from "interfaces/Prismic";
 
 interface IExperienceCardProps {
   experience: IExperience;
@@ -28,9 +28,9 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
 
   return (
     <Box>
-      <Text variant="accent">
-        {!experience.is_other ? "Featured Experience" : ""}
-      </Text>
+      {!experience.is_other && (
+        <Text variant="accent">Featured Experience</Text>
+      )}
       <Heading as="h3" size="md">
         {experience.job_title}
       </Heading>
@@ -56,7 +56,7 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
         </Box>
       </Box>
       {experience.body && experience.body.length > 0 && (
-        <CardBasic marginInline="0" maxW="85%" paddingLeft="3rem">
+        <CardBasic marginInline="0" maxW="85%">
           {SliceMachine({
             slices: experience.body,
             options: { Text: { variant: "soft" } },

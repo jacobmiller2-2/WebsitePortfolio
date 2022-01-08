@@ -56,6 +56,7 @@ export interface ISlice {
 }
 export enum ESliceType {
   UNORDERED_LIST = "unordered_list",
+  RICH_TEXT = "rich_text",
 }
 
 export interface ISpan {
@@ -93,6 +94,28 @@ export interface IExperienceMeta {
   experience_view_title: string;
   experience_order: {
     experience: {
+      id: string;
+    };
+  }[];
+}
+
+export interface IProject {
+  id: string;
+  project_name: string;
+  is_featured: boolean;
+  tech_stack: any[];
+  links: any[];
+  creation_date: string;
+  latest_version: string;
+  picture_src: string;
+  picture_alt: string;
+  body: ISlice[];
+}
+
+export interface IProjectMeta {
+  projects_view_title: string;
+  project_order: {
+    project: {
       id: string;
     };
   }[];
