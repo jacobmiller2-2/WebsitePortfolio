@@ -89,18 +89,26 @@ const ProjectCard = ({ project, alt = true }: IProjectCardProps) => {
 
     const picture = project.picture_src;
     const ProjectImage = (
-      <Box width="100%" key="project-image">
-        <Image
-          src={
-            picture.url ??
-            "https://www.valpo.edu/theology/files/2016/02/640x360.png"
-          }
-          alt={project.picture_alt}
-          width={picture.width}
-          height={picture.height}
-          layout="responsive"
-        />
-        <Text>{project.picture_alt}</Text>
+      <Box
+        width="100%"
+        height="100%"
+        key="project-image"
+        display="flex"
+        alignItems="center"
+        flexDir="column"
+      >
+        <Box height="100%">
+          <Image
+            src={
+              picture.url ??
+              "https://www.valpo.edu/theology/files/2016/02/640x360.png"
+            }
+            alt={project.picture_alt}
+            width={picture.width}
+            height={picture.height}
+            layout="responsive"
+          />
+        </Box>
       </Box>
     );
 

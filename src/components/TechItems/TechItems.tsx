@@ -12,10 +12,9 @@ const TechItems = ({ techs }: ITechItemsProps) => {
   return techs.map(
     (tech, i: number) =>
       techPics[tech] && (
-        <Tooltip label={techPics[tech].name}>
+        <Tooltip label={techPics[tech].name} key={`tech-icon-${i}`}>
           <span
             style={{ width: "30px", paddingLeft: "0px", margin: "0.25rem" }}
-            key={`tech-icon-${i}`}
           >
             {techPics[tech].pic()}
           </span>

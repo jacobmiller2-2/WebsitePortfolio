@@ -107,7 +107,11 @@ export interface IProject {
   links: any[];
   creation_date: string;
   latest_version: string;
-  picture_src: string;
+  picture_src: {
+    url: string;
+    width: number;
+    height: number;
+  };
   picture_alt: string;
   body: ISlice[];
 }

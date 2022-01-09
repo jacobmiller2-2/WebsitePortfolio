@@ -19,18 +19,7 @@ const ProjectsView = ({ projects, meta, ...rest }: IProjectsViewProps) => {
     ).filter((project) => project.is_featured);
 
     return featuredProjects.map((project, i: number) => (
-      <>
-        <ProjectCard
-          project={project}
-          key={`project-card-${i}`}
-          alt={!(i % 2)}
-        />
-        <ProjectCard
-          project={project}
-          key={`project-card-${i}`}
-          alt={!!(i % 2)}
-        />
-      </>
+      <ProjectCard project={project} key={`project-card-${i}`} alt={!(i % 2)} />
     ));
   };
 
