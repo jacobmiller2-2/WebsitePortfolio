@@ -26,11 +26,9 @@ const ProjectCard = ({ project, alt = true }: IProjectCardProps) => {
     dateOptions
   );
 
-  console.log(project.tech_stack);
-
   const renderContent = () => {
     const cardMargin = {
-      marginRight: alt ? "initial" : "-3rem",
+      marginRight: alt ? "initial" : ["0rem", "-1rem", "-1.5rem", "-3rem"],
       marginLeft: alt ? ["0rem", "-1rem", "-1.5rem", "-3rem"] : "initial",
     };
 
