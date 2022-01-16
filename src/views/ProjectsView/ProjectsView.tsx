@@ -24,12 +24,7 @@ const ProjectsView = ({ projects, meta, ...rest }: IProjectsViewProps) => {
   };
 
   return (
-    <Container
-      maxW="container.lg"
-      h={["100%", "100%", "100vh", "100vh"]}
-      mh="100vh"
-      {...rest}
-    >
+    <Container maxW="container.lg" h="100%" minH="100vh" {...rest}>
       <VStack spacing={2} align="flex-start" justifyContent="flex-start">
         <HStack
           w="100%"

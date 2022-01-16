@@ -39,7 +39,7 @@ export const IndexPage = ({
 }: IndexPageProps) => {
   return (
     <Main>
-      <Box bg="paper.default" maxW="100vw">
+      <Box bg="paper.default" maxW="100vw" minH="100vh">
         <Topbar />
         <VStack>
           <IndexView id="" hero={hero} />
