@@ -2,6 +2,7 @@ import React from "react";
 import { GetStaticProps, GetStaticPropsContext } from "next";
 /** Data */
 import {
+  getContact,
   getExperience,
   getExperienceMeta,
   getHero,
@@ -11,16 +12,22 @@ import {
 
 /** Components */
 import Main from "layouts/Main";
-import { IndexView, ExperienceView, ProjectsView, Topbar } from "views";
+import {
+  IndexView,
+  ExperienceView,
+  ProjectsView,
+  Topbar,
+  ContactView,
+} from "views";
 import { Box, VStack } from "@chakra-ui/react";
 import {
+  IContact,
   IExperience,
   IExperienceMeta,
   IHero,
   IProject,
   IProjectMeta,
 } from "interfaces/Prismic";
-import exp from "constants";
 
 interface IndexPageProps {
   hero: IHero;
@@ -28,6 +35,7 @@ interface IndexPageProps {
   experienceMeta: IExperienceMeta;
   projects: IProject[];
   projectMeta: IProjectMeta;
+  contact: IContact;
 }
 
 export const IndexPage = ({
@@ -36,6 +44,7 @@ export const IndexPage = ({
   experienceMeta,
   projects = [],
   projectMeta,
+  contact,
 }: IndexPageProps) => {
   return (
     <Main>
@@ -49,6 +58,7 @@ export const IndexPage = ({
             id="experience"
           />
           <ProjectsView projects={projects} meta={projectMeta} id="projects" />
+          <ContactView id="contact" contact={contact} />
         </VStack>
       </Box>
     </Main>
@@ -70,6 +80,8 @@ export const getStaticProps: GetStaticProps = async (
 
   const projectMeta = await getProjectMeta();
 
+  const contact = await getContact();
+
   return {
     props: {
       hero: hero.data,
@@ -77,32 +89,8 @@ export const getStaticProps: GetStaticProps = async (
       experienceMeta: experienceMeta.data,
       projects: projects.map((proj) => ({ id: proj.id, ...proj.data })),
       projectMeta: projectMeta.data,
+      contact: contact.data,
     },
     revalidate: 60,
   };
-};
-
-const contactInfo = {
-  firstName: "Jacob",
-  lastName: "Miller",
-  email: "jacobmillerdev@gmail.com",
-  phone: "",
-  social: {
-    github: {
-      user: "jacobmiller22",
-      link: "https://github.com/jacobmiller22",
-    },
-    linkedin: {
-      user: "jacobmiller22",
-      link: "https://www.linkedin.com/in/jacobmiller22/",
-    },
-    twitter: {
-      user: "jacobmiller22",
-      link: "",
-    },
-    youtube: {
-      user: "Jacob Develops",
-      link: "https://www.youtube.com/channel/UCuNIpl8S8Nk3yCD0p2J2YBA",
-    },
-  },
 };

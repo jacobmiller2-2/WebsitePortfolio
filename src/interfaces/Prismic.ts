@@ -124,3 +124,15 @@ export interface IProjectMeta {
     };
   }[];
 }
+
+export interface ISocial {
+  social_display_text: string;
+  social_link: string;
+  social_provider: string;
+}
+
+export interface IContact {
+  contact_view_title: string;
+  socials: ISocial[];
+  contact_view_social_title: string;
+}

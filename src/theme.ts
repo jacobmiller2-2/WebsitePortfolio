@@ -72,11 +72,66 @@ const _theme: Theme = {
         xs: {},
         sm: { fontSize: "1.25rem", fontWeight: "thin body" },
         md: { fontSize: "2.0rem" },
-        lg: { fontSize: "2.5rem" },
+        lg: { fontSize: "2.25rem" },
         xl: { fontSize: "2.75rem" },
         "2xl": {},
         "3xl": {},
         "4xl": { fontSize: "5.25rem" },
+      },
+    },
+    FormLabel: {
+      baseStyle: {
+        color: "text.primary",
+      },
+    },
+    //@ts-ignore
+    Textarea: {
+      baseStyle: {
+        bgColor: "card.default",
+        color: "text.primary",
+        _autofill: {
+          border: "1px solid",
+          borderColor: "primary.default",
+          bgColor: "red",
+          outline: "none",
+        },
+      },
+      defaultProps: {
+        variant: "none",
+        size: "md",
+      },
+    },
+    //@ts-ignore
+    Input: {
+      baseStyle: {
+        element: {
+          _autofill: {
+            border: "1px solid",
+            borderColor: "primary.default",
+            bgColor: "red",
+            outline: "none",
+          },
+        },
+        field: {
+          color: "text.primary",
+          bgColor: "card.default",
+
+          _focus: {
+            border: "1px solid",
+            borderColor: "primary.default",
+          },
+          _autofill: {
+            border: "1px solid",
+            borderColor: "primary.default",
+            bgColor: "red",
+            outline: "none",
+          },
+        },
+        addon: {},
+      },
+      defaultProps: {
+        variant: "none",
+        size: "md",
       },
     },
     //@ts-ignore
