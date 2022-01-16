@@ -1,11 +1,11 @@
-import Image from "next/image";
+// import Image from "next/image";
 
 /** Interfaces/types */
 
 import { IProject } from "interfaces/Prismic";
 
 /** components */
-import { CardBasic, TechItems } from "components";
+import { CardBasic, TechItems, Image } from "components";
 import { Heading, Text, Box, Divider, HStack } from "@chakra-ui/react";
 import SliceMachine from "components/SliceMachine";
 
@@ -29,7 +29,7 @@ const ProjectCard = ({ project, alt = true }: IProjectCardProps) => {
   const renderContent = () => {
     const cardMargin = {
       marginRight: alt ? "initial" : "-3rem",
-      marginLeft: alt ? "-3rem" : "initial",
+      marginLeft: alt ? ["0rem", "-1rem", "-1.5rem", "-3rem"] : "initial",
     };
 
     const ProjectBody = (
@@ -38,7 +38,9 @@ const ProjectCard = ({ project, alt = true }: IProjectCardProps) => {
         flexDir="column"
         alignItems={alt ? "flex-start" : "flex-end"}
         width="100%"
+        height="100%"
         key="project-body"
+        marginInlineStart={["0rem !important", "0.5rem !important"]}
       >
         {project.is_featured && <Text variant="accent">Featured Project</Text>}
         <Heading as="h3" size="md">
@@ -47,10 +49,9 @@ const ProjectCard = ({ project, alt = true }: IProjectCardProps) => {
 
         <Box
           display="flex"
-          flexDir={["column", "column", "row", "row"]}
+          flexDir={["row", "row", "row", "row"]}
           columnGap="1rem"
           marginTop="0.5rem"
-          // alignItems={["center", "center", "center", "center"]}
         >
           <Box>
             <Text variant="secondary" marginTop=".5rem" as="span">
@@ -79,7 +80,6 @@ const ProjectCard = ({ project, alt = true }: IProjectCardProps) => {
           flexDir="row"
           justifyContent={alt ? "flex-end" : "flex-start"}
         >
-          {/* {TechItems({ techs: project.tech_stack.map(({ tech }) => tech) })} */}
           {TechItems({
             techs: ["react", "rust", "vue", "nodejs"],
           })}
@@ -90,25 +90,23 @@ const ProjectCard = ({ project, alt = true }: IProjectCardProps) => {
     const picture = project.picture_src;
     const ProjectImage = (
       <Box
+        display={["none", "flex", "flex", "flex"]}
         width="100%"
         height="100%"
         key="project-image"
-        display="flex"
         alignItems="center"
         flexDir="column"
+        alignSelf="center"
       >
-        <Box height="100%">
-          <Image
-            src={
-              picture.url ??
-              "https://www.valpo.edu/theology/files/2016/02/640x360.png"
-            }
-            alt={project.picture_alt}
-            width={picture.width}
-            height={picture.height}
-            layout="responsive"
-          />
-        </Box>
+        <Image
+          src={
+            picture.url ??
+            "https://www.valpo.edu/theology/files/2016/02/640x360.png"
+          }
+          alt={project.picture_alt}
+          width={picture.width}
+          height={picture.height}
+        />
       </Box>
     );
 
@@ -118,7 +116,12 @@ const ProjectCard = ({ project, alt = true }: IProjectCardProps) => {
   };
 
   return (
-    <HStack alignItems="flex-start" width="100%" margin="2rem 0 !important">
+    <HStack
+      alignItems="flex-start"
+      width="100%"
+      height="max-content"
+      margin="2rem 0 !important"
+    >
       {renderContent()}
     </HStack>
   );
