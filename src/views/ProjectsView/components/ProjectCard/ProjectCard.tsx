@@ -26,6 +26,8 @@ const ProjectCard = ({ project, alt = true }: IProjectCardProps) => {
     dateOptions
   );
 
+  console.log(project.tech_stack);
+
   const renderContent = () => {
     const cardMargin = {
       marginRight: alt ? "initial" : "-3rem",
@@ -81,7 +83,7 @@ const ProjectCard = ({ project, alt = true }: IProjectCardProps) => {
           justifyContent={alt ? "flex-end" : "flex-start"}
         >
           {TechItems({
-            techs: ["react", "rust", "vue", "nodejs"],
+            techs: project.tech_stack.map(({ tech }) => tech),
           })}
         </Box>
       </Box>
@@ -99,11 +101,9 @@ const ProjectCard = ({ project, alt = true }: IProjectCardProps) => {
         alignSelf="center"
       >
         <Image
-          src={
-            picture.url ??
-            "https://www.valpo.edu/theology/files/2016/02/640x360.png"
-          }
+          src={picture.url}
           alt={project.picture_alt}
+          altText={project.project_name}
           width={picture.width}
           height={picture.height}
         />
