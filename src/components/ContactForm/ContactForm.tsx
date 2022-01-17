@@ -1,14 +1,12 @@
-import { Formik, Field, Form, ErrorMessage } from "formik";
+import { Formik, Field, Form } from "formik";
 /** Interfaces/types */
 
 /** components */
 import {
   FormControl,
-  // FormLabel,
   FormErrorMessage,
   FormHelperText,
   Input,
-  Box,
   VStack,
   Button,
   Textarea,
@@ -16,21 +14,17 @@ import {
 import FormLabel from "../FormLabel";
 
 interface IContactFormProps {
-  onSubmit: () => void;
+  onSubmit: (values: any) => void;
 }
 
 const initialFormValues = { name: "", email: "", message: "" };
 
 const ContactForm = ({ onSubmit }: IContactFormProps) => {
-  // const onFormikSubmit = (values: any, actions: any) => {};
-
   const validateEmail = (value: string, props) => {
-    console.log(props.touched);
     if (
       props.touched.email &&
       (!value || !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value))
     ) {
-      console.log("invalid email");
       return "Invalid email address";
     }
   };
@@ -121,18 +115,11 @@ const ContactForm = ({ onSubmit }: IContactFormProps) => {
                     id="message"
                     placeholder="Message..."
                     borderRadius="0px"
-                    // as="textarea"
-                    // pt="5px"
                   />
                 </FormControl>
               )}
             </Field>
-            <Button
-              mt={4}
-              type="submit"
-              isLoading={props.isSubmitting}
-              // isDisabled={form.errors}
-            >
+            <Button mt={4} type="submit" isLoading={props.isSubmitting}>
               Submit
             </Button>
           </Form>

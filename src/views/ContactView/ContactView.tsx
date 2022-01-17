@@ -12,6 +12,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { ContactForm } from "components";
+import { sendMessageRequest } from "lib/messageApi";
 
 interface IContactViewProps {
   contact: IContact;
@@ -19,7 +20,9 @@ interface IContactViewProps {
 }
 
 const ContactView = ({ contact, ...rest }: IContactViewProps) => {
-  const onSubmit = () => {};
+  const onSubmit = async ({ name, email, message }) => {
+    await sendMessageRequest({ name, sender: email, message });
+  };
 
   return (
     <Container maxW="container.lg" h="100%" minH="100vh">
