@@ -44,7 +44,7 @@ const ContactForm = ({ onSubmit }: IContactFormProps) => {
   };
 
   return (
-    <VStack w="80%" m="auto">
+    <VStack w={["100%", "100%", "80%", "80%"]} m="auto">
       <Formik initialValues={initialFormValues} onSubmit={onSubmit}>
         {(props) => (
           <Form style={{ width: "100%" }} spellCheck={false}>

@@ -30,7 +30,7 @@ const ContactView = ({ contact, ...rest }: IContactViewProps) => {
         <Heading as="h2" size="xl">
           {contact.contact_view_title || "Contact"}
         </Heading>
-        <HStack w="container.lg">
+        <HStack maxW="container.lg" w={["100%", "100%", "80%", "80%"]}>
           <ContactForm onSubmit={onSubmit} />
         </HStack>
         <Heading as="h3" size="lg">

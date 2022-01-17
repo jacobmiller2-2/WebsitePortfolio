@@ -15,11 +15,9 @@ const ContactAPI = async (req: NextApiRequest, res: NextApiResponse) => {
       message: "Bad request",
     });
   }
-  const emailResponse = await sendMessage({ sender, name, message });
+  await sendMessage({ sender, name, message });
 
-  console.log("emailResponserrfw", emailResponse.data);
-
-  return res.status(200).json({});
+  return res.status(202).end();
 };
 
 export default ContactAPI;
