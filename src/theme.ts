@@ -89,6 +89,9 @@ const _theme: Theme = {
       baseStyle: {
         bgColor: "card.default",
         color: "text.primary",
+        _placeholder: {
+          color: "text.secondary",
+        },
         _autofill: {
           border: "1px solid",
           borderColor: "primary.default",
@@ -105,6 +108,7 @@ const _theme: Theme = {
     Input: {
       baseStyle: {
         element: {
+          color: "red",
           _autofill: {
             border: "1px solid",
             borderColor: "primary.default",
@@ -115,6 +119,9 @@ const _theme: Theme = {
         field: {
           color: "text.primary",
           bgColor: "card.default",
+          _placeholder: {
+            color: "text.secondary",
+          },
 
           _focus: {
             border: "1px solid",
@@ -123,11 +130,26 @@ const _theme: Theme = {
           _autofill: {
             border: "1px solid",
             borderColor: "primary.default",
-            bgColor: "red",
             outline: "none",
           },
         },
         addon: {},
+      },
+      defaultProps: {
+        variant: "none",
+        size: "md",
+      },
+    },
+    Form: {
+      baseStyle: {
+        //@ts-ignore
+        container: {},
+        helperText: {
+          color: "text.secondary",
+        },
+        requiredIndicator: {
+          color: "primary.default",
+        },
       },
       defaultProps: {
         variant: "none",
@@ -146,12 +168,8 @@ const _theme: Theme = {
         },
         label: {
           color: "text.primary",
-          bg: "red",
-          // border: "8px solid red",
         },
-        closeButton: {
-          // border: "8px solid red",
-        },
+        closeButton: {},
       },
       defaultProps: {
         variant: "none",

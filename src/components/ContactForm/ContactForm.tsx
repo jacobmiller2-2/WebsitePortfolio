@@ -1,4 +1,5 @@
 import { Formik, Field, Form } from "formik";
+
 /** Interfaces/types */
 
 /** components */
@@ -10,8 +11,8 @@ import {
   VStack,
   Button,
   Textarea,
+  FormLabel,
 } from "@chakra-ui/react";
-import FormLabel from "../FormLabel";
 
 interface IContactFormProps {
   onSubmit: (values: any) => void;
