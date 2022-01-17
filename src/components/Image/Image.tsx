@@ -29,6 +29,8 @@ const Image = ({ width, height, src, alt, altText }: IImageProps) => {
           width={80}
           src="/portfolio_logo_inverted_v5.svg"
           alt="Site Logo"
+          layout="intrinsic"
+          placeholder="blur"
         />
         <Heading as="span" color="card.default">
           {altText || "No image available"}
@@ -39,7 +41,14 @@ const Image = ({ width, height, src, alt, altText }: IImageProps) => {
 
   return (
     <Box>
-      <NextImage width={width} height={height} src={src} alt={alt} />
+      <NextImage
+        width={width}
+        height={height}
+        src={src}
+        alt={alt}
+        layout="intrinsic"
+        placeholder="blur"
+      />
     </Box>
   );
 };
