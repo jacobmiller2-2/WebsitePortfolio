@@ -28,6 +28,7 @@ const Image = ({ width, height, src, alt, altText }: IImageProps) => {
           height={80}
           width={80}
           src="/portfolio_logo_inverted_v5.svg"
+          alt="Site Logo"
         />
         <Heading as="span" color="card.default">
           {altText || "No image available"}
