@@ -30,7 +30,7 @@ const Image = ({ width, height, src, alt, altText }: IImageProps) => {
           src="/portfolio_logo_inverted_v5.svg"
           alt="Site Logo"
           layout="intrinsic"
-          placeholder="blur"
+          // placeholder="blur"
         />
         <Heading as="span" color="card.default">
           {altText || "No image available"}
@@ -47,7 +47,7 @@ const Image = ({ width, height, src, alt, altText }: IImageProps) => {
         src={src}
         alt={alt}
         layout="intrinsic"
-        placeholder="blur"
+        // placeholder="blur"
       />
     </Box>
   );

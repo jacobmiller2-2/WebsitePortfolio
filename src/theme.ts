@@ -183,6 +183,12 @@ const _theme: Theme = {
         fontSize: "1.25rem",
       },
     },
+    LinkOverlay: {
+      baseStyle: {
+        color: "red",
+        fontSize: "1.25rem",
+      },
+    },
   },
   colors: {
     //@ts-ignore

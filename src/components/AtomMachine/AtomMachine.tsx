@@ -27,6 +27,9 @@ interface AtomMachineProps {
       color?: string;
       variant?: string;
     };
+    Link: {
+      fontSize?: string;
+    };
   };
 }
 
@@ -85,7 +88,7 @@ const handleSpans = (
       );
     } else {
     }
-    sections.push(getSpan(span, text, i));
+    sections.push(getSpan(span, text, i, options));
     curr = span.end;
   });
   if (curr < text.length) {
@@ -102,14 +105,14 @@ const getSpanText = (span, text) => {
   return text.substring(span.start, span.end);
 };
 
-const getSpan = (span, text, i?) => {
+const getSpan = (span, text, i?, options?) => {
   switch (span.type as ESpanType) {
     case ESpanType.HYPERLINK:
       const data: IHyperlinkData = span.data;
       if (data.link_type === "Web") {
         return (
           <NextLink href={data.url} passHref key={`link-${i}`}>
-            <Link target={data.target} rel="noreferrer">
+            <Link target={data.target} rel="noreferrer" {...options?.Link}>
               {getSpanText(span, text)}
             </Link>
           </NextLink>
@@ -121,6 +124,7 @@ const getSpan = (span, text, i?) => {
             target={data.target}
             key={`link-${i}`}
             rel="noreferrer"
+            {...options?.Link}
           >
             {text}
           </Link>

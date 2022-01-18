@@ -128,11 +128,22 @@ export interface IProjectMeta {
 export interface ISocial {
   social_display_text: string;
   social_link: string;
-  social_provider: string;
+  social_provider: ESocialProvider;
 }
 
 export interface IContact {
   contact_view_title: string;
+  contact_view_subtext: IAtom[];
   socials: ISocial[];
   contact_view_social_title: string;
+}
+
+export enum ESocialProvider {
+  GITHUB = "github",
+  LINKEDIN = "linkedin",
+  TWITTER = "twitter",
+  INSTAGRAM = "instagram",
+  YOUTUBE = "youtube",
+  FACEBOOK = "facebook",
+  EMAIL = "email",
 }
