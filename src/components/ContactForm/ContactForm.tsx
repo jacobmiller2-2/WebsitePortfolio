@@ -116,6 +116,7 @@ const ContactForm = ({ onSubmit }: IContactFormProps) => {
                     id="message"
                     placeholder="Message..."
                     borderRadius="0px"
+                    rows={6}
                   />
                 </FormControl>
               )}

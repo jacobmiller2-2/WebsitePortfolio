@@ -1,19 +1,12 @@
-/** Interfaces/types */
+import { sendMessageRequest } from "lib/messageApi";
 
+/** Interfaces/types */
 import { IContact } from "interfaces/Prismic";
+
 /** components */
-import {
-  HStack,
-  Box,
-  Text,
-  Heading,
-  Divider,
-  Container,
-  VStack,
-} from "@chakra-ui/react";
+import { HStack, Box, Heading, Container, VStack } from "@chakra-ui/react";
 import { ContactForm, SocialItems } from "components";
 import AtomMachine from "components/AtomMachine";
-import { sendMessageRequest } from "lib/messageApi";
 
 interface IContactViewProps {
   contact: IContact;
@@ -25,9 +18,8 @@ const ContactView = ({ contact, ...rest }: IContactViewProps) => {
     await sendMessageRequest({ name, sender: email, message });
   };
 
-  console.log(contact.contact_view_subtext);
   return (
-    <Container maxW="container.lg" h="100%" minH="100vh">
+    <Container maxW="container.lg" h="100%" minH="100vh" {...rest}>
       <VStack>
         <Heading as="h2" size="xl">
           {contact.contact_view_title || "Contact"}
@@ -35,10 +27,6 @@ const ContactView = ({ contact, ...rest }: IContactViewProps) => {
         <Box maxW={["100%", "90%", "80%", "80%"]} mb="2rem !important">
           {AtomMachine({
             atoms: contact.contact_view_subtext,
-            // options: {
-            //   Text: { variant: "secondary" },
-            //   Link: { fontSize: "md" },
-            // },
           })}
         </Box>
         <HStack

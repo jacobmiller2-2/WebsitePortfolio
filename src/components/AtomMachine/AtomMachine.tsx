@@ -1,5 +1,6 @@
-import NextLink from "next/link";
 import React from "react";
+import NextLink from "next/link";
+
 /** Interfaces/Types */
 import {
   EAtomType,
@@ -9,15 +10,7 @@ import {
 } from "interfaces/Prismic";
 
 /** Components */
-import {
-  Text,
-  Box,
-  Link,
-  ListItem,
-  StylesProvider,
-  ListIcon,
-} from "@chakra-ui/react";
-import { IoOptions } from "react-icons/io5";
+import { Text, Link } from "@chakra-ui/react";
 
 interface AtomMachineProps {
   atoms: IAtom[];

@@ -3,16 +3,7 @@
 import { ESocialProvider, ISocial } from "interfaces/Prismic";
 
 /** components */
-import {
-  Box,
-  Link,
-  List,
-  ListItem,
-  ListIcon,
-  Icon,
-  LinkOverlay,
-  LinkBox,
-} from "@chakra-ui/react";
+import { Box, Link, Icon, LinkOverlay, LinkBox } from "@chakra-ui/react";
 import { FaGithub, FaYoutube, FaLinkedin } from "react-icons/fa";
 
 import { FiMail } from "react-icons/fi";
@@ -23,9 +14,7 @@ interface ISocialItemsProps {
 
 const SocialItems = ({ socials }: ISocialItemsProps) => {
   const renderSocialItems = () => {
-    console.log(socials[0].social_link);
     return socials.map((social: ISocial) => (
-      // <LinkOverlay>
       <LinkBox
         display="flex"
         alignItems="center"

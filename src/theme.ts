@@ -89,6 +89,7 @@ const _theme: Theme = {
       baseStyle: {
         bgColor: "card.default",
         color: "text.primary",
+        fontFamily: "code",
         _placeholder: {
           color: "text.secondary",
         },
@@ -117,6 +118,7 @@ const _theme: Theme = {
           },
         },
         field: {
+          fontFamily: "code",
           color: "text.primary",
           bgColor: "card.default",
           _placeholder: {
