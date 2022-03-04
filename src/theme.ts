@@ -46,15 +46,47 @@ const _theme: Theme = {
     },
 
     //@ts-ignore
+    // Button: {
+    //   baseStyle: {
+    //     bgColor: "paper.primary",
+    //     _hover: {
+    //       bgColor: "card.default",
+    //     },
+    //     color: "primary.default",
+    //     borderColor: "primary.default",
+    //     borderWidth: "1px",
+    //   },
+    //   defaultProps: {
+    //     variant: "none",
+    //     size: "md",
+    //     colorScheme: "none",
+    //   },
+    // },
     Button: {
       baseStyle: {
-        bgColor: "paper.primary",
+        textTransform: "uppercase",
+        bgColor: "primary.default",
         _hover: {
-          bgColor: "card.default",
+          bgColor: "primary.dark",
+
+          borderColor: "primary.dark",
         },
-        color: "primary.default",
+        color: "paper.default",
         borderColor: "primary.default",
         borderWidth: "1px",
+      },
+      variants: {
+        //@ts-ignore
+        secondary: {
+          bgColor: "paper.default",
+          _hover: {
+            bgColor: "paper.light",
+            color: "primary.light",
+            borderColor: "primary.light",
+          },
+          color: "primary.default",
+          borderColor: "primary.default",
+        },
       },
       defaultProps: {
         variant: "none",
@@ -181,8 +213,11 @@ const _theme: Theme = {
     },
     Link: {
       baseStyle: {
-        color: "primary.default",
+        color: "primary.dark",
         fontSize: "1.25rem",
+        _hover: {
+          color: "primary.default",
+        },
       },
     },
     LinkOverlay: {
@@ -195,14 +230,22 @@ const _theme: Theme = {
   colors: {
     //@ts-ignore
     primary: {
-      default: "#29DCE6",
+      // default: "#29DCE6",
+      default: "#ff0040",
+      light: "#FF1E56",
+      dark: "#cc0033",
     },
     paper: {
       default: "#18191A",
+      light: "#1B1C1D",
+      // default: "#151A4F",
+      // default: "#0f0e14",
+      // default: "#1a1816",
     },
     text: { primary: "#E4E6EB", secondary: "#b0b3b8" },
     card: {
       default: "#242526",
+      // default: "#1A1916",
       light: "#3A3B3C",
       dark: "#0A0B0C",
     },

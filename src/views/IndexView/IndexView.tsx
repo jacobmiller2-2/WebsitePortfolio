@@ -66,7 +66,9 @@ const IndexView = ({ hero, ...rest }: IndexViewProps) => {
           {renderTags(hero.tags)}
         </HStack>
         <br />
-        <Box maxW="1200px">{AtomMachine({ atoms: hero.introduction })}</Box>
+        <Box maxW="1200px" lineHeight={"1.75"}>
+          {AtomMachine({ atoms: hero.introduction })}
+        </Box>
         <HStack w="100%" marginTop="2rem !important">
           <LinkBox>
             <Button>
