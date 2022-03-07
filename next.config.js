@@ -25,15 +25,19 @@ const CLOUDFLARE_WEB_ANALTICS_CSP =
 
 const SCRIPT_SRC = `script-src 'self' ${CLOUDFLARE_WEB_ANALTICS_CSP} www.google-analytics.com googletagmanager.com`;
 
+const ContentSecurityPolicy = `
+  default-src 'self' 'unsafe-inline';
+`;
+
 const securityHeaders = [
   {
     key: "X-DNS-Prefetch-Control",
     value: "on",
   },
-  {
-    key: "Content-Security-Policy",
-    value: `default-src 'self'`,
-  },
+  // {
+  //   key: "Content-Security-Policy",
+  //   value: ContentSecurityPolicy.replace(/\s{2,}/g, " ").trim(),
+  // },
   {
     key: "Referrer-Policy",
     value: "strict-origin-when-cross-origin",

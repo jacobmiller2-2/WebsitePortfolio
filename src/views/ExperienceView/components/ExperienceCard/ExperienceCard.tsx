@@ -27,7 +27,7 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
       new Date(experience.end_date).toLocaleString("en-US", dateOptions);
 
   return (
-    <Box>
+    <Box w="100%">
       {!experience.is_other && (
         <Text variant="accent">Featured Experience</Text>
       )}
@@ -56,7 +56,7 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
         </Box>
       </Box>
       {experience.body && experience.body.length > 0 && (
-        <CardBasic marginInline="0" maxW="85%">
+        <CardBasic marginInline="0" maxW={["100%", "100%", "85%", "85%"]}>
           {SliceMachine({
             slices: experience.body,
             options: { Text: { variant: "soft" } },

@@ -13,7 +13,12 @@ interface IMenuToggleProps {
 const MenuToggle = ({ toggle, open }: IMenuToggleProps) => {
   return (
     <Box display={{ base: "block", md: "none" }} onClick={toggle}>
-      <IconButton aria-label={`${open ? "close" : "open"} nav menu`}>
+      <IconButton
+        aria-label={`${open ? "close" : "open"} nav menu`}
+        borderColor="card.light"
+        backgroundColor="card.default"
+        color="paper.dark"
+      >
         {open ? <IoCloseSharp /> : <BiMenu />}
       </IconButton>
     </Box>

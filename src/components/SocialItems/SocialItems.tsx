@@ -25,13 +25,16 @@ const SocialItems = ({ socials }: ISocialItemsProps) => {
         p="1rem"
         m="1rem"
         minW={["225px"]}
+        bgColor="card.default"
       >
         <Icon as={getProviderIcon(social.social_provider)} />
         <LinkOverlay
           href={social.social_link}
           ml="1rem"
-          as={Link}
           fontSize="md"
+          // color="primary.default"
+          color="text.secondary"
+          _hover={{ color: "primary.default" }}
         >
           {social.social_display_text}
         </LinkOverlay>
@@ -48,7 +51,7 @@ const SocialItems = ({ socials }: ISocialItemsProps) => {
 
 export default SocialItems;
 
-const getProviderIcon = (provider: ESocialProvider) => {
+export const getProviderIcon = (provider: ESocialProvider) => {
   switch (provider) {
     case ESocialProvider.GITHUB:
       return Github;

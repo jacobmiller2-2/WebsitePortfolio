@@ -14,7 +14,7 @@ const TechItems = ({ techs }: ITechItemsProps) => {
       techPics[tech] && (
         <Tooltip label={techPics[tech].name} key={`tech-icon-${i}`}>
           <span
-            style={{ width: "30px", paddingLeft: "0px", margin: "0.25rem" }}
+            style={{ width: "30px", paddingLeft: "0px", marginRight: ".5rem" }}
           >
             {techPics[tech].pic()}
           </span>
