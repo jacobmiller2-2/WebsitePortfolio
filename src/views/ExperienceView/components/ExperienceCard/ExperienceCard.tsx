@@ -8,9 +8,10 @@ import { IExperience } from "interfaces/Prismic";
 
 interface IExperienceCardProps {
   experience: IExperience;
+  [rest: string]: any;
 }
 
-const ExperienceCard = ({ experience }: IExperienceCardProps) => {
+const ExperienceCard = ({ experience, ...rest }: IExperienceCardProps) => {
   const dateOptions = {
     year: "numeric",
     month: "long",
@@ -40,6 +41,7 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
         flexDir={["column", "column", "row", "row"]}
         columnGap="1rem"
         marginTop="0.5rem"
+        {...rest}
       >
         <Box>
           <Text variant="secondary" marginTop=".5rem" as="span">

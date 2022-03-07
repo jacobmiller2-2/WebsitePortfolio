@@ -43,7 +43,11 @@ const ExperienceView = ({
 
   const renderOtherExperience = () =>
     otherExperience.map((item, i: number) => (
-      <ExperienceCard experience={item} key={`experience-card-${i}`} />
+      <ExperienceCard
+        experience={item}
+        key={`experience-card-${i}`}
+        mb="1rem"
+      />
     ));
 
   return (
@@ -60,14 +64,20 @@ const ExperienceView = ({
           </Heading>
         </HStack>
         {renderRelevantExperience()}
+        {showOther && renderOtherExperience()}
         <HStack w="100%" justifyContent="center">
-          {!showOther && otherExperience.length > 0 && (
-            <Button onClick={() => setShowOther(true)}>
-              Show Other Work Experience
+          {otherExperience?.length > 0 && (
+            <Button
+              onClick={() =>
+                setShowOther(!showOther && otherExperience?.length > 0)
+              }
+            >
+              {!showOther && otherExperience?.length > 0
+                ? "Show More Experience"
+                : "Show less"}
             </Button>
           )}
         </HStack>
-        {showOther && renderOtherExperience()}
       </VStack>
     </Container>
   );
