@@ -1,4 +1,4 @@
-import { Box, Link, Text } from "@chakra-ui/react";
+import { Box, Link, Text, Heading } from "@chakra-ui/react";
 
 interface IItemProps {
   children: React.ReactNode;
@@ -8,11 +8,11 @@ interface IItemProps {
 
 const Item = ({ children, href, ...rest }: IItemProps) => {
   return (
-    <Link href={href}>
-      <Text display="block" {...rest}>
+    <Heading display="block" size="sm" {...rest}>
+      <Link href={href} color="text.primary">
         {children}
-      </Text>
-    </Link>
+      </Link>
+    </Heading>
   );
 };
 

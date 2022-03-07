@@ -1,12 +1,31 @@
+import { Box, ChakraProvider, VStack } from "@chakra-ui/react";
+import Head from "next/head";
+import { Footer, Topbar } from "views";
+import theme from "theme";
+import { ISocial } from "interfaces/Prismic";
+
 interface IMainProps {
   children: React.ReactNode | React.ReactNode[];
+  socials: ISocial[];
+  head?: JSX.Element;
 }
 
-const Main = ({ children }: IMainProps) => {
+const Main = ({ head, socials, children }: IMainProps) => {
   return (
     <>
-      <main>{children}</main>
-      <footer style={{ minHeight: "5vh" }}></footer>
+      <main>
+        <ChakraProvider theme={theme}>
+          <Head>{head}</Head>
+          <Box bg="paper.default" maxW="100vw" minH="100vh">
+            <VStack>
+              <Topbar />
+              {children}
+            </VStack>
+          </Box>
+
+          <Footer socials={socials ?? []} />
+        </ChakraProvider>
+      </main>
     </>
   );
 };

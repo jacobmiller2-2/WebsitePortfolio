@@ -10,7 +10,7 @@ interface ILogoProps {
 
 const Logo = ({ ...rest }: ILogoProps) => {
   return (
-    <Box {...rest}>
+    <Box display="flex" alignItems="center" {...rest}>
       <Image src="/portfolio_logo_v5.svg" alt="Logo" width="42" height="42" />
     </Box>
   );

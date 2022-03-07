@@ -29,11 +29,11 @@ export const fetchAPI = async ({ query, page = 1, routes = [] }) => {
   return [...new Set(allRoutes)];
 };
 
-export const getHero = async () => {
+export const getHero = async (): Promise<any | undefined> => {
   const query = Prismic.Predicates.at("document.type", "hero");
   const response = await fetchAPI({ query });
 
-  return response[0];
+  return response?.[0];
 };
 
 export const getExperience = async () => {

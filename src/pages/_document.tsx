@@ -1,9 +1,16 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import { _theme } from "theme";
 
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html
+        lang="en"
+        style={{
+          //@ts-ignore
+          backgroundColor: _theme.colors.paper.dark,
+        }}
+      >
         <Head>
           <meta charSet="utf-8" />
           <meta name="theme-color" content="#18191A" />

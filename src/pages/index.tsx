@@ -47,20 +47,15 @@ export const IndexPage = ({
   contact,
 }: IndexPageProps) => {
   return (
-    <Main>
-      <Box bg="paper.default" maxW="100vw" minH="100vh">
-        <Topbar />
-        <VStack>
-          <IndexView id="" hero={hero} />
-          <ExperienceView
-            experience={experience}
-            meta={experienceMeta}
-            id="experience"
-          />
-          <ProjectsView projects={projects} meta={projectMeta} id="projects" />
-          <ContactView id="contact" contact={contact} />
-        </VStack>
-      </Box>
+    <Main socials={contact.socials}>
+      <IndexView id="" hero={hero} />
+      <ExperienceView
+        experience={experience}
+        meta={experienceMeta}
+        id="experience"
+      />
+      <ProjectsView projects={projects} meta={projectMeta} id="projects" />
+      <ContactView id="contact" contact={contact} />
     </Main>
   );
 };
@@ -70,26 +65,26 @@ export default IndexPage;
 export const getStaticProps: GetStaticProps = async (
   ctx: GetStaticPropsContext
 ) => {
-  const hero = await getHero();
+  const hero: any | undefined = await getHero();
 
-  const experience = await getExperience();
+  const experience: any[] = await getExperience();
 
-  const experienceMeta = await getExperienceMeta();
+  const experienceMeta: any | undefined = await getExperienceMeta();
 
-  const projects = await getProjects();
+  const projects: any[] = await getProjects();
 
-  const projectMeta = await getProjectMeta();
+  const projectMeta: any | undefined = await getProjectMeta();
 
-  const contact = await getContact();
+  const contact: any | undefined = await getContact();
 
   return {
     props: {
-      hero: hero.data,
+      hero: hero?.data,
       experience: experience.map((exp) => ({ id: exp.id, ...exp.data })),
-      experienceMeta: experienceMeta.data,
+      experienceMeta: experienceMeta?.data,
       projects: projects.map((proj) => ({ id: proj.id, ...proj.data })),
-      projectMeta: projectMeta.data,
-      contact: contact.data,
+      projectMeta: projectMeta?.data,
+      contact: contact?.data,
     },
     revalidate: 60,
   };

@@ -2,7 +2,7 @@
 import { extendTheme, Theme } from "@chakra-ui/react";
 
 // 2. Extend the theme to include custom colors, fonts, etc
-const _theme: Theme = {
+export const _theme: Theme = {
   fonts: {
     heading:
       "-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Pretendard, Roboto, 'Noto Sans KR', 'Segoe UI', 'Malgun Gothic', sans-serif; ",
@@ -22,6 +22,15 @@ const _theme: Theme = {
     },
   },
   components: {
+    Icon: {
+      variants: {
+        link: {
+          _hover: {
+            fill: "primary.default",
+          },
+        },
+      },
+    },
     Text: {
       baseStyle: {
         color: "text.primary",
@@ -36,6 +45,10 @@ const _theme: Theme = {
         secondary: {
           color: "text.secondary",
           fontSize: "1rem",
+        },
+        tertiary: {
+          color: "text.secondary",
+          fontSize: "0.75rem",
         },
         soft: {
           color: "text.secondary",
@@ -101,8 +114,8 @@ const _theme: Theme = {
         // fontWeight: "very fine",
       },
       sizes: {
-        xs: {},
-        sm: { fontSize: "1.25rem", fontWeight: "thin body" },
+        xs: { fontSize: "1.15rem", fontWeight: "thin body" },
+        sm: { fontSize: "1.5rem" },
         md: { fontSize: "2.0rem" },
         lg: { fontSize: "2.25rem" },
         xl: { fontSize: "2.75rem" },
@@ -212,11 +225,34 @@ const _theme: Theme = {
       },
     },
     Link: {
+      //@ts-ignore
       baseStyle: {
         color: "primary.dark",
         fontSize: "1.25rem",
+        position: "relative",
         _hover: {
           color: "primary.default",
+        },
+
+        _after: {
+          content: '""',
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          width: "100%",
+          height: "0.1em",
+          backgroundColor: "primary.default",
+          opacity: 0,
+          transition: "opacity 300ms, transform 300ms",
+        },
+        transform: "scale(0)",
+        transformOrigin: "center",
+      },
+      //@ts-ignore
+      variants: {
+        secondary: {
+          fontSize: "1rem",
+          color: "text.secondary",
         },
       },
     },
@@ -238,14 +274,11 @@ const _theme: Theme = {
     paper: {
       default: "#18191A",
       light: "#1B1C1D",
-      // default: "#151A4F",
-      // default: "#0f0e14",
-      // default: "#1a1816",
+      dark: "#040404",
     },
     text: { primary: "#E4E6EB", secondary: "#b0b3b8" },
     card: {
       default: "#242526",
-      // default: "#1A1916",
       light: "#3A3B3C",
       dark: "#0A0B0C",
     },

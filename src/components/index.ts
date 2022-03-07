@@ -4,3 +4,6 @@ export { default as TechItems } from "./TechItems";
 export { default as Image } from "./Image";
 export { default as ContactForm } from "./ContactForm";
 export { default as SocialItems } from "./SocialItems";
+export { default as Heading } from "./Heading";
+export { default as Spacer } from "./Spacer";
+export { default as MinSocialItems } from "./MinSocialItems";

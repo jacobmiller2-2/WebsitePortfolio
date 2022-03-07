@@ -26,8 +26,8 @@ const Topbar = ({ ...rest }: ITopbarProps) => {
           pt={[4, 4, 0, 0]}
         >
           <LinkItem href="/#experience">Experience</LinkItem>
+          <LinkItem href="/archive">Archive</LinkItem>
           <LinkItem href="/#about">About</LinkItem>
-          <LinkItem href="/#projects">Projects</LinkItem>
         </Stack>
       </Box>
     );

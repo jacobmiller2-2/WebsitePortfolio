@@ -6,3 +6,4 @@ export { default as SkillsView } from "./SkillsView";
 export { default as ContactView } from "./ContactView";
 export { default as Footer } from "./Footer";
 export { default as ServiceView } from "./ServiceView";
+export { default as ArchiveView } from "./ArchiveView";
