@@ -2,10 +2,9 @@
 import { ISocial } from "interfaces/Prismic";
 
 /** Components */
-import { Box, Icon, LinkOverlay, Link, LinkBox } from "@chakra-ui/react";
+import { Box, Icon, LinkOverlay, LinkBox } from "@chakra-ui/react";
 import React from "react";
 import { getIcon } from "components/Icons";
-import styled from "@emotion/styled";
 
 type SocialItemsProps = {
   socials: ISocial[];
