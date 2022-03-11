@@ -40,5 +40,6 @@ export const getStaticProps = async () => {
       projects: projects.map((proj) => ({ id: proj.id, ...proj.data })),
       contact: contact?.data,
     },
+    revalidate: 60,
   };
 };
