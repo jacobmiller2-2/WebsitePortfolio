@@ -12,7 +12,7 @@ interface ISocialItemsProps {
 
 const SocialItems = ({ socials }: ISocialItemsProps) => {
   const renderSocialItems = () => {
-    return socials.map((social: ISocial) => (
+    return socials.map((social: ISocial, i: number) => (
       <LinkBox
         display="flex"
         alignItems="center"
@@ -24,6 +24,7 @@ const SocialItems = ({ socials }: ISocialItemsProps) => {
         m="1rem"
         minW={["225px"]}
         bgColor="card.default"
+        key={`social-item-${i}`}
       >
         <Icon as={getIcon(social.social_provider)} fill="black" />
         <LinkOverlay
