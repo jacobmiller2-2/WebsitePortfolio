@@ -20,7 +20,11 @@ export const getIcon = (provider: ESocialProvider) => {
   }
 };
 
+export { default as IconList } from "./IconList";
+
 export { default as Github } from "./Github";
 export { default as Linkedin } from "./Linkedin";
 export { default as Email } from "./Email";
 export { default as Youtube } from "./Youtube";
+
+export { default as External } from "./External";

@@ -6,8 +6,20 @@ import { IProject } from "interfaces/Prismic";
 
 /** components */
 import { CardBasic, TechItems, Image } from "components";
-import { Heading, Text, Box, Divider, HStack } from "@chakra-ui/react";
+import {
+  Heading,
+  Text,
+  Box,
+  Divider,
+  HStack,
+  Icon,
+  LinkBox,
+  LinkOverlay,
+  Link,
+  As,
+} from "@chakra-ui/react";
 import SliceMachine from "components/SliceMachine";
+import { Github, External, IconList } from "components/Icons";
 
 interface IProjectCardProps {
   project: IProject;
@@ -31,6 +43,13 @@ const ProjectCard = ({ project, alt = true }: IProjectCardProps) => {
       marginRight: alt ? "initial" : ["0rem", "-1rem", "-1.5rem", "-3rem"],
       marginLeft: alt ? ["0rem", "-1rem", "-1.5rem", "-3rem"] : "initial",
     };
+
+    const externalLink = project.links.find(
+      (link) => link.platform === "project"
+    )?.link;
+    const githubLink = project.links.find(
+      (link) => link.platform === "github"
+    )?.link;
 
     const ProjectBody = (
       <Box
@@ -73,17 +92,47 @@ const ProjectCard = ({ project, alt = true }: IProjectCardProps) => {
               slices: project.body,
               options: { Text: { variant: "soft" } },
             })}
+            <Box
+              display="flex"
+              flexDir="row"
+              justifyContent="space-between"
+              mt="2"
+            >
+              <IconList justifyContent={!alt ? "flex-end" : "flex-start"}>
+                {githubLink && (
+                  <LinkBox>
+                    <LinkOverlay
+                      href={githubLink?.url}
+                      target={githubLink?.target}
+                    >
+                      <Icon as={Github(24) as As<() => JSX.Element>} />
+                    </LinkOverlay>
+                  </LinkBox>
+                )}
+
+                {externalLink && (
+                  <LinkBox>
+                    <LinkOverlay
+                      href={externalLink?.url}
+                      target={externalLink?.target}
+                    >
+                      <Icon as={External(24) as As<() => JSX.Element>} />
+                    </LinkOverlay>
+                  </LinkBox>
+                )}
+              </IconList>
+              <Box
+                display="flex"
+                flexDir="row"
+                justifyContent={alt ? "flex-end" : "flex-start"}
+              >
+                {TechItems({
+                  techs: project.tech_stack.map(({ tech }) => tech),
+                })}
+              </Box>
+            </Box>
           </CardBasic>
         )}
-        <Box
-          display="flex"
-          flexDir="row"
-          justifyContent={alt ? "flex-end" : "flex-start"}
-        >
-          {TechItems({
-            techs: project.tech_stack.map(({ tech }) => tech),
-          })}
-        </Box>
       </Box>
     );
 
