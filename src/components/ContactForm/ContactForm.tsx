@@ -45,11 +45,9 @@ const ContactForm = ({ onSubmit }: IContactFormProps) => {
   };
 
   const handleSubmit = async (values: any, actions) => {
-    console.log("handleSubmit", values);
     await onSubmit(values);
     actions.setSubmitting(false);
     actions.resetForm();
-    console.log("reset");
   };
 
   return (
