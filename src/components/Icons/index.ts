@@ -4,21 +4,34 @@ import Email from "./Email";
 import Youtube from "./Youtube";
 
 import { ESocialProvider } from "interfaces/Prismic";
+import React from "react";
 
-export const getIcon = (provider: ESocialProvider) => {
+export const getIcon = (
+  provider: ESocialProvider,
+  size?: number
+): JSX.Element => {
   switch (provider) {
     case ESocialProvider.GITHUB:
-      return Github;
+      //@ts-ignore
+      return SizedIcon(size || 32, Github);
     case ESocialProvider.LINKEDIN:
-      return Linkedin;
+      //@ts-ignore
+      return SizedIcon(size || 32, Linkedin);
     case ESocialProvider.EMAIL:
-      return Email;
+      //@ts-ignore
+      return SizedIcon(size || 32, Email);
     case ESocialProvider.YOUTUBE:
-      return Youtube;
+      //@ts-ignore
+      return SizedIcon(size || 32, Youtube);
     default:
       return null;
   }
 };
+
+export const SizedIcon = (
+  size: number,
+  icon: (size: number) => React.ReactElement
+) => icon(size);
 
 export { default as IconList } from "./IconList";
 

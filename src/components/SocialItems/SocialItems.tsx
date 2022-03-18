@@ -26,6 +26,7 @@ const SocialItems = ({ socials }: ISocialItemsProps) => {
         bgColor="card.default"
         key={`social-item-${i}`}
       >
+        {/* @ts-ignore */}
         <Icon as={getIcon(social.social_provider)} fill="black" />
         <LinkOverlay
           href={social.social_link}
