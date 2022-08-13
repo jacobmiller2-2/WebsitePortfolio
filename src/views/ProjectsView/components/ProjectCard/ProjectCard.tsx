@@ -2,10 +2,10 @@
 
 /** Interfaces/types */
 
-import { IProject } from "interfaces/Prismic";
+import { IProject } from "lib/interfaces/Prismic";
 
 /** components */
-import { CardBasic, TechItems, Image } from "components";
+import { CardBasic, TechItems, Image } from "lib/components";
 import {
   Heading,
   Text,
@@ -18,8 +18,8 @@ import {
   Link,
   As,
 } from "@chakra-ui/react";
-import SliceMachine from "components/SliceMachine";
-import { Github, External, IconList } from "components/Icons";
+import SliceMachine from "lib/components/SliceMachine";
+import { Github, External, IconList } from "lib/components/Icons";
 
 interface IProjectCardProps {
   project: IProject;

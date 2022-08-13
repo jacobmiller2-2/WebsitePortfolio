@@ -1,12 +1,12 @@
 import { sendMessageRequest } from "lib/messageApi";
 
 /** Interfaces/types */
-import { IContact } from "interfaces/Prismic";
+import { IContact } from "lib/interfaces/Prismic";
 
 /** components */
 import { HStack, Box, Heading, Container, VStack } from "@chakra-ui/react";
-import { ContactForm, SocialItems } from "components";
-import AtomMachine from "components/AtomMachine";
+import { ContactForm, SocialItems } from "lib/components";
+import AtomMachine from "lib/components/AtomMachine";
 
 interface IContactViewProps {
   contact: IContact;

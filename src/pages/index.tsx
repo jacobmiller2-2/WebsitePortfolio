@@ -27,7 +27,7 @@ import {
   IHero,
   IProject,
   IProjectMeta,
-} from "interfaces/Prismic";
+} from "lib/interfaces/Prismic";
 
 interface IndexPageProps {
   hero: IHero;

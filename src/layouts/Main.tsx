@@ -1,8 +1,8 @@
 import { Box, ChakraProvider, VStack } from "@chakra-ui/react";
 import Head from "next/head";
 import { Footer, Topbar } from "views";
-import theme from "theme";
-import { ISocial } from "interfaces/Prismic";
+import theme from "lib/theme";
+import { ISocial } from "lib/interfaces/Prismic";
 
 interface IMainProps {
   children: React.ReactNode | React.ReactNode[];

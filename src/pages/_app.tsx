@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { AppProps } from "next/app";
 import * as gtag from "lib/gtag";
 import { ChakraProvider } from "@chakra-ui/react";
-import theme from "theme";
+import theme from "lib/theme";
 import Head from "next/head";
 
 function App({ Component, pageProps }: AppProps) {

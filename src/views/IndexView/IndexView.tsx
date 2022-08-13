@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 /** Interfaces/Types */
-import { IHero } from "interfaces/Prismic";
+import { IHero } from "lib/interfaces/Prismic";
 
 /** Components */
 import {
@@ -15,7 +15,7 @@ import {
   Box,
   Button,
 } from "@chakra-ui/react";
-import AtomMachine from "components/AtomMachine";
+import AtomMachine from "lib/components/AtomMachine";
 
 interface IndexViewProps {
   hero: IHero;

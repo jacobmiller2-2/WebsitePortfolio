@@ -1,10 +1,10 @@
 /** Interfaces/types */
 
-import { ISocial } from "interfaces/Prismic";
+import { ISocial } from "lib/interfaces/Prismic";
 
 /** components */
 import { Box, Link, Icon, LinkOverlay, LinkBox } from "@chakra-ui/react";
-import { getIcon } from "components/Icons";
+import { getIcon } from "lib/components/Icons";
 
 interface ISocialItemsProps {
   socials: ISocial[];

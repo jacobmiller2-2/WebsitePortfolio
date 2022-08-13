@@ -3,7 +3,7 @@ import Linkedin from "./Linkedin";
 import Email from "./Email";
 import Youtube from "./Youtube";
 
-import { ESocialProvider } from "interfaces/Prismic";
+import { ESocialProvider } from "lib/interfaces/Prismic";
 
 export const getIcon = (provider: ESocialProvider) => {
   switch (provider) {

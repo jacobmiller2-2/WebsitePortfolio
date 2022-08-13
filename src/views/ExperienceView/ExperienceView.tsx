@@ -12,8 +12,8 @@ import {
   Button,
   Box,
 } from "@chakra-ui/react";
-import AtomMachine from "components/AtomMachine";
-import { IExperience, IExperienceMeta } from "interfaces/Prismic";
+import AtomMachine from "lib/components/AtomMachine";
+import { IExperience, IExperienceMeta } from "lib/interfaces/Prismic";
 import ExperienceCard from "./components/ExperienceCard/ExperienceCard";
 
 interface IExperienceViewProps {

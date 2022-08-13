@@ -2,7 +2,7 @@
 
 /** components */
 import { Container, VStack, Heading, HStack } from "@chakra-ui/react";
-import { IProject, IProjectMeta } from "interfaces/Prismic";
+import { IProject, IProjectMeta } from "lib/interfaces/Prismic";
 import { ProjectCard } from "./components";
 
 interface IProjectsViewProps {
