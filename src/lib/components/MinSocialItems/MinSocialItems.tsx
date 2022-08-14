@@ -16,7 +16,7 @@ const MinSocialItems = ({ socials, ...rest }: SocialItemsProps) => {
     return socials.map((social: ISocial, i: number) => {
       return (
         <LinkBox m="1" key={`min-social-item-${i}`}>
-          <Icon as={getIcon(social.social_provider)} />
+          <Icon as={getIcon(social.social_provider)} fill="black" />
           <LinkOverlay href={social.social_link}></LinkOverlay>
         </LinkBox>
       );

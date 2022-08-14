@@ -7,3 +7,4 @@ export { default as SocialItems } from "./SocialItems";
 export { default as Heading } from "./Heading";
 export { default as Spacer } from "./Spacer";
 export { default as MinSocialItems } from "./MinSocialItems";
+export { default as Section } from "./Section";

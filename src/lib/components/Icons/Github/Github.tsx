@@ -4,9 +4,9 @@ const defaultProps = {
   size: 32,
   fill: "white",
 };
-const Github = (size?: number) => {
+const Github = ({ size }: { size?: number }) => {
   if (size) {
-    return () => <FaGithub {...defaultProps} size={size} />;
+    return <FaGithub {...defaultProps} size={size} />;
   }
   return <FaGithub {...defaultProps} />;
 };

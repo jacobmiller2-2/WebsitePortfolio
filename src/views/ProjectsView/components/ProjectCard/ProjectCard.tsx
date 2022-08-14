@@ -105,7 +105,12 @@ const ProjectCard = ({ project, alt = true }: IProjectCardProps) => {
                       href={githubLink?.url}
                       target={githubLink?.target}
                     >
-                      <Icon as={Github(24) as As<() => JSX.Element>} />
+                      {/* <Icon
+                        as={Github({ size: 24 }) as As<() => JSX.Element>}
+                      /> */}
+                      <Icon height={30} width={30}>
+                        <Github size={24} />
+                      </Icon>
                     </LinkOverlay>
                   </LinkBox>
                 )}

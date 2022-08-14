@@ -5,10 +5,10 @@ import Youtube from "./Youtube";
 
 import { ESocialProvider } from "lib/interfaces/Prismic";
 
-export const getIcon = (provider: ESocialProvider) => {
+export const getIcon = (provider: ESocialProvider): (() => JSX.Element) => {
   switch (provider) {
     case ESocialProvider.GITHUB:
-      return Github;
+      return Github as () => JSX.Element;
     case ESocialProvider.LINKEDIN:
       return Linkedin;
     case ESocialProvider.EMAIL:
