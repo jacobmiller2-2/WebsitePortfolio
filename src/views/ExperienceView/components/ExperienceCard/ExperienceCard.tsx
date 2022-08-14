@@ -1,10 +1,10 @@
 /** Interfaces/types */
 
 /** Components */
-import { CardBasic } from "lib/components";
+import { CardBasic } from "components";
 import { Heading, Text, Box, Divider } from "@chakra-ui/react";
-import SliceMachine from "lib/components/SliceMachine";
-import { IExperience } from "lib/interfaces/Prismic";
+import SliceMachine from "components/SliceMachine";
+import { IExperience } from "interfaces/Prismic";
 
 interface IExperienceCardProps {
   experience: IExperience;

@@ -1,9 +1,9 @@
 /** Components */
 import { Container, Text, VStack } from "@chakra-ui/react";
-import { Heading } from "lib/components";
-import { IProject } from "lib/interfaces/Prismic";
+import { Heading } from "components";
+import { IProject } from "interfaces/Prismic";
 import React from "react";
-import { isSameYear } from "lib/utils";
+import { isSameYear } from "utils";
 import { ProjectCard } from "./components";
 
 type ArchiveViewProps = {
