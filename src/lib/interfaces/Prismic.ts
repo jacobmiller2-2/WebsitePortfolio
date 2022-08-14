@@ -104,7 +104,14 @@ export interface IProject {
   project_name: string;
   is_featured: boolean;
   tech_stack: any[];
-  links: any[];
+  links: {
+    platform: "github" | "project" | "docker";
+    link: {
+      url: string;
+      link_type: string;
+      target: string;
+    };
+  }[];
   creation_date: string;
   latest_version: string;
   picture_src: {

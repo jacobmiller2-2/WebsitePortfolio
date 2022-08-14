@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 
 interface IContactFormProps {
-  onSubmit: (values: any) => void;
+  onSubmit: (values: any) => Promise<void>;
 }
 
 const initialFormValues = { name: "", email: "", message: "" };
@@ -44,9 +44,15 @@ const ContactForm = ({ onSubmit }: IContactFormProps) => {
     }
   };
 
+  const handleSubmit = async (values: any, actions) => {
+    await onSubmit(values);
+    actions.setSubmitting(false);
+    actions.resetForm();
+  };
+
   return (
     <VStack w={["100%", "100%", "80%", "80%"]} m="auto">
-      <Formik initialValues={initialFormValues} onSubmit={onSubmit}>
+      <Formik initialValues={initialFormValues} onSubmit={handleSubmit}>
         {(props) => (
           <Form style={{ width: "100%" }} spellCheck={false}>
             <Field

@@ -25,7 +25,7 @@ export const sendMessage = async ({ sender, name, message }) => {
       },
     });
 
-    console.log("messgeresponse ", res);
+    // console.log("messgeresponse ", res);
 
     return res.data;
   } catch (err) {
