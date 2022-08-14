@@ -1,7 +1,7 @@
 /** Interfaces/types */
 
 /** components */
-import techPics from "lib/techPics";
+import techPics from "techPics";
 import { Tooltip } from "@chakra-ui/react";
 
 interface ITechItemsProps {

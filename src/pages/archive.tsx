@@ -8,7 +8,7 @@ import { getContact, getProjects } from "lib/contentApi";
 /** Components */
 import Main from "layouts/Main";
 import { ArchiveView } from "views";
-import { IContact, IProject } from "lib/interfaces/Prismic";
+import { IContact, IProject } from "interfaces/Prismic";
 
 type ArchivePageProps = {
   projects: IProject[];

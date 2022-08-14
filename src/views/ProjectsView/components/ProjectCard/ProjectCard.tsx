@@ -2,10 +2,10 @@
 
 /** Interfaces/types */
 
-import { IProject } from "lib/interfaces/Prismic";
+import { IProject } from "interfaces/Prismic";
 
 /** components */
-import { CardBasic, TechItems, Image } from "lib/components";
+import { CardBasic, TechItems, Image } from "components";
 import {
   Heading,
   Text,
@@ -18,8 +18,10 @@ import {
   Link,
   As,
 } from "@chakra-ui/react";
+
 import SliceMachine from "lib/components/SliceMachine";
 import { Github, External, IconList } from "lib/components/Icons";
+
 
 interface IProjectCardProps {
   project: IProject;
@@ -105,12 +107,7 @@ const ProjectCard = ({ project, alt = true }: IProjectCardProps) => {
                       href={githubLink?.url}
                       target={githubLink?.target}
                     >
-                      {/* <Icon
-                        as={Github({ size: 24 }) as As<() => JSX.Element>}
-                      /> */}
-                      <Icon height={30} width={30}>
-                        <Github size={24} />
-                      </Icon>
+                      <Icon as={Github(24) as As<() => JSX.Element>} />
                     </LinkOverlay>
                   </LinkBox>
                 )}
