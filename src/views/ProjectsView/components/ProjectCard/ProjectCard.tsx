@@ -18,8 +18,10 @@ import {
   Link,
   As,
 } from "@chakra-ui/react";
-import SliceMachine from "components/SliceMachine";
-import { Github, External, IconList, Docker } from "components/Icons";
+
+import SliceMachine from "lib/components/SliceMachine";
+import { Github, External, IconList } from "lib/components/Icons";
+
 
 interface IProjectCardProps {
   project: IProject;
@@ -44,10 +46,12 @@ const ProjectCard = ({ project, alt = true }: IProjectCardProps) => {
       marginLeft: alt ? ["0rem", "-1rem", "-1.5rem", "-3rem"] : "initial",
     };
 
-    let linkMap = {};
-    linkKeys.forEach((key) => {
-      linkMap[key] = project.links.find((link) => link.platform === key)?.link;
-    });
+    const externalLink = project.links.find(
+      (link) => link.platform === "project"
+    )?.link;
+    const githubLink = project.links.find(
+      (link) => link.platform === "github"
+    )?.link;
 
     const ProjectBody = (
       <Box
@@ -90,42 +94,31 @@ const ProjectCard = ({ project, alt = true }: IProjectCardProps) => {
               slices: project.body,
               options: { Text: { variant: "soft" } },
             })}
-
             <Box
               display="flex"
               flexDir="row"
               justifyContent="space-between"
-              mt="3"
+              mt="2"
             >
               <IconList justifyContent={!alt ? "flex-end" : "flex-start"}>
-                {linkMap["github"] && (
+                {githubLink && (
                   <LinkBox>
                     <LinkOverlay
-                      href={linkMap["github"]?.url}
-                      target={linkMap["github"]?.target}
+                      href={githubLink?.url}
+                      target={githubLink?.target}
                     >
                       <Icon as={Github(24) as As<() => JSX.Element>} />
                     </LinkOverlay>
                   </LinkBox>
                 )}
 
-                {linkMap["project"] && (
+                {externalLink && (
                   <LinkBox>
                     <LinkOverlay
-                      href={linkMap["project"]?.url}
-                      target={linkMap["project"]?.target}
+                      href={externalLink?.url}
+                      target={externalLink?.target}
                     >
                       <Icon as={External(24) as As<() => JSX.Element>} />
-                    </LinkOverlay>
-                  </LinkBox>
-                )}
-                {linkMap["docker"] && (
-                  <LinkBox>
-                    <LinkOverlay
-                      href={linkMap["docker"]?.url}
-                      target={linkMap["docker"]?.target}
-                    >
-                      <Icon as={Docker(24) as As<() => JSX.Element>} />
                     </LinkOverlay>
                   </LinkBox>
                 )}
@@ -184,9 +177,3 @@ const ProjectCard = ({ project, alt = true }: IProjectCardProps) => {
 };
 
 export default ProjectCard;
-
-const linkKeys: ("github" | "project" | "docker")[] = [
-  "github",
-  "project",
-  "docker",
-];
