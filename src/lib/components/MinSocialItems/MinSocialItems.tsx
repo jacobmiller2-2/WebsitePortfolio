@@ -16,12 +16,7 @@ const MinSocialItems = ({ socials, ...rest }: SocialItemsProps) => {
     return socials.map((social: ISocial, i: number) => {
       return (
         <LinkBox m="1" key={`min-social-item-${i}`}>
-<<<<<<< HEAD:src/lib/components/MinSocialItems/MinSocialItems.tsx
           <Icon as={getIcon(social.social_provider)} fill="black" />
-=======
-          {/* @ts-ignore */}
-          <Icon as={getIcon(social.social_provider)} />
->>>>>>> f23b7c8f1929274a6000afef06956b6ce71be759:src/components/MinSocialItems/MinSocialItems.tsx
           <LinkOverlay href={social.social_link}></LinkOverlay>
         </LinkBox>
       );
