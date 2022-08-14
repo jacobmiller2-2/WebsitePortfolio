@@ -1,9 +1,9 @@
 /** Interfaces/types */
 
-import { IAtom, ISlice } from "lib/interfaces/Prismic";
+import { IAtom, ISlice } from "interfaces/Prismic";
 
 /** Components */
-import AtomMachine from "lib/components/AtomMachine";
+import AtomMachine from "components/AtomMachine";
 import { List, ListItem } from "@chakra-ui/react";
 
 interface IUnorderedListProps {

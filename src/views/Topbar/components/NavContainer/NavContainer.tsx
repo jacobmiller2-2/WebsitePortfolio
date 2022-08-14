@@ -1,5 +1,5 @@
 import React from "react";
-import useScroll from "lib/hooks/useScroll";
+import useScroll from "hooks/useScroll";
 /** Interfaces/types */
 
 /** Components */
