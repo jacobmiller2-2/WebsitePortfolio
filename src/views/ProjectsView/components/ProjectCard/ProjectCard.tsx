@@ -18,13 +18,9 @@ import {
   Link,
   As,
 } from "@chakra-ui/react";
-<<<<<<< HEAD
+
 import SliceMachine from "lib/components/SliceMachine";
 import { Github, External, IconList } from "lib/components/Icons";
-=======
-import SliceMachine from "components/SliceMachine";
-import { Github, External, IconList, Docker } from "components/Icons";
->>>>>>> f23b7c8f1929274a6000afef06956b6ce71be759
 
 interface IProjectCardProps {
   project: IProject;
