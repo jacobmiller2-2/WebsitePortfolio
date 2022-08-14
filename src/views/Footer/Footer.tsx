@@ -2,8 +2,8 @@
 
 /** components */
 import { Box, Link, Text } from "@chakra-ui/react";
-import { MinSocialItems } from "components";
-import { ISocial } from "interfaces/Prismic";
+import { MinSocialItems } from "lib/components";
+import { ISocial } from "lib/interfaces/Prismic";
 import NextLink from "next/link";
 
 interface IFooterProps {

@@ -6,7 +6,7 @@
  */
 
 /** Interfaces / Types */
-import { ISlice, ESliceType } from "interfaces/Prismic";
+import { ISlice, ESliceType } from "lib/interfaces/Prismic";
 
 /** Components */
 import { UnorderedList, RichText } from "./Slices";

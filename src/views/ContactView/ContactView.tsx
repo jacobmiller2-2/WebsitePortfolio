@@ -1,12 +1,12 @@
 import { sendMessageRequest } from "lib/messageApi";
 
 /** Interfaces/types */
-import { IContact } from "interfaces/Prismic";
+import { IContact } from "lib/interfaces/Prismic";
 
 /** components */
 import { HStack, Box, Heading, Container, VStack } from "@chakra-ui/react";
-import { ContactForm, SocialItems } from "components";
-import AtomMachine from "components/AtomMachine";
+import { ContactForm, Section, SocialItems } from "lib/components";
+import AtomMachine from "lib/components/AtomMachine";
 
 interface IContactViewProps {
   contact: IContact;
@@ -19,7 +19,7 @@ const ContactView = ({ contact, ...rest }: IContactViewProps) => {
   };
 
   return (
-    <Container maxW="container.lg" h="100%" minH="100vh" {...rest}>
+    <Section {...rest}>
       <VStack>
         <Heading as="h2" size="xl">
           {contact.contact_view_title || "Contact"}
@@ -41,7 +41,7 @@ const ContactView = ({ contact, ...rest }: IContactViewProps) => {
         </Heading>
         <VStack spacing={2}>{SocialItems({ socials: contact.socials })}</VStack>
       </VStack>
-    </Container>
+    </Section>
   );
 };
 

@@ -12,9 +12,10 @@ import {
   Button,
   Box,
 } from "@chakra-ui/react";
-import AtomMachine from "components/AtomMachine";
-import { IExperience, IExperienceMeta } from "interfaces/Prismic";
+import AtomMachine from "lib/components/AtomMachine";
+import { IExperience, IExperienceMeta } from "lib/interfaces/Prismic";
 import ExperienceCard from "./components/ExperienceCard/ExperienceCard";
+import { Section } from "lib/components";
 
 interface IExperienceViewProps {
   experience: IExperience[];
@@ -27,7 +28,6 @@ const ExperienceView = ({
   meta,
   ...rest
 }: IExperienceViewProps) => {
-  // console.log(meta.experience_order);
   const [showOther, setShowOther] = useState(false);
 
   const items = getExperienceFromOrder(experience, meta.experience_order);
@@ -51,7 +51,7 @@ const ExperienceView = ({
     ));
 
   return (
-    <Container maxW="container.lg" h="100%" minH="100vh" {...rest}>
+    <Section {...rest}>
       <VStack spacing={2} align="flex-start" justifyContent="flex-start">
         <HStack
           w="100%"
@@ -79,7 +79,7 @@ const ExperienceView = ({
           )}
         </HStack>
       </VStack>
-    </Container>
+    </Section>
   );
 };
 

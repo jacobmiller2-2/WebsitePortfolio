@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import { GetStaticProps, GetStaticPropsContext } from "next";
 /** Data */
 import {
@@ -18,6 +19,7 @@ import {
   ProjectsView,
   Topbar,
   ContactView,
+  Footer,
 } from "views";
 import { Box, VStack } from "@chakra-ui/react";
 import {
@@ -27,7 +29,7 @@ import {
   IHero,
   IProject,
   IProjectMeta,
-} from "interfaces/Prismic";
+} from "lib/interfaces/Prismic";
 
 interface IndexPageProps {
   hero: IHero;
@@ -48,7 +50,10 @@ export const IndexPage = ({
 }: IndexPageProps) => {
   return (
     <Main socials={contact.socials}>
-      <IndexView id="" hero={hero} />
+      <Head>
+        <title>Jacob Miller</title>
+      </Head>
+      <IndexView id="root" hero={hero} />
       <ExperienceView
         experience={experience}
         meta={experienceMeta}

@@ -7,7 +7,7 @@ import {
   ESpanType,
   IAtom,
   IHyperlinkData,
-} from "interfaces/Prismic";
+} from "lib/interfaces/Prismic";
 
 /** Components */
 import { Text, Link } from "@chakra-ui/react";

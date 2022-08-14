@@ -1,7 +1,5 @@
-import Head from "next/head";
-
 /** Interfaces/Types */
-import { IHero } from "interfaces/Prismic";
+import { IHero } from "lib/interfaces/Prismic";
 
 /** Components */
 import {
@@ -15,7 +13,8 @@ import {
   Box,
   Button,
 } from "@chakra-ui/react";
-import AtomMachine from "components/AtomMachine";
+import AtomMachine from "lib/components/AtomMachine";
+import { Section } from "lib/components";
 
 interface IndexViewProps {
   hero: IHero;
@@ -34,17 +33,7 @@ const IndexView = ({ hero, ...rest }: IndexViewProps) => {
   };
 
   return (
-    <Container
-      maxW="container.lg"
-      display="flex"
-      alignItems="center"
-      h={["100%", "100%", "100vh", "100vh"]}
-      mh="100vh"
-      {...rest}
-    >
-      <Head>
-        <title>Jacob Miller</title>
-      </Head>
+    <Section {...rest}>
       <VStack spacing={2} align="flex-start" maxW="100%">
         <Heading as="h6" size="sm">
           {hero.prelude}
@@ -77,7 +66,7 @@ const IndexView = ({ hero, ...rest }: IndexViewProps) => {
           </LinkBox>
         </HStack>
       </VStack>
-    </Container>
+    </Section>
   );
 };
 export default IndexView;

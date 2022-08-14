@@ -1,10 +1,10 @@
 /** Interfaces/types */
-import { ISocial } from "interfaces/Prismic";
+import { ISocial } from "lib/interfaces/Prismic";
 
 /** Components */
 import { Box, Icon, LinkOverlay, LinkBox } from "@chakra-ui/react";
 import React from "react";
-import { getIcon } from "components/Icons";
+import { getIcon } from "lib/components/Icons";
 
 type SocialItemsProps = {
   socials: ISocial[];
@@ -16,8 +16,7 @@ const MinSocialItems = ({ socials, ...rest }: SocialItemsProps) => {
     return socials.map((social: ISocial, i: number) => {
       return (
         <LinkBox m="1" key={`min-social-item-${i}`}>
-          {/* @ts-ignore */}
-          <Icon as={getIcon(social.social_provider)} />
+          <Icon as={getIcon(social.social_provider)} fill="black" />
           <LinkOverlay href={social.social_link}></LinkOverlay>
         </LinkBox>
       );

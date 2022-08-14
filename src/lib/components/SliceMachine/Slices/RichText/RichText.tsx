@@ -1,7 +1,7 @@
 /** Interfaces/types */
 
-import AtomMachine from "components/AtomMachine";
-import { ISlice } from "interfaces/Prismic";
+import AtomMachine from "lib/components/AtomMachine";
+import { ISlice } from "lib/interfaces/Prismic";
 import React from "react";
 
 /** components */

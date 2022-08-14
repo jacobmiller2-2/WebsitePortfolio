@@ -1,9 +1,9 @@
-import { IProject } from "interfaces/Prismic";
+import { IProject } from "lib/interfaces/Prismic";
 
 /** Components */
 import { Box, Text, Heading, Divider, Spacer } from "@chakra-ui/react";
-import { TechItems } from "components";
-import SliceMachine from "components/SliceMachine";
+import { TechItems } from "lib/components";
+import SliceMachine from "lib/components/SliceMachine";
 
 type ProjectCardProps = {
   project: IProject;

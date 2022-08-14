@@ -2,7 +2,8 @@
 
 /** components */
 import { Container, VStack, Heading, HStack } from "@chakra-ui/react";
-import { IProject, IProjectMeta } from "interfaces/Prismic";
+import { Section } from "lib/components";
+import { IProject, IProjectMeta } from "lib/interfaces/Prismic";
 import { ProjectCard } from "./components";
 
 interface IProjectsViewProps {
@@ -24,7 +25,7 @@ const ProjectsView = ({ projects, meta, ...rest }: IProjectsViewProps) => {
   };
 
   return (
-    <Container maxW="container.lg" h="100%" minH="100vh" {...rest}>
+    <Section {...rest}>
       <VStack spacing={2} align="flex-start" justifyContent="flex-start">
         <HStack
           w="100%"
@@ -46,7 +47,7 @@ const ProjectsView = ({ projects, meta, ...rest }: IProjectsViewProps) => {
         </HStack> */}
         {/* {showOther && renderOtherExperience()} */}
       </VStack>
-    </Container>
+    </Section>
   );
 };
 
