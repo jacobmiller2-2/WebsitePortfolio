@@ -15,6 +15,7 @@ import {
 import AtomMachine from "components/AtomMachine";
 import { IExperience, IExperienceMeta } from "interfaces/Prismic";
 import ExperienceCard from "./components/ExperienceCard/ExperienceCard";
+import ViewLayout from "views/ViewLayout";
 
 interface IExperienceViewProps {
   experience: IExperience[];
@@ -51,7 +52,7 @@ const ExperienceView = ({
     ));
 
   return (
-    <Container maxW="container.lg" h="100%" minH="100vh" {...rest}>
+    <ViewLayout>
       <VStack spacing={2} align="flex-start" justifyContent="flex-start">
         <HStack
           w="100%"
@@ -79,7 +80,7 @@ const ExperienceView = ({
           )}
         </HStack>
       </VStack>
-    </Container>
+    </ViewLayout>
   );
 };
 

@@ -1,8 +1,5 @@
-import Head from "next/head";
-
 /** Interfaces/Types */
 import { IHero } from "interfaces/Prismic";
-
 /** Components */
 import {
   Container,
@@ -14,8 +11,13 @@ import {
   LinkOverlay,
   Box,
   Button,
+  Text,
+  Fade,
+  ScaleFade,
 } from "@chakra-ui/react";
 import AtomMachine from "components/AtomMachine";
+import ViewLayout from "views/ViewLayout";
+import { Cyclic } from "components";
 
 interface IndexViewProps {
   hero: IHero;
@@ -34,17 +36,7 @@ const IndexView = ({ hero, ...rest }: IndexViewProps) => {
   };
 
   return (
-    <Container
-      maxW="container.lg"
-      display="flex"
-      alignItems="center"
-      h={["100%", "100%", "100vh", "100vh"]}
-      mh="100vh"
-      {...rest}
-    >
-      <Head>
-        <title>Jacob Miller</title>
-      </Head>
+    <ViewLayout>
       <VStack spacing={2} align="flex-start" maxW="100%">
         <Heading as="h6" size="sm">
           {hero.prelude}
@@ -53,7 +45,7 @@ const IndexView = ({ hero, ...rest }: IndexViewProps) => {
           {hero.name}.
         </Heading>
 
-        <HStack
+        {/* <HStack
           maxW="100%"
           marginTop="1rem !important"
           overflowX="scroll"
@@ -64,7 +56,23 @@ const IndexView = ({ hero, ...rest }: IndexViewProps) => {
           }}
         >
           {renderTags(hero.tags)}
-        </HStack>
+        </HStack> */}
+        <Box>
+          <Cyclic
+            items={hero.tags.map((v, i) => (show: boolean) => (
+              <ScaleFade
+                in={show}
+                initialScale={0.9}
+                style={{ display: show ? "block" : "none" }}
+                key={`item-${i}`}
+              >
+                <Text color="primary.default">{v.tag}</Text>
+              </ScaleFade>
+            ))}
+            start={<Text>I am a&nbsp;</Text>}
+            containerProps={{ display: "flex" }}
+          />
+        </Box>
         <br />
         <Box maxW="1200px" lineHeight={"1.75"}>
           {AtomMachine({ atoms: hero.introduction })}
@@ -77,7 +85,7 @@ const IndexView = ({ hero, ...rest }: IndexViewProps) => {
           </LinkBox>
         </HStack>
       </VStack>
-    </Container>
+    </ViewLayout>
   );
 };
 export default IndexView;

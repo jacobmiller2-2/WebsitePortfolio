@@ -4,6 +4,7 @@ import { Heading } from "components";
 import { IProject } from "interfaces/Prismic";
 import React from "react";
 import { isSameYear } from "utils";
+import ViewLayout from "views/ViewLayout";
 import { ProjectCard } from "./components";
 
 type ArchiveViewProps = {
@@ -45,17 +46,10 @@ const ArchiveView = ({ projects, ...rest }: ArchiveViewProps) => {
   };
 
   return (
-    <Container
-      maxW="container.lg"
-      display="flex"
-      alignItems="center"
-      h={["100%", "100%", "100vh", "100vh"]}
-      mh="100vh"
-      {...rest}
-    >
+    <ViewLayout>
       {/* <Heading label="March 2022" /> */}
       <VStack alignItems="flex-start">{renderProjects()}</VStack>
-    </Container>
+    </ViewLayout>
   );
 };
 

@@ -3,6 +3,7 @@
 /** components */
 import { Container, VStack, Heading, HStack } from "@chakra-ui/react";
 import { IProject, IProjectMeta } from "interfaces/Prismic";
+import ViewLayout from "views/ViewLayout";
 import { ProjectCard } from "./components";
 
 interface IProjectsViewProps {
@@ -24,10 +25,16 @@ const ProjectsView = ({ projects, meta, ...rest }: IProjectsViewProps) => {
   };
 
   return (
-    <Container maxW="container.lg" h="100%" minH="100vh" {...rest}>
-      <VStack spacing={2} align="flex-start" justifyContent="flex-start">
+    <ViewLayout>
+      <VStack
+        spacing={2}
+        align="flex-start"
+        justifyContent="flex-start"
+        maxW={"100%"}
+      >
         <HStack
           w="100%"
+          maxW={"100%"}
           align="center"
           justifyContent="center"
           marginBottom="3rem"
@@ -46,7 +53,7 @@ const ProjectsView = ({ projects, meta, ...rest }: IProjectsViewProps) => {
         </HStack> */}
         {/* {showOther && renderOtherExperience()} */}
       </VStack>
-    </Container>
+    </ViewLayout>
   );
 };
 

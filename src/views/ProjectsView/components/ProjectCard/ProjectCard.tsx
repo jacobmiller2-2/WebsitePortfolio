@@ -55,6 +55,7 @@ const ProjectCard = ({ project, alt = true }: IProjectCardProps) => {
         flexDir="column"
         alignItems={alt ? "flex-start" : "flex-end"}
         width="100%"
+        maxW={"100%"}
         height="100%"
         key="project-body"
         marginInlineStart={["0rem !important", "0.5rem !important"]}

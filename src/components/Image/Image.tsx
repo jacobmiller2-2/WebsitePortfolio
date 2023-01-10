@@ -22,7 +22,7 @@ const Image = ({ width, height, src, alt, altText }: IImageProps) => {
         bgColor="text.primary"
         w="100%"
         h="100%"
-        p="8rem 3rem !important"
+        p="8rem 3rem"
       >
         <NextImage
           height={80}

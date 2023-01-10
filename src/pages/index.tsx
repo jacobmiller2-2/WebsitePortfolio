@@ -28,6 +28,7 @@ import {
   IProject,
   IProjectMeta,
 } from "interfaces/Prismic";
+import Head from "next/head";
 
 interface IndexPageProps {
   hero: IHero;
@@ -48,6 +49,9 @@ export const IndexPage = ({
 }: IndexPageProps) => {
   return (
     <Main socials={contact.socials}>
+      <Head>
+        <title>Jacob Miller</title>
+      </Head>
       <IndexView id="" hero={hero} />
       <ExperienceView
         experience={experience}

@@ -1,11 +1,11 @@
-module.exports = {
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig = {
   distDir: "build",
   i18n: {
     locales: ["en-US"],
     defaultLocale: "en-US",
-  },
-  future: {
-    webpack5: true,
   },
   images: {
     domains: ["www.valpo.edu", "images.prismic.io"],
@@ -17,6 +17,8 @@ module.exports = {
     },
   ],
 };
+
+module.exports = nextConfig;
 
 const CLOUDFLARE_WEB_ANALTICS_CSP =
   "static.cloudflareinsights.com; connect-src cloudflareinsights.co";
