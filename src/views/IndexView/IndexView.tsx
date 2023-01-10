@@ -2,7 +2,6 @@
 import { IHero } from "interfaces/Prismic";
 /** Components */
 import {
-  Container,
   VStack,
   Heading,
   Tag,
@@ -12,7 +11,6 @@ import {
   Box,
   Button,
   Text,
-  Fade,
   ScaleFade,
 } from "@chakra-ui/react";
 import AtomMachine from "components/AtomMachine";
@@ -25,16 +23,6 @@ interface IndexViewProps {
 }
 
 const IndexView = ({ hero, ...rest }: IndexViewProps) => {
-  const renderTags = (tags: { tag: string }[]): React.ReactNode[] => {
-    return tags.map(({ tag }: { tag: string }, i: number) => {
-      return (
-        <Tag key={`tag-${i}`} whiteSpace="nowrap" minW="fit-content">
-          {tag}
-        </Tag>
-      );
-    });
-  };
-
   return (
     <ViewLayout>
       <VStack spacing={2} align="flex-start" maxW="100%">
@@ -44,19 +32,6 @@ const IndexView = ({ hero, ...rest }: IndexViewProps) => {
         <Heading as="h1" size="4xl">
           {hero.name}.
         </Heading>
-
-        {/* <HStack
-          maxW="100%"
-          marginTop="1rem !important"
-          overflowX="scroll"
-          css={{
-            "&::-webkit-scrollbar": { display: "none" },
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-          }}
-        >
-          {renderTags(hero.tags)}
-        </HStack> */}
         <Box>
           <Cyclic
             items={hero.tags.map((v, i) => (show: boolean) => (
